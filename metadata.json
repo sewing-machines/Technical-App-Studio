@@ -1,0 +1,6 @@
+{
+  "name": "Technical App Studio",
+  "description": "Official Android app showcase portfolio for Technical App Studio — Smart Tools, Productivity & Games for Everyone.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

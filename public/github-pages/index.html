@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Technical App Studio — Smart Tools, Productivity &amp; Games for Everyone</title>
+  <meta name="description" content="Official Android app showcase portfolio for Technical App Studio — Smart Tools, Productivity & Games for Everyone." />
+  <meta property="og:title" content="Technical App Studio — Smart Tools, Productivity &amp; Games for Everyone" />
+  <meta property="og:description" content="Explore published Android apps from Technical App Studio: Machine Record Tracker, All Documents Reader, All-in-One Calculator, PLT File Viewer, Construction Cost Calculator, and Dots & Boxes Premium Edition." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('tas-theme');
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (saved === 'dark' || (!saved && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --bg-elevated: rgba(255, 255, 255, 0.78);
+      --bg-header: rgba(255, 255, 255, 0.84);
+      --bg-input: rgba(248, 250, 252, 0.9);
+      --bg-tabs: rgba(241, 245, 249, 0.9);
+      --bg-modal: #ffffff;
+      --text: #0f172a;
+      --text-muted: #475569;
+      --text-subtle: #64748b;
+      --border: rgba(226, 232, 240, 0.9);
+      --border-hover: rgba(16, 185, 129, 0.45);
+      --accent: #059669;
+      --accent-hover: #047857;
+      --accent-text: #ffffff;
+      --btn-dark-bg: #0f172a;
+      --btn-dark-hover: #1e293b;
+      --btn-dark-text: #ffffff;
+      --shadow-card: 0 4px 24px -6px rgba(15, 23, 42, 0.06);
+      --font-display: 'Outfit', system-ui, -apple-system, sans-serif;
+      --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    }
+
+    html.dark {
+      --bg: #070b12;
+      --bg-elevated: rgba(15, 23, 42, 0.62);
+      --bg-header: rgba(7, 11, 18, 0.84);
+      --bg-input: rgba(2, 6, 23, 0.65);
+      --bg-tabs: rgba(2, 6, 23, 0.72);
+      --bg-modal: #0f172a;
+      --text: #f8fafc;
+      --text-muted: #cbd5e1;
+      --text-subtle: #94a3b8;
+      --border: rgba(30, 41, 59, 0.9);
+      --border-hover: rgba(52, 211, 153, 0.45);
+      --accent: #10b981;
+      --accent-hover: #34d399;
+      --accent-text: #020617;
+      --btn-dark-bg: #ffffff;
+      --btn-dark-hover: #e2e8f0;
+      --btn-dark-text: #020617;
+      --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.48);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      font-family: var(--font-sans);
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background-color: var(--bg);
+      color: var(--text);
+      transition: background-color 0.2s ease, color 0.2s ease;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, .font-display {
+      font-family: var(--font-display);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+    }
+
+    /* Ambient Glows */
+    .ambient-bg {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+    .ambient-orb-1 {
+      position: absolute;
+      top: -160px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 900px;
+      height: 460px;
+      border-radius: 9999px;
+      background: rgba(16, 185, 129, 0.11);
+      filter: blur(120px);
+    }
+    .ambient-orb-2 {
+      position: absolute;
+      top: 32%;
+      right: -160px;
+      width: 520px;
+      height: 520px;
+      border-radius: 9999px;
+      background: rgba(56, 189, 248, 0.08);
+      filter: blur(130px);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+    @media (min-width: 640px) {
+      .container { padding-left: 24px; padding-right: 24px; }
+    }
+    @media (min-width: 1024px) {
+      .container { padding-left: 32px; padding-right: 32px; }
+    }
+
+    /* Top Bar */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-header);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+    .header-inner {
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .brand-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .brand-name {
+      font-family: var(--font-display);
+      font-size: 1.125rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .nav-links {
+      display: none;
+      align-items: center;
+      gap: 28px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+    @media (min-width: 768px) {
+      .nav-links { display: flex; }
+    }
+    .nav-links a:hover {
+      color: var(--text);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+    .theme-btn {
+      width: 40px;
+      height: 40px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--bg-elevated);
+      color: var(--text);
+      transition: background-color 0.15s ease;
+    }
+    .theme-btn:hover {
+      background: var(--bg-tabs);
+    }
+    .whatsapp-header-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      border-radius: 12px;
+      border: none;
+      background: var(--btn-dark-bg);
+      color: var(--btn-dark-text);
+      font-size: 0.8125rem;
+      font-weight: 600;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: background-color 0.15s ease;
+    }
+    .whatsapp-header-btn:hover {
+      background: var(--btn-dark-hover);
+    }
+
+    main {
+      position: relative;
+      z-index: 10;
+      flex: 1;
+    }
+
+    /* Hero */
+    .hero {
+      padding: 40px 0 44px;
+    }
+    @media (min-width: 640px) {
+      .hero { padding: 56px 0 48px; }
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+      align-items: stretch;
+    }
+    @media (min-width: 1024px) {
+      .hero-grid {
+        grid-template-columns: 7fr 5fr;
+        gap: 40px;
+      }
+    }
+    .hero-kicker {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin: 0 0 12px;
+      letter-spacing: 0.01em;
+    }
+    .hero-title {
+      font-size: clamp(2.15rem, 4vw, 3.35rem);
+      font-weight: 700;
+      line-height: 1.08;
+      letter-spacing: -0.025em;
+      margin: 0 0 20px;
+      text-wrap: balance;
+    }
+    .hero-copy {
+      font-size: 1.0625rem;
+      line-height: 1.65;
+      color: var(--text-muted);
+      max-width: 40rem;
+      margin: 0 0 28px;
+    }
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 20px;
+      border-radius: 12px;
+      background: var(--accent);
+      color: var(--accent-text);
+      font-size: 0.875rem;
+      font-weight: 600;
+      border: none;
+      white-space: nowrap;
+      transition: background-color 0.15s ease;
+    }
+    .btn-primary:hover {
+      background: var(--accent-hover);
+    }
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 20px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--bg-elevated);
+      color: var(--text);
+      font-size: 0.875rem;
+      font-weight: 600;
+      white-space: nowrap;
+      transition: background-color 0.15s ease;
+    }
+    .btn-secondary:hover {
+      background: var(--bg-tabs);
+    }
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px 16px;
+      font-size: 0.875rem;
+      color: var(--text-subtle);
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* Hero Preview Panel */
+    .glass-panel {
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: var(--bg-elevated);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: var(--shadow-card);
+    }
+    .preview-panel {
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .preview-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .preview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin: 18px 0;
+    }
+    .preview-tile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 10px 6px;
+      border-radius: 12px;
+      border: 1px solid transparent;
+      background: transparent;
+      color: var(--text-muted);
+      transition: background-color 0.15s ease, border-color 0.15s ease;
+    }
+    .preview-tile:hover {
+      background: var(--bg-tabs);
+      border-color: var(--border);
+    }
+    .preview-tile span {
+      margin-top: 8px;
+      font-size: 0.6875rem;
+      font-weight: 500;
+      line-height: 1.25;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .preview-footer {
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      color: var(--text-subtle);
+    }
+
+    /* Storefront Toolbar */
+    .toolbar {
+      padding: 18px;
+      margin-bottom: 32px;
+    }
+    .toolbar-row {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    @media (min-width: 1024px) {
+      .toolbar-row {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+    .search-wrap {
+      position: relative;
+      flex: 1;
+      max-width: 560px;
+    }
+    .search-icon {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-subtle);
+      pointer-events: none;
+    }
+    .search-input {
+      width: 100%;
+      height: 44px;
+      padding: 0 38px 0 40px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--bg-input);
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.875rem;
+      outline: none;
+      transition: border-color 0.15s ease;
+    }
+    .search-input:focus {
+      border-color: var(--accent);
+    }
+    .clear-search-btn {
+      position: absolute;
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 28px;
+      height: 28px;
+      border: none;
+      border-radius: 8px;
+      background: transparent;
+      color: var(--text-subtle);
+      display: none;
+      align-items: center;
+      justify-content: center;
+    }
+    .clear-search-btn.visible {
+      display: inline-flex;
+    }
+    .filter-tabs {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      overflow-x: auto;
+      padding: 4px;
+      border-radius: 12px;
+      background: var(--bg-tabs);
+      border: 1px solid var(--border);
+    }
+    .filter-tab {
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      padding: 8px 14px;
+      border-radius: 9px;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: background-color 0.15s ease, color 0.15s ease;
+    }
+    .filter-tab:hover {
+      color: var(--text);
+    }
+    .filter-tab.active {
+      background: var(--btn-dark-bg);
+      color: var(--btn-dark-text);
+      font-weight: 600;
+    }
+    html.dark .filter-tab.active {
+      background: var(--accent);
+      color: var(--accent-text);
+    }
+    .toolbar-meta {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      color: var(--text-subtle);
+      font-variant-numeric: tabular-nums;
+    }
+    .reset-link {
+      border: none;
+      background: none;
+      padding: 0;
+      color: var(--accent);
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    /* App Grid */
+    .apps-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      margin-bottom: 64px;
+    }
+    @media (min-width: 768px) {
+      .apps-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 1024px) {
+      .apps-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    .app-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 24px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: var(--bg-elevated);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: var(--shadow-card);
+      transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.2s ease;
+    }
+    .app-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--border-hover);
+    }
+    .app-card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .category-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 10px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: var(--bg-input);
+      color: var(--text-muted);
+      font-size: 0.75rem;
+      font-weight: 500;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .app-title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 700;
+      letter-spacing: -0.015em;
+      margin: 0 0 8px;
+      color: var(--text);
+    }
+    .app-desc {
+      font-size: 0.875rem;
+      line-height: 1.55;
+      color: var(--text-muted);
+      margin: 0 0 20px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      min-height: 2.75em;
+    }
+    .app-card-footer {
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .app-card-sub {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.75rem;
+      color: var(--text-subtle);
+    }
+    .details-btn {
+      border: none;
+      background: none;
+      padding: 0;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .details-btn:hover {
+      color: var(--accent);
+    }
+    .play-btn {
+      width: 100%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px 16px;
+      border-radius: 12px;
+      background: var(--btn-dark-bg);
+      color: var(--btn-dark-text);
+      font-size: 0.875rem;
+      font-weight: 600;
+      white-space: nowrap;
+      transition: background-color 0.15s ease;
+    }
+    .play-btn:hover {
+      background: var(--btn-dark-hover);
+    }
+
+    /* Empty state */
+    .empty-state {
+      display: none;
+      text-align: center;
+      padding: 44px 24px;
+      margin-bottom: 64px;
+    }
+    .empty-state.visible {
+      display: block;
+    }
+
+    /* Contact Banner */
+    .contact-banner {
+      padding: 28px;
+      margin-bottom: 64px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    @media (min-width: 768px) {
+      .contact-banner {
+        padding: 40px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+
+    /* Footer */
+    .site-footer {
+      position: relative;
+      z-index: 10;
+      border-top: 1px solid var(--border);
+      background: var(--bg-header);
+      backdrop-filter: blur(18px);
+    }
+    .footer-inner {
+      padding: 28px 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    @media (min-width: 640px) {
+      .footer-inner { flex-direction: row; }
+    }
+
+    /* Modal & Toast */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      background: rgba(2, 6, 23, 0.65);
+      backdrop-filter: blur(6px);
+    }
+    .modal-backdrop.open {
+      display: flex;
+    }
+    .modal-card {
+      position: relative;
+      width: 100%;
+      max-width: 480px;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      background: var(--bg-modal);
+      padding: 28px;
+      box-shadow: 0 24px 48px rgba(0, 0, 0, 0.35);
+    }
+    .modal-close {
+      position: absolute;
+      right: 16px;
+      top: 16px;
+      width: 34px;
+      height: 34px;
+      border: none;
+      border-radius: 10px;
+      background: transparent;
+      color: var(--text-subtle);
+      font-size: 1.25rem;
+      line-height: 1;
+    }
+    .modal-close:hover {
+      background: var(--bg-tabs);
+      color: var(--text);
+    }
+    .toast {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 60;
+      max-width: 360px;
+      padding: 12px 16px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      background: var(--bg-modal);
+      color: var(--text);
+      font-size: 0.8125rem;
+      line-height: 1.45;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+      display: none;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .toast.visible {
+      display: flex;
+    }
+    .hidden {
+      display: none !important;
+    }
+  </style>
+</head>
+<body>
+  <div class="ambient-bg" aria-hidden="true">
+    <div class="ambient-orb-1"></div>
+    <div class="ambient-orb-2"></div>
+  </div>
+
+  <!-- Top Navigation Bar -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#top" class="brand-link">
+        <svg width="32" height="32" viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <rect width="40" height="40" rx="10" fill="currentColor" />
+          <path d="M11 13.5C11 12.6716 11.6716 12 12.5 12H27.5C28.3284 12 29 12.6716 29 13.5V16.5C29 17.3284 28.3284 18 27.5 18H22.75V28.5C22.75 29.3284 22.0784 30 21.25 30H18.75C17.9216 30 17.25 29.3284 17.25 28.5V18H12.5C11.6716 18 11 17.3284 11 16.5V13.5Z" fill="var(--bg)" />
+          <circle cx="28.5" cy="26.5" r="3" fill="#10B981" />
+        </svg>
+        <span class="brand-name">Technical App Studio</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary Navigation">
+        <a href="#apps">Apps</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" id="themeToggle" class="theme-btn" aria-label="Toggle dark and light mode" title="Toggle theme">
+          <span id="themeIconSun" class="hidden" aria-hidden="true">&#9728;</span>
+          <span id="themeIconMoon" aria-hidden="true">&#9790;</span>
+        </button>
+
+        <!-- PASTE YOUR WHATSAPP LINK HERE (e.g., https://wa.me/15551234567) -->
+        <a href="#" id="headerWhatsappBtn" class="whatsapp-header-btn">
+          <span>Contact / WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="top">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="hero-kicker">Official Android App Showcase &middot; Google Play Publisher</p>
+          <h1 class="hero-title">Smart Tools, Productivity &amp; Games for Everyone</h1>
+          <p class="hero-copy">
+            Technical App Studio builds fast, focused Android applications for workshop operations,
+            multi-format document reading, CAD plotting, construction planning, and classic strategy play.
+          </p>
+          <div class="hero-ctas">
+            <a href="#apps" class="btn-primary">Browse All 6 Apps</a>
+            <!-- PASTE YOUR WHATSAPP LINK HERE (e.g., https://wa.me/15551234567) -->
+            <a href="#" id="heroWhatsappBtn" class="btn-secondary">Contact / WhatsApp</a>
+          </div>
+          <div class="hero-meta">
+            <span>6 Published Android Apps</span>
+            <span aria-hidden="true">&middot;</span>
+            <span>4 Specialized Categories</span>
+            <span aria-hidden="true">&middot;</span>
+            <span>Direct Google Play Distribution</span>
+          </div>
+        </div>
+
+        <div class="glass-panel preview-panel">
+          <div class="preview-header">
+            <div>
+              <strong class="font-display" style="font-size:0.9375rem;">Studio Release Suite</strong>
+              <div style="font-size:0.75rem;color:var(--text-subtle);">Select any app to inspect details</div>
+            </div>
+            <span style="font-size:0.75rem;font-weight:600;color:var(--accent);">6 / 6 Live</span>
+          </div>
+          <div class="preview-grid" id="heroPreviewGrid"></div>
+          <div class="preview-footer">
+            <span>Android Smartphones &amp; Tablets</span>
+            <span>Google Play</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Storefront Search, Category Filters & App Cards -->
+    <section id="apps" class="container" aria-label="Published Android Apps">
+      <div class="glass-panel toolbar">
+        <div class="toolbar-row">
+          <div class="search-wrap">
+            <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="m21 21-4.3-4.3"></path>
+            </svg>
+            <input
+              type="search"
+              id="searchInput"
+              class="search-input"
+              placeholder="Search apps by name, file type, or feature..."
+              aria-label="Search Android apps"
+            />
+            <button type="button" id="clearSearchBtn" class="clear-search-btn" aria-label="Clear search">&times;</button>
+          </div>
+
+          <div class="filter-tabs" role="tablist" aria-label="Filter apps by category" id="categoryTabs">
+            <button type="button" class="filter-tab active" data-category="All" role="tab" aria-selected="true">All 6</button>
+            <button type="button" class="filter-tab" data-category="Business" role="tab" aria-selected="false">Business 1</button>
+            <button type="button" class="filter-tab" data-category="Productivity" role="tab" aria-selected="false">Productivity 2</button>
+            <button type="button" class="filter-tab" data-category="Tools" role="tab" aria-selected="false">Tools 2</button>
+            <button type="button" class="filter-tab" data-category="Board" role="tab" aria-selected="false">Board 1</button>
+          </div>
+        </div>
+
+        <div class="toolbar-meta">
+          <span id="resultsCount">Showing 6 of 6 apps</span>
+          <button type="button" id="resetFiltersBtn" class="reset-link hidden">Reset filters</button>
+        </div>
+      </div>
+
+      <!-- 6 App Cards Grid -->
+      <div class="apps-grid" id="appsGrid">
+
+        <!-- APP 1: Machine Record Tracker -->
+        <article class="app-card" data-id="machine-record-tracker" data-category="Business" data-search="machine record tracker business sewing industrial stitching maintenance">
+          <div>
+            <div class="app-card-top">
+              <svg width="64" height="64" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+                <rect width="64" height="64" rx="16" fill="#0F172A"/>
+                <rect x="12" y="42" width="40" height="7" rx="2.5" fill="#F59E0B"/>
+                <path d="M42 42V22C42 18.6863 39.3137 16 36 16H19C16.7909 16 15 17.7909 15 20V25C15 26.1046 15.8954 27 17 27H23V24H35V42H42Z" fill="#E2E8F0"/>
+                <rect x="18" y="27" width="3" height="7" rx="1" fill="#94A3B8"/>
+                <path d="M19.5 34V40.5" stroke="#38BDF8" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M16 40.5H23" stroke="#CBD5E1" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="45" cy="24" r="5" fill="#334155" stroke="#F59E0B" stroke-width="2"/>
+                <circle cx="45" cy="24" r="1.5" fill="#F59E0B"/>
+                <rect x="27" y="11" width="5" height="5" rx="1" fill="#F59E0B"/>
+              </svg>
+              <span class="category-badge">Business</span>
+            </div>
+            <h3 class="app-title">Machine Record Tracker</h3>
+            <p class="app-desc">Easily manage, track, and maintain service records and operations for industrial and stitching machines.</p>
+          </div>
+          <div class="app-card-footer">
+            <div class="app-card-sub">
+              <span>Android &middot; Workshop Ledger</span>
+              <button type="button" class="details-btn" data-open-modal="machine-record-tracker">App Details</button>
+            </div>
+            <a href="https://play.google.com/store/apps/details?id=com.aistudio.machinerecordtracker.rkpz" target="_blank" rel="noopener noreferrer" class="play-btn" data-app-name="Machine Record Tracker">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.609 1.814L13.792 12 3.61 22.186a1.75 1.75 0 0 1-.61-1.335V3.149c0-.52.231-.995.609-1.335z" fill="#32BBFF"/><path d="M17.213 8.579L13.792 12l3.421 3.421 3.864-2.199c.903-.514.903-1.93 0-2.444l-3.864-2.199z" fill="#FFCE00"/><path d="M3.609 22.186L13.792 12l3.421 3.421-12.137 6.906c-.553.314-1.148.248-1.467-.141z" fill="#F14336"/><path d="M3.609 1.814c.319-.389.914-.455 1.467-.141L17.213 8.58 13.792 12 3.609 1.814z" fill="#00F076"/></svg>
+              <span>Get it on Google Play</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- APP 2: All Documents Reader -->
+        <article class="app-card" data-id="all-documents-reader" data-category="Productivity" data-search="all documents reader productivity pdf word excel text viewer folder">
+          <div>
+            <div class="app-card-top">
+              <svg width="64" height="64" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+                <rect width="64" height="64" rx="16" fill="#1E3A8A"/>
+                <path d="M12 20C12 17.7909 13.7909 16 16 16H26L29.5 20H48C50.2091 20 52 21.7909 52 24V44C52 46.2091 50.2091 48 48 48H16C13.7909 48 12 46.2091 12 44V20Z" fill="#60A5FA"/>
+                <rect x="17" y="18" width="14" height="18" rx="2" fill="#EF4444"/>
+                <rect x="25" y="15" width="14" height="20" rx="2" fill="#F8FAFC"/>
+                <rect x="33" y="18" width="14" height="18" rx="2" fill="#10B981"/>
+                <path d="M28 20H36M28 24H36M28 28H33" stroke="#1E40AF" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M12 26C12 24.8954 12.8954 24 14 24H50C51.1046 24 52 24.8954 52 26V44C52 46.2091 50.2091 48 48 48H16C13.7909 48 12 46.2091 12 44V26Z" fill="#3B82F6"/>
+                <path d="M20 35H44M20 40H36" stroke="#DBEAFE" stroke-width="2.2" stroke-linecap="round"/>
+              </svg>
+              <span class="category-badge">Productivity</span>
+            </div>
+            <h3 class="app-title">All Documents Reader</h3>
+            <p class="app-desc">A fast, all-in-one file viewer to open and read PDF, Word, Excel, and text documents seamlessly on your phone.</p>
+          </div>
+          <div class="app-card-footer">
+            <div class="app-card-sub">
+              <span>Android &middot; File Viewer</span>
+              <button type="button" class="details-btn" data-open-modal="all-documents-reader">App Details</button>
+            </div>
+            <a href="https://play.google.com/store/apps/details?id=com.aistudio.omnireader.mfxkpl" target="_blank" rel="noopener noreferrer" class="play-btn" data-app-name="All Documents Reader">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.609 1.814L13.792 12 3.61 22.186a1.75 1.75 0 0 1-.61-1.335V3.149c0-.52.231-.995.609-1.335z" fill="#32BBFF"/><path d="M17.213 8.579L13.792 12l3.421 3.421 3.864-2.199c.903-.514.903-1.93 0-2.444l-3.864-2.199z" fill="#FFCE00"/><path d="M3.609 22.186L13.792 12l3.421 3.421-12.137 6.906c-.553.314-1.148.248-1.467-.141z" fill="#F14336"/><path d="M3.609 1.814c.319-.389.914-.455 1.467-.141L17.213 8.58 13.792 12 3.609 1.814z" fill="#00F076"/></svg>
+              <span>Get it on Google Play</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- APP 3: All-in-One Calculator -->
+        <article class="app-card" data-id="all-in-one-calculator" data-category="Tools" data-search="all in one calculator tools math scientific unit conversion financial">
+          <div>
+            <div class="app-card-top">
+              <svg width="64" height="64" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+                <rect width="64" height="64" rx="16" fill="#064E3B"/>
+                <rect x="15" y="10" width="34" height="44" rx="6" fill="#1E293B" stroke="#34D399" stroke-width="1.5"/>
+                <rect x="19" y="14" width="26" height="10" rx="2.5" fill="#022C22" stroke="#10B981" stroke-width="1"/>
+                <path d="M34 19H41M39 17V21" stroke="#34D399" stroke-width="1.6" stroke-linecap="round"/>
+                <rect x="19" y="28" width="6" height="5" rx="1.5" fill="#475569"/>
+                <rect x="27" y="28" width="6" height="5" rx="1.5" fill="#475569"/>
+                <rect x="35" y="28" width="10" height="5" rx="1.5" fill="#0EA5E9"/>
+                <rect x="19" y="36" width="6" height="5" rx="1.5" fill="#475569"/>
+                <rect x="27" y="36" width="6" height="5" rx="1.5" fill="#475569"/>
+                <rect x="35" y="36" width="10" height="5" rx="1.5" fill="#0EA5E9"/>
+                <rect x="19" y="44" width="6" height="5" rx="1.5" fill="#475569"/>
+                <rect x="27" y="44" width="6" height="5" rx="1.5" fill="#475569"/>
+                <rect x="35" y="44" width="10" height="5" rx="1.5" fill="#10B981"/>
+              </svg>
+              <span class="category-badge">Tools</span>
+            </div>
+            <h3 class="app-title">All-in-One Calculator</h3>
+            <p class="app-desc">Perform everyday math, scientific calculations, unit conversions, and financial estimates in one smart tool.</p>
+          </div>
+          <div class="app-card-footer">
+            <div class="app-card-sub">
+              <span>Android &middot; Smart Utility</span>
+              <button type="button" class="details-btn" data-open-modal="all-in-one-calculator">App Details</button>
+            </div>
+            <a href="https://play.google.com/store/apps/details?id=com.sajid.allinonecalculator.offcal" target="_blank" rel="noopener noreferrer" class="play-btn" data-app-name="All-in-One Calculator">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.609 1.814L13.792 12 3.61 22.186a1.75 1.75 0 0 1-.61-1.335V3.149c0-.52.231-.995.609-1.335z" fill="#32BBFF"/><path d="M17.213 8.579L13.792 12l3.421 3.421 3.864-2.199c.903-.514.903-1.93 0-2.444l-3.864-2.199z" fill="#FFCE00"/><path d="M3.609 22.186L13.792 12l3.421 3.421-12.137 6.906c-.553.314-1.148.248-1.467-.141z" fill="#F14336"/><path d="M3.609 1.814c.319-.389.914-.455 1.467-.141L17.213 8.58 13.792 12 3.609 1.814z" fill="#00F076"/></svg>
+              <span>Get it on Google Play</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- APP 4: PLT File Viewer -->
+        <article class="app-card" data-id="plt-file-viewer" data-category="Productivity" data-search="plt file viewer productivity hpgl plotter cad vector blueprint">
+          <div>
+            <div class="app-card-top">
+              <svg width="64" height="64" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+                <rect width="64" height="64" rx="16" fill="#0C4A6E"/>
+                <path d="M16 12V52M26.6 12V52M37.3 12V52M48 12V52M12 16H52M12 26.6H52M12 37.3H52M12 48H52" stroke="#38BDF8" stroke-opacity="0.22" stroke-width="1"/>
+                <path d="M15 44C19 26 29 22 36 32C41 39 47 34 49 20" stroke="#22D3EE" stroke-width="2.5" stroke-linecap="round"/>
+                <rect x="13" y="42" width="4" height="4" rx="1" fill="#F8FAFC"/>
+                <rect x="34" y="30" width="4" height="4" rx="1" fill="#F8FAFC"/>
+                <path d="M42 13L51 22L38 35L29 36L30 27L42 13Z" fill="#F8FAFC" stroke="#0284C7" stroke-width="1.5" stroke-linejoin="round"/>
+              </svg>
+              <span class="category-badge">Productivity</span>
+            </div>
+            <h3 class="app-title">PLT File Viewer</h3>
+            <p class="app-desc">View, zoom, and inspect HPGL (.plt) plotter and CAD vector design files directly on your Android device.</p>
+          </div>
+          <div class="app-card-footer">
+            <div class="app-card-sub">
+              <span>Android &middot; CAD Inspector</span>
+              <button type="button" class="details-btn" data-open-modal="plt-file-viewer">App Details</button>
+            </div>
+            <a href="https://play.google.com/store/apps/details?id=com.aistudio.pltviewer.xywzqp" target="_blank" rel="noopener noreferrer" class="play-btn" data-app-name="PLT File Viewer">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.609 1.814L13.792 12 3.61 22.186a1.75 1.75 0 0 1-.61-1.335V3.149c0-.52.231-.995.609-1.335z" fill="#32BBFF"/><path d="M17.213 8.579L13.792 12l3.421 3.421 3.864-2.199c.903-.514.903-1.93 0-2.444l-3.864-2.199z" fill="#FFCE00"/><path d="M3.609 22.186L13.792 12l3.421 3.421-12.137 6.906c-.553.314-1.148.248-1.467-.141z" fill="#F14336"/><path d="M3.609 1.814c.319-.389.914-.455 1.467-.141L17.213 8.58 13.792 12 3.609 1.814z" fill="#00F076"/></svg>
+              <span>Get it on Google Play</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- APP 5: Construction Cost Calculator -->
+        <article class="app-card" data-id="construction-cost-calculator" data-category="Tools" data-search="construction cost calculator tools building materials cement bricks house crane">
+          <div>
+            <div class="app-card-top">
+              <svg width="64" height="64" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+                <rect width="64" height="64" rx="16" fill="#1E3A8A"/>
+                <path d="M16 12V52M32 12V52M48 12V52M12 20H52M12 36H52M12 50H52" stroke="#93C5FD" stroke-opacity="0.18" stroke-width="1"/>
+                <rect x="20" y="16" width="5" height="34" fill="#F59E0B"/>
+                <path d="M12 20H50L46 16H14L12 20Z" fill="#FBBF24"/>
+                <rect x="11" y="20" width="6" height="4" rx="1" fill="#CBD5E1"/>
+                <path d="M22.5 11L44 16M22.5 11L14 16" stroke="#FDE68A" stroke-width="1.4"/>
+                <path d="M41 20V31" stroke="#E2E8F0" stroke-width="1.6"/>
+                <rect x="35" y="31" width="12" height="8" rx="1.5" fill="#38BDF8"/>
+                <rect x="14" y="48" width="36" height="4" rx="1" fill="#E2E8F0"/>
+              </svg>
+              <span class="category-badge">Tools</span>
+            </div>
+            <h3 class="app-title">Construction Cost Calculator</h3>
+            <p class="app-desc">Estimate building materials, cement, bricks, and total house construction expenses accurately before you build.</p>
+          </div>
+          <div class="app-card-footer">
+            <div class="app-card-sub">
+              <span>Android &middot; Civil Estimator</span>
+              <button type="button" class="details-btn" data-open-modal="construction-cost-calculator">App Details</button>
+            </div>
+            <a href="https://play.google.com/store/apps/details?id=com.aistudio.constcalc.mepvsy" target="_blank" rel="noopener noreferrer" class="play-btn" data-app-name="Construction Cost Calculator">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.609 1.814L13.792 12 3.61 22.186a1.75 1.75 0 0 1-.61-1.335V3.149c0-.52.231-.995.609-1.335z" fill="#32BBFF"/><path d="M17.213 8.579L13.792 12l3.421 3.421 3.864-2.199c.903-.514.903-1.93 0-2.444l-3.864-2.199z" fill="#FFCE00"/><path d="M3.609 22.186L13.792 12l3.421 3.421-12.137 6.906c-.553.314-1.148.248-1.467-.141z" fill="#F14336"/><path d="M3.609 1.814c.319-.389.914-.455 1.467-.141L17.213 8.58 13.792 12 3.609 1.814z" fill="#00F076"/></svg>
+              <span>Get it on Google Play</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- APP 6: Dots & Boxes Premium Edition -->
+        <article class="app-card" data-id="dots-and-boxes-premium" data-category="Board" data-search="dots and boxes premium edition board game neon strategy ai multiplayer">
+          <div>
+            <div class="app-card-top">
+              <svg width="64" height="64" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+                <rect width="64" height="64" rx="16" fill="#09090B"/>
+                <rect x="16" y="16" width="16" height="16" fill="#06B6D4" fill-opacity="0.24"/>
+                <rect x="32" y="32" width="16" height="16" fill="#F59E0B" fill-opacity="0.24"/>
+                <path d="M16 16H32M16 16V32M32 16V32M16 32H32" stroke="#22D3EE" stroke-width="2.6" stroke-linecap="round"/>
+                <path d="M32 32H48M32 32V48M48 32V48M32 48H48" stroke="#FBBF24" stroke-width="2.6" stroke-linecap="round"/>
+                <path d="M16 32V48H32" stroke="#10B981" stroke-width="2.2" stroke-linecap="round"/>
+                <circle cx="16" cy="16" r="3" fill="#F8FAFC"/>
+                <circle cx="32" cy="16" r="3" fill="#F8FAFC"/>
+                <circle cx="48" cy="16" r="3" fill="#71717A"/>
+                <circle cx="16" cy="32" r="3" fill="#F8FAFC"/>
+                <circle cx="32" cy="32" r="3" fill="#22D3EE"/>
+                <circle cx="48" cy="32" r="3" fill="#F8FAFC"/>
+                <circle cx="16" cy="48" r="3" fill="#10B981"/>
+                <circle cx="32" cy="48" r="3" fill="#F8FAFC"/>
+                <circle cx="48" cy="48" r="3" fill="#FBBF24"/>
+              </svg>
+              <span class="category-badge">Board</span>
+            </div>
+            <h3 class="app-title">Dots &amp; Boxes Premium Edition</h3>
+            <p class="app-desc">Enjoy the classic pen-and-paper strategy board game with sleek neon visuals, smart AI, and multiplayer modes.</p>
+          </div>
+          <div class="app-card-footer">
+            <div class="app-card-sub">
+              <span>Android &middot; Strategy Game</span>
+              <button type="button" class="details-btn" data-open-modal="dots-and-boxes-premium">App Details</button>
+            </div>
+            <a href="https://play.google.com/store/apps/details?id=com.sajid.dots.and.boxes" target="_blank" rel="noopener noreferrer" class="play-btn" data-app-name="Dots & Boxes Premium Edition">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3.609 1.814L13.792 12 3.61 22.186a1.75 1.75 0 0 1-.61-1.335V3.149c0-.52.231-.995.609-1.335z" fill="#32BBFF"/><path d="M17.213 8.579L13.792 12l3.421 3.421 3.864-2.199c.903-.514.903-1.93 0-2.444l-3.864-2.199z" fill="#FFCE00"/><path d="M3.609 22.186L13.792 12l3.421 3.421-12.137 6.906c-.553.314-1.148.248-1.467-.141z" fill="#F14336"/><path d="M3.609 1.814c.319-.389.914-.455 1.467-.141L17.213 8.58 13.792 12 3.609 1.814z" fill="#00F076"/></svg>
+              <span>Get it on Google Play</span>
+            </a>
+          </div>
+        </article>
+
+      </div>
+
+      <div id="emptyState" class="glass-panel empty-state">
+        <h3 class="font-display" style="margin:0 0 8px;">No matching apps found</h3>
+        <p style="margin:0 0 18px;font-size:0.875rem;color:var(--text-muted);">Try adjusting your search keywords or switching back to all categories.</p>
+        <button type="button" id="emptyResetBtn" class="btn-primary">Show All 6 Apps</button>
+      </div>
+    </section>
+
+    <!-- Contact / WhatsApp Section -->
+    <section id="contact" class="container">
+      <div class="glass-panel contact-banner">
+        <div>
+          <p class="hero-kicker" style="margin-bottom:6px;">Support &amp; Custom Android Inquiries</p>
+          <h2 class="font-display" style="margin:0 0 8px;font-size:1.75rem;">Need help with an app or custom business tool?</h2>
+          <p style="margin:0;font-size:0.9375rem;color:var(--text-muted);max-width:36rem;">
+            Reach out to Technical App Studio directly for app support, feature suggestions, or tailored Android utility development.
+          </p>
+        </div>
+        <!-- PASTE YOUR WHATSAPP LINK HERE (e.g., https://wa.me/15551234567) -->
+        <a href="#" id="bannerWhatsappBtn" class="btn-primary">Contact / WhatsApp</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Clean Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div style="display:flex;align-items:center;gap:10px;">
+        <span class="font-display" style="font-weight:700;font-size:0.9375rem;">Technical App Studio</span>
+      </div>
+      <p style="margin:0;font-size:0.8125rem;color:var(--text-subtle);">&copy; 2026 Technical App Studio. All rights reserved.</p>
+      <div style="display:flex;gap:18px;font-size:0.8125rem;font-weight:500;">
+        <a href="#apps">Apps</a>
+        <a href="#contact">Contact / WhatsApp</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- App Details Modal -->
+  <div id="detailModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <button type="button" id="closeModalBtn" class="modal-close" aria-label="Close modal">&times;</button>
+      <span id="modalCategory" style="font-size:0.75rem;font-weight:600;color:var(--accent);"></span>
+      <h3 id="modalTitle" class="font-display" style="margin:6px 0 12px;font-size:1.375rem;"></h3>
+      <p id="modalDesc" style="margin:0 0 22px;font-size:0.9375rem;line-height:1.6;color:var(--text-muted);"></p>
+      <a id="modalPlayBtn" href="#" target="_blank" rel="noopener noreferrer" class="play-btn">Get it on Google Play</a>
+    </div>
+  </div>
+
+  <!-- Non-intrusive Toast Notice -->
+  <div id="toast" class="toast" role="status" aria-live="polite">
+    <span id="toastText" style="flex:1;"></span>
+    <button type="button" id="closeToast" style="border:none;background:none;color:var(--text-subtle);font-size:1.1rem;line-height:1;" aria-label="Dismiss">&times;</button>
+  </div>
+
+  <script>
+    (function () {
+      var root = document.documentElement;
+      var themeToggle = document.getElementById('themeToggle');
+      var sunIcon = document.getElementById('themeIconSun');
+      var moonIcon = document.getElementById('themeIconMoon');
+
+      function syncThemeIcons() {
+        var isDark = root.classList.contains('dark');
+        sunIcon.classList.toggle('hidden', !isDark);
+        moonIcon.classList.toggle('hidden', isDark);
+      }
+      syncThemeIcons();
+
+      themeToggle.addEventListener('click', function () {
+        var isDark = root.classList.toggle('dark');
+        try { localStorage.setItem('tas-theme', isDark ? 'dark' : 'light'); } catch (e) {}
+        syncThemeIcons();
+      });
+
+      // Build compact Hero Preview Tiles from existing cards
+      var cards = Array.prototype.slice.call(document.querySelectorAll('.app-card'));
+      var previewGrid = document.getElementById('heroPreviewGrid');
+      var modal = document.getElementById('detailModal');
+      var modalCategory = document.getElementById('modalCategory');
+      var modalTitle = document.getElementById('modalTitle');
+      var modalDesc = document.getElementById('modalDesc');
+      var modalPlayBtn = document.getElementById('modalPlayBtn');
+
+      function openAppModal(card) {
+        var title = card.querySelector('.app-title').textContent;
+        var cat = card.querySelector('.category-badge').textContent;
+        var desc = card.querySelector('.app-desc').textContent;
+        var href = card.querySelector('.play-btn').getAttribute('href');
+        modalCategory.textContent = cat + ' · Technical App Studio';
+        modalTitle.textContent = title;
+        modalDesc.textContent = desc;
+        modalPlayBtn.setAttribute('href', href);
+        modalPlayBtn.setAttribute('data-app-name', title);
+        modal.classList.add('open');
+      }
+
+      cards.forEach(function (card) {
+        var svg = card.querySelector('.app-card-top svg').cloneNode(true);
+        svg.setAttribute('width', '48');
+        svg.setAttribute('height', '48');
+        var title = card.querySelector('.app-title').textContent;
+        var btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'preview-tile';
+        btn.appendChild(svg);
+        var label = document.createElement('span');
+        label.textContent = title;
+        btn.appendChild(label);
+        btn.addEventListener('click', function () { openAppModal(card); });
+        previewGrid.appendChild(btn);
+      });
+
+      // Live Search & Category Filter
+      var searchInput = document.getElementById('searchInput');
+      var clearBtn = document.getElementById('clearSearchBtn');
+      var tabs = Array.prototype.slice.call(document.querySelectorAll('.filter-tab'));
+      var resultsCount = document.getElementById('resultsCount');
+      var resetBtn = document.getElementById('resetFiltersBtn');
+      var emptyResetBtn = document.getElementById('emptyResetBtn');
+      var emptyState = document.getElementById('emptyState');
+      var activeCategory = 'All';
+
+      function filterApps() {
+        var query = searchInput.value.trim().toLowerCase();
+        var visible = 0;
+
+        clearBtn.classList.toggle('visible', searchInput.value.length > 0);
+
+        cards.forEach(function (card) {
+          var cat = card.getAttribute('data-category');
+          var haystack = card.getAttribute('data-search');
+          var matchesCat = activeCategory === 'All' || cat === activeCategory;
+          var matchesQuery = !query || haystack.indexOf(query) !== -1;
+          var show = matchesCat && matchesQuery;
+          card.classList.toggle('hidden', !show);
+          if (show) visible++;
+        });
+
+        resultsCount.textContent = 'Showing ' + visible + ' of ' + cards.length + ' apps';
+        resetBtn.classList.toggle('hidden', activeCategory === 'All' && !query);
+        emptyState.classList.toggle('visible', visible === 0);
+      }
+
+      searchInput.addEventListener('input', filterApps);
+      clearBtn.addEventListener('click', function () {
+        searchInput.value = '';
+        filterApps();
+        searchInput.focus();
+      });
+
+      tabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+          activeCategory = tab.getAttribute('data-category');
+          tabs.forEach(function (t) {
+            var selected = t === tab;
+            t.classList.toggle('active', selected);
+            t.setAttribute('aria-selected', selected ? 'true' : 'false');
+          });
+          filterApps();
+        });
+      });
+
+      function resetAll() {
+        searchInput.value = '';
+        activeCategory = 'All';
+        tabs.forEach(function (t) {
+          var isAll = t.getAttribute('data-category') === 'All';
+          t.classList.toggle('active', isAll);
+          t.setAttribute('aria-selected', isAll ? 'true' : 'false');
+        });
+        filterApps();
+      }
+      resetBtn.addEventListener('click', resetAll);
+      emptyResetBtn.addEventListener('click', resetAll);
+
+      // Modal & Placeholder Link Feedback
+      document.querySelectorAll('[data-open-modal]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var id = btn.getAttribute('data-open-modal');
+          var card = document.querySelector('.app-card[data-id="' + id + '"]');
+          if (card) openAppModal(card);
+        });
+      });
+
+      document.getElementById('closeModalBtn').addEventListener('click', function () {
+        modal.classList.remove('open');
+      });
+      modal.addEventListener('click', function (e) {
+        if (e.target === modal) modal.classList.remove('open');
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') modal.classList.remove('open');
+      });
+
+      var toast = document.getElementById('toast');
+      var toastText = document.getElementById('toastText');
+      var toastTimer;
+      function showToast(msg) {
+        toastText.textContent = msg;
+        toast.classList.add('visible');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(function () { toast.classList.remove('visible'); }, 3600);
+      }
+      document.getElementById('closeToast').addEventListener('click', function () {
+        toast.classList.remove('visible');
+      });
+
+      document.querySelectorAll('.play-btn').forEach(function (link) {
+        link.addEventListener('click', function (e) {
+          if (link.getAttribute('href') === '#') {
+            e.preventDefault();
+            showToast(link.getAttribute('data-app-name') + ': Replace href="#" with your Google Play URL.');
+          }
+        });
+      });
+
+      ['headerWhatsappBtn', 'heroWhatsappBtn', 'bannerWhatsappBtn'].forEach(function (id) {
+        var el = document.getElementById(id);
+        if (!el) return;
+        el.addEventListener('click', function (e) {
+          if (el.getAttribute('href') === '#') {
+            e.preventDefault();
+            showToast('WhatsApp link placeholder: Replace href="#" with https://wa.me/YOUR_NUMBER.');
+          }
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
