@@ -3,18 +3,18 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Technical App Studio — Smart Tools, Productivity &amp; Games for Everyone</title>
+    <title>Technical App Studio — Apps, Machine Videos &amp; R&amp;D Projects</title>
     <meta
       name="description"
-      content="Official Android app showcase portfolio for Technical App Studio — Smart Tools, Productivity & Games for Everyone."
+      content="Technical App Studio: Industrial Stitching Machine Maintenance, Automation Innovation & Android App Development."
     />
     <meta
       property="og:title"
-      content="Technical App Studio — Smart Tools, Productivity &amp; Games for Everyone"
+      content="Technical App Studio — Apps, Machine Videos &amp; R&amp;D Projects"
     />
     <meta
       property="og:description"
-      content="Explore published Android apps from Technical App Studio: Machine Record Tracker, All Documents Reader, All-in-One Calculator, PLT File Viewer, Construction Cost Calculator, and Dots & Boxes Premium Edition."
+      content="Explore published Android & web apps, machine maintenance videos, and custom XYZ R&D project galleries from Technical App Studio."
     />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
@@ -96,24 +96,26 @@
     class="bg-slate-50 text-slate-900 dark:bg-[#070B12] dark:text-slate-100 antialiased selection:bg-emerald-500/20 selection:text-emerald-700 dark:selection:text-emerald-300 transition-colors duration-200"
   >
     <div class="relative min-h-screen flex flex-col overflow-x-hidden">
-      <!-- Subtle Ambient Background Mesh for Glassmorphism Refraction -->
+      <!-- Subtle Industrial-Tech Ambient Background Glow -->
       <div aria-hidden="true" class="pointer-events-none fixed inset-0 overflow-hidden">
         <div
-          class="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[480px] rounded-full bg-emerald-500/10 dark:bg-emerald-500/12 blur-[120px]"
+          class="absolute -top-44 left-1/2 -translate-x-1/2 w-[920px] h-[460px] rounded-full bg-emerald-500/10 dark:bg-emerald-500/12 blur-[130px]"
         ></div>
         <div
-          class="absolute top-1/3 -right-40 w-[520px] h-[520px] rounded-full bg-sky-500/8 dark:bg-blue-600/10 blur-[130px]"
+          class="absolute top-1/3 -right-40 w-[520px] h-[520px] rounded-full bg-sky-500/8 dark:bg-amber-500/8 blur-[130px]"
         ></div>
       </div>
 
-      <!-- Top Bar: Clean 3-Zone Header -->
+      <!-- =====================================================================
+           HEADER (Clean 3-Zone Navigation Bar)
+           ===================================================================== -->
       <header
-        class="sticky top-0 z-40 border-b border-slate-200/80 dark:border-slate-800/80 bg-white/80 dark:bg-[#070B12]/80 backdrop-blur-xl"
+        class="sticky top-0 z-40 border-b border-slate-200/80 dark:border-slate-800/80 bg-white/85 dark:bg-[#070B12]/85 backdrop-blur-xl"
       >
         <div
           class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4 sm:gap-8"
         >
-          <!-- Zone 1: Brand Title + Clean Logo Icon -->
+          <!-- Zone 1: Brand Title + Logo Icon -->
           <a
             href="#top"
             class="flex items-center gap-3 whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded-lg"
@@ -137,32 +139,35 @@
             </span>
           </a>
 
-          <!-- Zone 2: Concise Single-Line Navigation Links -->
+          <!-- Zone 2: 3 Concise Navigation Links -->
           <nav
             aria-label="Primary Navigation"
             class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-600 dark:text-slate-300"
           >
-            <a
-              href="#apps"
-              class="hover:text-slate-950 dark:hover:text-white hover:underline underline-offset-4 transition-colors whitespace-nowrap shrink-0"
+            <button
+              type="button"
+              data-nav-tab="apps"
+              class="hover:text-slate-950 dark:hover:text-white hover:underline underline-offset-4 transition-colors whitespace-nowrap shrink-0 cursor-pointer"
             >
               Apps
-            </a>
-            <a
-              href="#capabilities"
-              class="hover:text-slate-950 dark:hover:text-white hover:underline underline-offset-4 transition-colors whitespace-nowrap shrink-0"
+            </button>
+            <button
+              type="button"
+              data-nav-tab="videos"
+              class="hover:text-slate-950 dark:hover:text-white hover:underline underline-offset-4 transition-colors whitespace-nowrap shrink-0 cursor-pointer"
             >
-              Standards
-            </a>
-            <a
-              href="#contact"
-              class="hover:text-slate-950 dark:hover:text-white hover:underline underline-offset-4 transition-colors whitespace-nowrap shrink-0"
+              Videos
+            </button>
+            <button
+              type="button"
+              data-nav-tab="gallery"
+              class="hover:text-slate-950 dark:hover:text-white hover:underline underline-offset-4 transition-colors whitespace-nowrap shrink-0 cursor-pointer"
             >
-              Contact
-            </a>
+              Machine &amp; Project Photos
+            </button>
           </nav>
 
-          <!-- Zone 3: Theme Switcher + Primary Action -->
+          <!-- Zone 3: Theme Toggle + Contact / WhatsApp -->
           <div class="flex items-center gap-2.5 shrink-0">
             <button
               type="button"
@@ -171,9 +176,7 @@
               title="Toggle dark and light mode"
               class="inline-flex items-center justify-center w-10 h-10 rounded-xl border border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 cursor-pointer"
             >
-              <!-- Sun icon (shown in dark mode) -->
               <svg
-                id="sunIcon"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -184,11 +187,11 @@
                 aria-hidden="true"
               >
                 <circle cx="12" cy="12" r="4" />
-                <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+                <path
+                  d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"
+                />
               </svg>
-              <!-- Moon icon (shown in light mode) -->
               <svg
-                id="moonIcon"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -219,143 +222,245 @@
       </header>
 
       <main id="top" class="relative z-10 flex-1">
-        <!-- Hero Showcase Section -->
-        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-10 sm:pt-14 sm:pb-12">
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
-            <!-- Left Column: Studio Proposition -->
-            <div class="lg:col-span-7 flex flex-col justify-center">
-              <p
-                class="text-xs sm:text-sm font-medium text-emerald-700 dark:text-emerald-400 tracking-wide mb-3"
-              >
-                Official Android App Showcase · Google Play Publisher
-              </p>
+        <!-- ===================================================================
+             COMPACT PROFILE & EXPERTISE HERO
+             =================================================================== -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-6 sm:pt-12 sm:pb-8">
+          <div class="max-w-4xl">
+            <p
+              class="text-xs sm:text-sm font-medium text-emerald-700 dark:text-emerald-400 tracking-wide mb-2.5"
+            >
+              Official Studio Hub · Google Play Publisher · Industrial R&amp;D
+            </p>
+            <h1
+              class="font-display font-bold tracking-tight text-slate-950 dark:text-white leading-[1.08] mb-3"
+              style="font-size: clamp(2rem, 4vw, 3.15rem); text-wrap: balance"
+            >
+              Technical App Studio
+            </h1>
+            <p
+              class="text-base sm:text-lg text-slate-600 dark:text-slate-300 leading-relaxed mb-6 dark:tracking-[0.01em]"
+              style="text-wrap: balance"
+            >
+              Industrial Stitching Machine Maintenance, Automation Innovation &amp; Android App
+              Development
+            </p>
+          </div>
 
-              <h1
-                class="font-display font-bold tracking-tight text-slate-950 dark:text-white leading-[1.08] mb-5"
-                style="font-size: clamp(2.15rem, 4vw, 3.35rem); text-wrap: balance"
-              >
-                Smart Tools, Productivity &amp; Games for Everyone
-              </h1>
-
-              <p
-                class="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl leading-relaxed mb-7 dark:tracking-[0.01em]"
-              >
-                Technical App Studio builds fast, focused Android applications for workshop
-                operations, multi-format document reading, CAD plotting, construction planning,
-                and classic strategy play.
-              </p>
-
-              <div class="flex flex-wrap items-center gap-3 mb-8">
-                <a
-                  href="#apps"
-                  class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 dark:bg-emerald-500 dark:hover:bg-emerald-400 text-white dark:text-slate-950 font-semibold text-sm transition-colors whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
-                >
-                  <span>Browse All 6 Apps</span>
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="w-4 h-4"
-                    aria-hidden="true"
-                  >
-                    <path d="M7 7h10v10" />
-                    <path d="M7 17 17 7" />
-                  </svg>
-                </a>
-
-                <button
-                  type="button"
-                  data-open-contact
-                  class="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-white/80 dark:bg-slate-900/60 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200 font-semibold text-sm transition-colors whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 cursor-pointer"
-                >
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="currentColor"
-                    class="w-4 h-4 text-emerald-600 dark:text-emerald-400"
-                    aria-hidden="true"
-                  >
-                    <path
-                      d="M12.031 2c-5.516 0-9.969 4.453-9.969 9.969 0 1.766.469 3.484 1.344 5l-1.406 5.156 5.281-1.375a9.92 9.92 0 0 0 4.75 1.219h.004c5.512 0 9.965-4.453 9.965-9.969 0-2.656-1.035-5.156-2.914-7.035A9.888 9.888 0 0 0 12.031 2zm5.805 14.172c-.246.691-1.43 1.324-1.984 1.406-.508.074-1.152.105-1.855-.121-.426-.137-.977-.32-1.676-.621-2.945-1.273-4.867-4.242-5.016-4.438-.145-.195-1.195-1.59-1.195-3.035 0-1.445.754-2.156 1.023-2.449.266-.293.582-.367.777-.367.195 0 .391.004.562.012.18.008.422-.07.66.504.246.59.836 2.043.91 2.191.074.148.125.32.023.516-.098.195-.148.316-.297.488-.148.172-.312.383-.445.516-.148.148-.305.309-.133.605.176.297.777 1.281 1.668 2.074 1.148 1.023 2.113 1.34 2.41 1.488.297.148.469.125.645-.074.172-.199.742-.867.941-1.164.199-.297.398-.246.668-.148.273.098 1.727.816 2.023.965.297.148.496.223.566.344.074.125.074.719-.172 1.41z"
-                    />
-                  </svg>
-                  <span>Contact / WhatsApp</span>
-                </button>
-              </div>
-
-              <!-- Quiet Unboxed Studio Metadata Strip -->
+          <!-- Clean 3-Column Expertise Strip -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-3.5">
+            <div
+              class="flex items-center gap-3 rounded-xl border border-slate-200/80 dark:border-slate-800/80 bg-white/70 dark:bg-slate-900/55 backdrop-blur-xl px-4 py-3"
+            >
               <div
-                class="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs sm:text-sm text-slate-500 dark:text-slate-400 tabular-nums"
+                class="w-9 h-9 rounded-lg bg-amber-500/15 text-amber-600 dark:text-amber-400 flex items-center justify-center shrink-0"
               >
-                <span>6 Published Android Apps</span>
-                <span aria-hidden="true">·</span>
-                <span>4 Specialized Categories</span>
-                <span aria-hidden="true">·</span>
-                <span>Direct Google Play Distribution</span>
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="w-4 h-4"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"
+                  />
+                </svg>
               </div>
+              <span class="text-xs sm:text-sm font-semibold text-slate-800 dark:text-slate-200">
+                Industrial Sewing &amp; Pattern Machine Mechanics
+              </span>
             </div>
 
-            <!-- Right Column: Interactive Storefront Preview Matrix -->
-            <div class="lg:col-span-5 flex">
+            <div
+              class="flex items-center gap-3 rounded-xl border border-slate-200/80 dark:border-slate-800/80 bg-white/70 dark:bg-slate-900/55 backdrop-blur-xl px-4 py-3"
+            >
               <div
-                class="w-full rounded-2xl border border-slate-200/80 dark:border-slate-800/80 bg-white/70 dark:bg-slate-900/55 backdrop-blur-xl p-5 sm:p-6 shadow-[0_8px_32px_-8px_rgba(15,23,42,0.08)] dark:shadow-[0_12px_40px_-10px_rgba(0,0,0,0.5)] flex flex-col justify-between"
+                class="w-9 h-9 rounded-lg bg-sky-500/15 text-sky-600 dark:text-sky-400 flex items-center justify-center shrink-0"
               >
-                <div
-                  class="flex items-center justify-between gap-2 pb-4 border-b border-slate-200/70 dark:border-slate-800/80"
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="w-4 h-4"
+                  aria-hidden="true"
                 >
-                  <div>
-                    <h2 class="font-display text-sm font-semibold text-slate-900 dark:text-white">
-                      Studio Release Suite
-                    </h2>
-                    <p class="text-xs text-slate-500 dark:text-slate-400">
-                      Select any app to inspect highlights
-                    </p>
-                  </div>
-                  <span
-                    class="text-xs font-medium text-emerald-700 dark:text-emerald-400 tabular-nums"
-                  >
-                    6 / 6 Live
-                  </span>
-                </div>
-
-                <div id="heroPreviewGrid" class="grid grid-cols-3 gap-3 my-5"></div>
-
-                <div
-                  class="pt-3 border-t border-slate-200/70 dark:border-slate-800/80 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400"
-                >
-                  <span>Compatible with Android Smartphones &amp; Tablets</span>
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="w-4 h-4 shrink-0 text-slate-400"
-                    aria-hidden="true"
-                  >
-                    <rect width="14" height="20" x="5" y="2" rx="2" ry="2" />
-                    <path d="M12 18h.01" />
-                  </svg>
-                </div>
+                  <rect width="16" height="16" x="4" y="4" rx="2" />
+                  <rect width="6" height="6" x="9" y="9" rx="1" />
+                  <path d="M15 2v2M15 20v2M2 15h2M2 9h2M20 15h2M20 9h2M9 2v2M9 20v2" />
+                </svg>
               </div>
+              <span class="text-xs sm:text-sm font-semibold text-slate-800 dark:text-slate-200">
+                Custom Automation &amp; Embedded Hardware Innovation
+              </span>
+            </div>
+
+            <div
+              class="flex items-center gap-3 rounded-xl border border-slate-200/80 dark:border-slate-800/80 bg-white/70 dark:bg-slate-900/55 backdrop-blur-xl px-4 py-3"
+            >
+              <div
+                class="w-9 h-9 rounded-lg bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 flex items-center justify-center shrink-0"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="w-4 h-4"
+                  aria-hidden="true"
+                >
+                  <rect width="14" height="20" x="5" y="2" rx="2" ry="2" />
+                  <path d="M12 18h.01" />
+                </svg>
+              </div>
+              <span class="text-xs sm:text-sm font-semibold text-slate-800 dark:text-slate-200">
+                Mobile Software Solutions
+              </span>
             </div>
           </div>
         </section>
 
-        <!-- Storefront Toolbar: Live Search + Category Filter Buttons -->
+        <!-- ===================================================================
+             3 PROMINENT ICON NAVIGATION CARDS (Apps | Videos | Machine Photos)
+             =================================================================== -->
+        <section id="hub" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
+          <div
+            role="tablist"
+            aria-label="Main Studio Sections"
+            class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5"
+          >
+            <!-- ICON 1: APPS -->
+            <button
+              type="button"
+              role="tab"
+              aria-selected="true"
+              data-hub-tab="apps"
+              class="hub-tab-btn group text-left rounded-2xl border p-5 sm:p-6 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 cursor-pointer"
+            >
+              <div class="flex items-center justify-between gap-4 mb-3.5">
+                <div
+                  class="hub-icon-box w-12 h-12 rounded-xl flex items-center justify-center transition-colors shrink-0"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="w-6 h-6"
+                    aria-hidden="true"
+                  >
+                    <rect width="14" height="20" x="5" y="2" rx="2" ry="2" />
+                    <path d="m10 8 5 4-5 4V8z" />
+                  </svg>
+                </div>
+                <span class="text-xs font-semibold tabular-nums hub-count">8 Apps</span>
+              </div>
+              <h2 class="font-display text-lg font-bold tracking-tight mb-1">Apps &amp; Software</h2>
+              <p class="text-xs sm:text-sm leading-relaxed hub-subtext">
+                All Google Play Android apps &amp; live web tools organized by category
+              </p>
+            </button>
+
+            <!-- ICON 2: VIDEOS -->
+            <button
+              type="button"
+              role="tab"
+              aria-selected="false"
+              data-hub-tab="videos"
+              class="hub-tab-btn group text-left rounded-2xl border p-5 sm:p-6 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 cursor-pointer"
+            >
+              <div class="flex items-center justify-between gap-4 mb-3.5">
+                <div
+                  class="hub-icon-box w-12 h-12 rounded-xl flex items-center justify-center transition-colors shrink-0"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="w-6 h-6"
+                    aria-hidden="true"
+                  >
+                    <rect width="20" height="14" x="2" y="5" rx="2" />
+                    <path d="m10 9 5 3-5 3V9z" />
+                  </svg>
+                </div>
+                <span class="text-xs font-semibold tabular-nums hub-count">3 Videos</span>
+              </div>
+              <h2 class="font-display text-lg font-bold tracking-tight mb-1">
+                Machine &amp; Tech Videos
+              </h2>
+              <p class="text-xs sm:text-sm leading-relaxed hub-subtext">
+                Stitching machine maintenance tutorials, troubleshooting &amp; automation demos
+              </p>
+            </button>
+
+            <!-- ICON 3: MACHINE & PROJECT PHOTOS -->
+            <button
+              type="button"
+              role="tab"
+              aria-selected="false"
+              data-hub-tab="gallery"
+              class="hub-tab-btn group text-left rounded-2xl border p-5 sm:p-6 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 cursor-pointer"
+            >
+              <div class="flex items-center justify-between gap-4 mb-3.5">
+                <div
+                  class="hub-icon-box w-12 h-12 rounded-xl flex items-center justify-center transition-colors shrink-0"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="w-6 h-6"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"
+                    />
+                    <circle cx="12" cy="13" r="3" />
+                  </svg>
+                </div>
+                <span class="text-xs font-semibold tabular-nums hub-count">4 Projects</span>
+              </div>
+              <h2 class="font-display text-lg font-bold tracking-tight mb-1">
+                Machines &amp; XYZ Projects
+              </h2>
+              <p class="text-xs sm:text-sm leading-relaxed hub-subtext">
+                Photo showcase of stitching machines, XYZ R&amp;D builds &amp; controllers
+              </p>
+            </button>
+          </div>
+        </section>
+
+        <!-- ===================================================================
+             TAB PANEL 1: ALL APPS (Grouped by Separate Categories + Filter Bar)
+             =================================================================== -->
         <section
-          id="apps"
-          aria-label="Published Android Apps"
-          class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16"
+          id="panel-apps"
+          role="tabpanel"
+          aria-label="All Apps"
+          class="hub-panel max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16"
         >
+          <!-- Search & Separate Category Filter Toolbar -->
           <div
             class="rounded-2xl border border-slate-200/80 dark:border-slate-800/80 bg-white/75 dark:bg-slate-900/60 backdrop-blur-xl p-4 sm:p-5 mb-8 shadow-[0_4px_24px_-6px_rgba(15,23,42,0.05)]"
           >
             <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
-              <!-- Live Search Input -->
               <div class="relative flex-1 max-w-xl">
                 <svg
                   viewBox="0 0 24 24"
@@ -373,8 +478,8 @@
                 <input
                   id="searchInput"
                   type="search"
-                  placeholder="Search apps by name, file type, or feature..."
-                  aria-label="Search Android apps"
+                  placeholder="Search apps by name, category, or feature..."
+                  aria-label="Search apps"
                   class="w-full h-11 pl-10 pr-10 rounded-xl border border-slate-200 dark:border-slate-700/80 bg-slate-50/80 dark:bg-slate-950/60 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/70 focus:border-emerald-500 transition-colors"
                 />
                 <button
@@ -399,7 +504,6 @@
                 </button>
               </div>
 
-              <!-- Category Filter Buttons -->
               <div
                 id="categoryTabs"
                 role="tablist"
@@ -408,11 +512,10 @@
               ></div>
             </div>
 
-            <!-- Quiet Unboxed Result Summary -->
             <div
               class="mt-3 pt-3 border-t border-slate-200/60 dark:border-slate-800/60 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 tabular-nums"
             >
-              <span id="resultsSummary">Showing 6 of 6 apps</span>
+              <span id="resultsSummary">Showing 8 of 8 apps across 5 categories</span>
               <button
                 type="button"
                 id="resetFiltersBtn"
@@ -423,8 +526,8 @@
             </div>
           </div>
 
-          <!-- App Showcase Grid -->
-          <div id="appsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+          <!-- Apps Grouped Cleanly by Category -->
+          <div id="appsContainer" class="space-y-10"></div>
 
           <!-- Empty Search State -->
           <div
@@ -442,151 +545,111 @@
               id="emptyResetBtn"
               class="inline-flex items-center justify-center px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 dark:bg-emerald-500 dark:hover:bg-emerald-400 text-white dark:text-slate-950 text-sm font-semibold transition-colors cursor-pointer"
             >
-              Show All 6 Apps
+              Show All Apps
             </button>
           </div>
         </section>
 
-        <!-- Studio Engineering Standards -->
-        <section id="capabilities" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
-          <div class="border-t border-slate-200/80 dark:border-slate-800/80 pt-12">
-            <div class="max-w-2xl mb-8">
-              <p class="text-xs font-medium text-emerald-700 dark:text-emerald-400 tracking-wide mb-2">
-                Studio Craftsmanship
+        <!-- ===================================================================
+             TAB PANEL 2: MACHINE & TECH VIDEOS
+             =================================================================== -->
+        <section
+          id="panel-videos"
+          role="tabpanel"
+          aria-label="Machine and Tech Videos"
+          class="hidden hub-panel max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16"
+        >
+          <div class="mb-6 flex flex-col sm:flex-row sm:items-end justify-between gap-3">
+            <div>
+              <p class="text-xs font-medium text-emerald-700 dark:text-emerald-400 mb-1">
+                Technical Walkthroughs &amp; Field Demos
               </p>
-              <h2
-                class="font-display text-2xl sm:text-3xl font-bold tracking-tight text-slate-950 dark:text-white"
-                style="text-wrap: balance"
-              >
-                Built for everyday clarity and field reliability
+              <h2 class="font-display text-2xl sm:text-3xl font-bold tracking-tight text-slate-950 dark:text-white">
+                Machine &amp; Innovation Videos
               </h2>
             </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div
-                class="rounded-2xl border border-slate-200/80 dark:border-slate-800/80 bg-white/65 dark:bg-slate-900/50 backdrop-blur-xl p-6"
-              >
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="w-5 h-5 text-emerald-600 dark:text-emerald-400 mb-3"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"
-                  />
-                </svg>
-                <h3 class="font-display text-base font-semibold text-slate-900 dark:text-white mb-1.5">
-                  01. Fast, Lightweight Builds
-                </h3>
-                <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                  Optimized Android binaries that launch immediately and run smoothly across
-                  modern and budget devices alike.
-                </p>
-              </div>
-
-              <div
-                class="rounded-2xl border border-slate-200/80 dark:border-slate-800/80 bg-white/65 dark:bg-slate-900/50 backdrop-blur-xl p-6"
-              >
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="w-5 h-5 text-emerald-600 dark:text-emerald-400 mb-3"
-                  aria-hidden="true"
-                >
-                  <path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z" />
-                  <path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65" />
-                  <path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65" />
-                </svg>
-                <h3 class="font-display text-base font-semibold text-slate-900 dark:text-white mb-1.5">
-                  02. Offline-Ready Workflows
-                </h3>
-                <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                  Core calculators, document readers, PLT viewers, and machine records work
-                  reliably on job sites and factory floors without constant connectivity.
-                </p>
-              </div>
-
-              <div
-                class="rounded-2xl border border-slate-200/80 dark:border-slate-800/80 bg-white/65 dark:bg-slate-900/50 backdrop-blur-xl p-6"
-              >
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="w-5 h-5 text-emerald-600 dark:text-emerald-400 mb-3"
-                  aria-hidden="true"
-                >
-                  <path
-                    d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
-                  />
-                  <path d="m9 12 2 2 4-4" />
-                </svg>
-                <h3 class="font-display text-base font-semibold text-slate-900 dark:text-white mb-1.5">
-                  03. Focused Privacy &amp; UX
-                </h3>
-                <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
-                  Clean Material-inspired layouts with zero unnecessary clutter, keeping your
-                  files, calculations, and records right at hand.
-                </p>
-              </div>
-            </div>
+            <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
+              Stitching machine repairs, timing guides &amp; automation tests
+            </p>
           </div>
+
+          <div id="videosGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
         </section>
 
-        <!-- Contact / WhatsApp Banner -->
-        <section id="contact" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+        <!-- ===================================================================
+             TAB PANEL 3: MACHINE & XYZ PROJECT GALLERY
+             =================================================================== -->
+        <section
+          id="panel-gallery"
+          role="tabpanel"
+          aria-label="Machines and XYZ Project Photos"
+          class="hidden hub-panel max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16"
+        >
           <div
-            class="rounded-2xl border border-slate-200/85 dark:border-slate-800/85 bg-white/75 dark:bg-slate-900/65 backdrop-blur-xl p-6 sm:p-10 flex flex-col md:flex-row md:items-center justify-between gap-6"
+            class="mb-6 flex flex-col sm:flex-row sm:items-end justify-between gap-4"
+          >
+            <div>
+              <p class="text-xs font-medium text-emerald-700 dark:text-emerald-400 mb-1">
+                Workshop Visuals &amp; Hardware R&amp;D
+              </p>
+              <h2 class="font-display text-2xl sm:text-3xl font-bold tracking-tight text-slate-950 dark:text-white">
+                Machines &amp; XYZ Project Gallery
+              </h2>
+            </div>
+
+            <!-- Gallery Filter Pills (All / Machines / XYZ Projects) -->
+            <div
+              id="galleryFilterTabs"
+              role="tablist"
+              aria-label="Filter gallery by type"
+              class="inline-flex items-center gap-1 p-1 rounded-xl bg-slate-100/90 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800/80 self-start sm:self-auto"
+            ></div>
+          </div>
+
+          <div id="galleryGrid" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+        </section>
+
+        <!-- ===================================================================
+             COMPACT CONTACT / WHATSAPP FOOTER STRIP
+             =================================================================== -->
+        <section id="contact" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+          <div
+            class="rounded-2xl border border-slate-200/85 dark:border-slate-800/85 bg-white/75 dark:bg-slate-900/65 backdrop-blur-xl p-6 sm:p-8 flex flex-col md:flex-row md:items-center justify-between gap-5"
           >
             <div class="max-w-xl">
-              <p class="text-xs font-medium text-emerald-700 dark:text-emerald-400 mb-2">
-                Support &amp; Custom Android Inquiries
-              </p>
-              <h2 class="font-display text-2xl sm:text-3xl font-bold tracking-tight text-slate-950 dark:text-white mb-2">
-                Need help with an app or custom business tool?
+              <h2 class="font-display text-xl sm:text-2xl font-bold tracking-tight text-slate-950 dark:text-white mb-1.5">
+                Direct Support &amp; Custom Project Inquiries
               </h2>
-              <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
-                Reach out to Technical App Studio directly for app support, feature
-                suggestions, or tailored Android utility development.
+              <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                Need help with an Android app, stitching machine automation, or an XYZ hardware build?
+                Message Technical App Studio directly on WhatsApp.
               </p>
             </div>
 
-            <div class="flex flex-wrap items-center gap-3 shrink-0">
-              <button
-                type="button"
-                data-open-contact
-                class="inline-flex items-center gap-2.5 px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 dark:bg-emerald-500 dark:hover:bg-emerald-400 text-white dark:text-slate-950 text-sm font-semibold transition-colors whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 cursor-pointer"
-              >
-                <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 shrink-0" aria-hidden="true">
-                  <path
-                    d="M12.031 2c-5.516 0-9.969 4.453-9.969 9.969 0 1.766.469 3.484 1.344 5l-1.406 5.156 5.281-1.375a9.92 9.92 0 0 0 4.75 1.219h.004c5.512 0 9.965-4.453 9.965-9.969 0-2.656-1.035-5.156-2.914-7.035A9.888 9.888 0 0 0 12.031 2zm5.805 14.172c-.246.691-1.43 1.324-1.984 1.406-.508.074-1.152.105-1.855-.121-.426-.137-.977-.32-1.676-.621-2.945-1.273-4.867-4.242-5.016-4.438-.145-.195-1.195-1.59-1.195-3.035 0-1.445.754-2.156 1.023-2.449.266-.293.582-.367.777-.367.195 0 .391.004.562.012.18.008.422-.07.66.504.246.59.836 2.043.91 2.191.074.148.125.32.023.516-.098.195-.148.316-.297.488-.148.172-.312.383-.445.516-.148.148-.305.309-.133.605.176.297.777 1.281 1.668 2.074 1.148 1.023 2.113 1.34 2.41 1.488.297.148.469.125.645-.074.172-.199.742-.867.941-1.164.199-.297.398-.246.668-.148.273.098 1.727.816 2.023.965.297.148.496.223.566.344.074.125.074.719-.172 1.41z"
-                  />
-                </svg>
-                <span>Contact / WhatsApp</span>
-              </button>
-            </div>
+            <button
+              type="button"
+              data-open-contact
+              class="inline-flex items-center justify-center gap-2.5 px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 dark:bg-emerald-500 dark:hover:bg-emerald-400 text-white dark:text-slate-950 text-sm font-semibold transition-colors whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 cursor-pointer"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 shrink-0" aria-hidden="true">
+                <path
+                  d="M12.031 2c-5.516 0-9.969 4.453-9.969 9.969 0 1.766.469 3.484 1.344 5l-1.406 5.156 5.281-1.375a9.92 9.92 0 0 0 4.75 1.219h.004c5.512 0 9.965-4.453 9.965-9.969 0-2.656-1.035-5.156-2.914-7.035A9.888 9.888 0 0 0 12.031 2zm5.805 14.172c-.246.691-1.43 1.324-1.984 1.406-.508.074-1.152.105-1.855-.121-.426-.137-.977-.32-1.676-.621-2.945-1.273-4.867-4.242-5.016-4.438-.145-.195-1.195-1.59-1.195-3.035 0-1.445.754-2.156 1.023-2.449.266-.293.582-.367.777-.367.195 0 .391.004.562.012.18.008.422-.07.66.504.246.59.836 2.043.91 2.191.074.148.125.32.023.516-.098.195-.148.316-.297.488-.148.172-.312.383-.445.516-.148.148-.305.309-.133.605.176.297.777 1.281 1.668 2.074 1.148 1.023 2.113 1.34 2.41 1.488.297.148.469.125.645-.074.172-.199.742-.867.941-1.164.199-.297.398-.246.668-.148.273.098 1.727.816 2.023.965.297.148.496.223.566.344.074.125.074.719-.172 1.41z"
+                />
+              </svg>
+              <span>Contact / WhatsApp</span>
+            </button>
           </div>
         </section>
       </main>
 
-      <!-- Clean Quiet Footer -->
+      <!-- ===================================================================
+           FOOTER
+           =================================================================== -->
       <footer
         class="relative z-10 border-t border-slate-200/80 dark:border-slate-800/80 bg-white/60 dark:bg-[#070B12]/70 backdrop-blur-xl"
       >
         <div
-          class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-4"
+          class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-7 flex flex-col sm:flex-row items-center justify-between gap-4"
         >
           <div class="flex items-center gap-2.5">
             <svg
@@ -613,7 +676,7 @@
           </p>
 
           <div class="flex items-center gap-5 text-xs font-medium text-slate-600 dark:text-slate-300">
-            <a href="#apps" class="hover:text-slate-950 dark:hover:text-white">Apps</a>
+            <a href="#hub" class="hover:text-slate-950 dark:hover:text-white">Top Hub</a>
             <button
               type="button"
               data-open-contact
@@ -626,22 +689,24 @@
       </footer>
     </div>
 
-    <!-- App Detail Modal -->
+    <!-- =====================================================================
+         UNIFIED MODAL (App Details / Video Player / Photo Lightbox)
+         ===================================================================== -->
     <div
-      id="appModal"
+      id="detailModal"
       role="dialog"
       aria-modal="true"
-      aria-labelledby="app-modal-title"
-      class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/60 backdrop-blur-sm"
+      aria-labelledby="detailModalTitle"
+      class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-sm"
     >
       <div
-        id="appModalCard"
-        class="relative w-full max-w-lg rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-7 shadow-2xl"
+        id="detailModalCard"
+        class="relative w-full max-w-xl rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-7 shadow-2xl max-h-[90vh] overflow-y-auto"
       >
         <button
           type="button"
-          id="closeAppModalBtn"
-          aria-label="Close app details"
+          id="closeDetailModalBtn"
+          aria-label="Close modal"
           class="absolute right-4 top-4 w-9 h-9 inline-flex items-center justify-center rounded-xl text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
         >
           <svg
@@ -660,62 +725,60 @@
         </button>
 
         <div class="flex items-center gap-4 mb-5 pr-8">
-          <div id="modalIconWrap" class="shrink-0"></div>
+          <div id="detailModalIconWrap" class="shrink-0"></div>
           <div>
             <span
-              id="modalCategory"
+              id="detailModalKicker"
               class="inline-block text-xs font-medium text-emerald-700 dark:text-emerald-400 mb-1"
             ></span>
             <h3
-              id="app-modal-title"
+              id="detailModalTitle"
               class="font-display text-xl sm:text-2xl font-bold text-slate-950 dark:text-white"
             ></h3>
           </div>
         </div>
 
+        <!-- Media Preview Slot (for Video Embed or Full Photo Lightbox) -->
+        <div
+          id="detailModalMediaWrap"
+          class="hidden mb-5 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 aspect-video bg-slate-950"
+        ></div>
+
         <p
-          id="modalDescription"
+          id="detailModalDescription"
           class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-5"
         ></p>
 
-        <div class="mb-6">
-          <h4 class="text-xs font-semibold text-slate-900 dark:text-white uppercase tracking-wider mb-3">
+        <div id="detailModalListWrap" class="mb-6">
+          <h4
+            id="detailModalListTitle"
+            class="text-xs font-semibold text-slate-900 dark:text-white uppercase tracking-wider mb-3"
+          >
             Key Highlights
           </h4>
-          <ul id="modalHighlights" class="space-y-2.5"></ul>
+          <ul id="detailModalList" class="space-y-2.5"></ul>
         </div>
 
         <div class="flex flex-col sm:flex-row gap-3">
           <a
-            id="modalPlayLink"
+            id="detailModalPrimaryAction"
             href="#"
             target="_blank"
             rel="noopener noreferrer"
             class="flex-1 inline-flex items-center justify-center gap-2.5 px-5 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 dark:bg-emerald-500 dark:hover:bg-emerald-400 text-white dark:text-slate-950 text-sm font-semibold transition-colors"
           >
-            <svg viewBox="0 0 24 24" fill="none" class="w-4 h-4 shrink-0" aria-hidden="true">
-              <path
-                d="M3.609 1.814L13.792 12 3.61 22.186a1.75 1.75 0 0 1-.61-1.335V3.149c0-.52.231-.995.609-1.335z"
-                fill="#32BBFF"
-              />
-              <path
-                d="M17.213 8.579L13.792 12l3.421 3.421 3.864-2.199c.903-.514.903-1.93 0-2.444l-3.864-2.199z"
-                fill="#FFCE00"
-              />
-              <path
-                d="M3.609 22.186L13.792 12l3.421 3.421-12.137 6.906c-.553.314-1.148.248-1.467-.141z"
-                fill="#F14336"
-              />
-              <path
-                d="M3.609 1.814c.319-.389.914-.455 1.467-.141L17.213 8.58 13.792 12 3.609 1.814z"
-                fill="#00F076"
-              />
-            </svg>
-            <span>Get it on Google Play</span>
+            <span id="detailModalPrimaryLabel">Open Link</span>
           </a>
           <button
             type="button"
-            id="modalCloseSecondaryBtn"
+            id="detailModalInquiryBtn"
+            class="hidden flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 dark:bg-emerald-500 dark:hover:bg-emerald-400 text-white dark:text-slate-950 text-sm font-semibold transition-colors cursor-pointer"
+          >
+            <span>Inquire via WhatsApp</span>
+          </button>
+          <button
+            type="button"
+            id="detailModalCloseBtn"
             class="px-5 py-3 rounded-xl border border-slate-200 dark:border-slate-700 text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
           >
             Close
@@ -724,13 +787,15 @@
       </div>
     </div>
 
-    <!-- Contact / WhatsApp Modal -->
+    <!-- =====================================================================
+         MODAL: CONTACT / WHATSAPP
+         ===================================================================== -->
     <div
       id="contactModal"
       role="dialog"
       aria-modal="true"
       aria-labelledby="contact-modal-title"
-      class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/60 backdrop-blur-sm"
+      class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-sm"
     >
       <div
         id="contactModalCard"
@@ -779,22 +844,26 @@
             >
               Contact Technical App Studio
             </h3>
-            <p class="text-xs text-slate-500 dark:text-slate-400">
-              Support, Feedback &amp; Inquiries
+            <p id="contactModalContext" class="text-xs text-slate-500 dark:text-slate-400">
+              App Support, Machine R&amp;D &amp; Custom Inquiries
             </p>
           </div>
         </div>
 
         <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-5">
-          Connect directly on WhatsApp for quick app support, business licensing, or
-          collaboration requests.
+          Connect directly on WhatsApp for Android app support, industrial stitching machine
+          automation, or custom hardware and software inquiries.
         </p>
 
         <div class="space-y-3">
-          <!-- Replace "#" with your WhatsApp link, e.g. https://wa.me/15551234567 -->
+          <!-- ===============================================================
+               PASTE YOUR WHATSAPP LINK HERE (e.g. href="https://wa.me/923001234567")
+               =============================================================== -->
           <a
             id="whatsappActionLink"
             href="#"
+            target="_blank"
+            rel="noopener noreferrer"
             class="w-full inline-flex items-center justify-center gap-2.5 px-4 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 dark:bg-emerald-500 dark:hover:bg-emerald-400 text-white dark:text-slate-950 text-sm font-semibold transition-colors"
           >
             <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 shrink-0" aria-hidden="true">
@@ -816,7 +885,7 @@
       </div>
     </div>
 
-    <!-- Non-intrusive Toast Notification -->
+    <!-- Toast Notification -->
     <div
       id="toast"
       role="status"
@@ -846,116 +915,311 @@
       </button>
     </div>
 
-    <!-- Vanilla JavaScript Application Logic -->
+    <!-- =====================================================================
+         ALL DATA & VANILLA JAVASCRIPT (EDIT LINKS, VIDEOS & PHOTOS HERE)
+         ===================================================================== -->
     <script>
       (function () {
-        var CATEGORIES = ['All', 'Business', 'Productivity', 'Tools', 'Board'];
+        /* -------------------------------------------------------------------
+           1. ALL APPS (Organized into Separate Categories)
+           Includes all 6 published Google Play apps + 2 Web & Beta tools.
+           ------------------------------------------------------------------- */
+        var APP_CATEGORIES = [
+          'All',
+          'Business',
+          'Productivity',
+          'Tools',
+          'Board',
+          'Web & Beta',
+        ];
 
-        var STUDIO_APPS = [
+        var ALL_APPS = [
+          // --- CATEGORY: Business ---
           {
             id: 'machine-record-tracker',
             title: 'Machine Record Tracker',
             category: 'Business',
+            type: 'android',
             description:
               'Easily manage, track, and maintain service records and operations for industrial and stitching machines.',
             iconKey: 'machine-record',
-            playStoreUrl:
+            actionLabel: 'Get it on Google Play',
+            actionUrl:
               'https://play.google.com/store/apps/details?id=com.aistudio.machinerecordtracker.rkpz',
             highlights: [
               'Log daily machine maintenance, part replacements, and technician notes',
               'Track stitching unit operational status across workshop floors',
               'Instant service history lookup organized by machine serial or bay',
             ],
-            platformNote: 'Android · Offline-Ready Workshop Ledger',
+            platformNote: 'Android · Google Play',
             accentClass: 'from-amber-500/15 to-slate-500/10',
           },
+
+          // --- CATEGORY: Productivity ---
           {
             id: 'all-documents-reader',
             title: 'All Documents Reader',
             category: 'Productivity',
+            type: 'android',
             description:
               'A fast, all-in-one file viewer to open and read PDF, Word, Excel, and text documents seamlessly on your phone.',
             iconKey: 'documents-reader',
-            playStoreUrl:
+            actionLabel: 'Get it on Google Play',
+            actionUrl:
               'https://play.google.com/store/apps/details?id=com.aistudio.omnireader.mfxkpl',
             highlights: [
               'Unified viewer for PDF, DOCX, XLSX, PPT, and plain TXT files',
               'Smart folder indexing with instant filename search',
               'Clean full-screen reading mode with smooth pinch-to-zoom',
             ],
-            platformNote: 'Android · Multi-Format Document Suite',
+            platformNote: 'Android · Google Play',
             accentClass: 'from-blue-500/15 to-indigo-500/10',
-          },
-          {
-            id: 'all-in-one-calculator',
-            title: 'All-in-One Calculator',
-            category: 'Tools',
-            description:
-              'Perform everyday math, scientific calculations, unit conversions, and financial estimates in one smart tool.',
-            iconKey: 'calculator',
-            playStoreUrl:
-              'https://play.google.com/store/apps/details?id=com.sajid.allinonecalculator.offcal',
-            highlights: [
-              'Standard, scientific, and engineering calculation modes',
-              'Built-in converter for length, mass, area, currency, and temperature',
-              'Loan, EMI, discount, and percentage financial calculators',
-            ],
-            platformNote: 'Android · Everyday & Scientific Utility',
-            accentClass: 'from-emerald-500/15 to-teal-500/10',
           },
           {
             id: 'plt-file-viewer',
             title: 'PLT File Viewer',
             category: 'Productivity',
+            type: 'android',
             description:
               'View, zoom, and inspect HPGL (.plt) plotter and CAD vector design files directly on your Android device.',
             iconKey: 'plt-viewer',
-            playStoreUrl:
+            actionLabel: 'Get it on Google Play',
+            actionUrl:
               'https://play.google.com/store/apps/details?id=com.aistudio.pltviewer.xywzqp',
             highlights: [
               'Accurate HPGL (.plt) vector line and pen-color rendering',
               'High-precision pan and zoom for inspecting garment & CAD patterns',
               'Open plotter files directly from device storage or messaging apps',
             ],
-            platformNote: 'Android · CAD & HPGL Plotter Inspector',
+            platformNote: 'Android · Google Play',
             accentClass: 'from-cyan-500/15 to-blue-500/10',
+          },
+
+          // --- CATEGORY: Tools ---
+          {
+            id: 'all-in-one-calculator',
+            title: 'All-in-One Calculator',
+            category: 'Tools',
+            type: 'android',
+            description:
+              'Perform everyday math, scientific calculations, unit conversions, and financial estimates in one smart tool.',
+            iconKey: 'calculator',
+            actionLabel: 'Get it on Google Play',
+            actionUrl:
+              'https://play.google.com/store/apps/details?id=com.sajid.allinonecalculator.offcal',
+            highlights: [
+              'Standard, scientific, and engineering calculation modes',
+              'Built-in converter for length, mass, area, currency, and temperature',
+              'Loan, EMI, discount, and percentage financial calculators',
+            ],
+            platformNote: 'Android · Google Play',
+            accentClass: 'from-emerald-500/15 to-teal-500/10',
           },
           {
             id: 'construction-cost-calculator',
             title: 'Construction Cost Calculator',
             category: 'Tools',
+            type: 'android',
             description:
               'Estimate building materials, cement, bricks, and total house construction expenses accurately before you build.',
             iconKey: 'construction-cost',
-            playStoreUrl:
+            actionLabel: 'Get it on Google Play',
+            actionUrl:
               'https://play.google.com/store/apps/details?id=com.aistudio.constcalc.mepvsy',
             highlights: [
               'Calculate cement bags, sand, aggregate, steel, and brick quantities',
               'Break down grey structure vs. finishing budgets by square footage',
               'Save and compare project material estimates on-site',
             ],
-            platformNote: 'Android · Civil & Home Cost Estimator',
+            platformNote: 'Android · Google Play',
             accentClass: 'from-sky-500/15 to-amber-500/10',
           },
+
+          // --- CATEGORY: Board ---
           {
             id: 'dots-and-boxes-premium',
             title: 'Dots & Boxes Premium Edition',
             category: 'Board',
+            type: 'android',
             description:
               'Enjoy the classic pen-and-paper strategy board game with sleek neon visuals, smart AI, and multiplayer modes.',
             iconKey: 'dots-boxes',
-            playStoreUrl:
+            actionLabel: 'Get it on Google Play',
+            actionUrl:
               'https://play.google.com/store/apps/details?id=com.sajid.dots.and.boxes',
             highlights: [
               'Crisp neon grid aesthetics with smooth haptic-friendly line placement',
               'Adaptive single-player AI with multiple strategic difficulty levels',
               'Pass-and-play local multiplayer on multiple board sizes',
             ],
-            platformNote: 'Android · Classic Strategy Board Game',
+            platformNote: 'Android · Google Play',
             accentClass: 'from-violet-500/15 to-cyan-500/10',
+          },
+
+          // --- CATEGORY: Web & Beta (Unlisted / Live Browser Apps) ---
+          {
+            id: 'pattern-stitch-estimator',
+            title: 'Garment Pattern & Stitch Estimator (Beta)',
+            category: 'Web & Beta',
+            type: 'web',
+            description:
+              'Browser-based utility for calculating thread consumption, stitch density (SPI), and pattern seam allowance estimates.',
+            iconKey: 'web-globe',
+            actionLabel: 'Open Live App',
+            // PASTE YOUR .ai.studio OR LIVE WEB APP URL BELOW (replace "#")
+            actionUrl: '#',
+            highlights: [
+              'Instant thread yardage & bobbin change calculations',
+              'Runs directly in desktop and mobile browsers with zero install',
+            ],
+            platformNote: 'Web Tool · Browser Preview',
+            accentClass: 'from-sky-500/15 to-emerald-500/10',
+          },
+          {
+            id: 'floor-diagnostics-helper',
+            title: 'Floor Machine Diagnostics Helper (Web Tool)',
+            category: 'Web & Beta',
+            type: 'web',
+            description:
+              'Interactive troubleshooting checklist and fault-code reference built for sewing floor mechanics and line supervisors.',
+            iconKey: 'web-globe',
+            actionLabel: 'Open Live App',
+            // PASTE YOUR .ai.studio OR LIVE WEB APP URL BELOW (replace "#")
+            actionUrl: '#',
+            highlights: [
+              'Quick fault-code lookup for servo motors & pattern controllers',
+              'Step-by-step preventive inspection checklists',
+            ],
+            platformNote: 'Web Tool · Beta Release',
+            accentClass: 'from-teal-500/15 to-cyan-500/10',
           },
         ];
 
+        /* -------------------------------------------------------------------
+           2. MACHINE & INNOVATION VIDEOS
+           Paste "youtubeId" (e.g. "abcd1234xyz") for embedded player OR
+           paste "watchUrl" (e.g. "https://youtu.be/...") for direct link.
+           ------------------------------------------------------------------- */
+        var STUDIO_VIDEOS = [
+          {
+            id: 'video-hook-timing',
+            title: 'Industrial Lockstitch Hook & Needle Timing Calibration',
+            category: 'Machine Maintenance',
+            duration: 'Step-by-Step Tutorial',
+            description:
+              'Practical bench walkthrough covering needle-bar height, rotary hook clearance, and skipped-stitch troubleshooting on heavy-duty machines.',
+            // PASTE YOUTUBE ID OR DIRECT URL BELOW
+            youtubeId: '',
+            watchUrl: '#',
+          },
+          {
+            id: 'video-pattern-machine',
+            title: 'Automated Pattern Sewer Feeding & Clamp Synchronization',
+            category: 'Automation Demo',
+            duration: 'Workshop Demo',
+            description:
+              'Demonstrating synchronized pneumatic clamp timing, XY stepper feed accuracy, and cycle-time optimization for repeatable stitching.',
+            // PASTE YOUTUBE ID OR DIRECT URL BELOW
+            youtubeId: '',
+            watchUrl: '#',
+          },
+          {
+            id: 'video-servo-retrofit',
+            title: 'Custom Sensor & Microcontroller Retrofit on Sewing Head',
+            category: 'Hardware Innovation',
+            duration: 'R&D Showcase',
+            description:
+              'Field test of a custom optical thread-break detector and automated presser-foot lift controller running on an industrial stitching line.',
+            // PASTE YOUTUBE ID OR DIRECT URL BELOW
+            youtubeId: '',
+            watchUrl: '#',
+          },
+        ];
+
+        /* -------------------------------------------------------------------
+           3. MACHINE & XYZ PROJECT GALLERY (Photos + Hardware Builds)
+           To show your real photos:
+           1) Put your photos in a folder like "photos/" next to index.html
+              (or use a direct image URL), and
+           2) Set imageUrl: "./photos/your-photo.jpg"
+           Leave imageUrl: "" to display the clean technical blueprint visual.
+           ------------------------------------------------------------------- */
+        var GALLERY_FILTERS = ['All', 'Machines', 'XYZ Projects'];
+
+        var GALLERY_ITEMS = [
+          {
+            id: 'photo-pattern-sewer',
+            title: 'Programmable CNC Pattern Stitching Machine',
+            group: 'Machines',
+            status: 'Workshop Unit',
+            statusTone: 'emerald',
+            description:
+              'Heavy-duty pattern sewing head tuned for precision leather, strap, and heavy webbing reinforcement stitches.',
+            // PASTE YOUR MACHINE PHOTO PATH OR URL HERE (e.g. "./photos/pattern-machine.jpg")
+            imageUrl: '',
+            fallbackType: 'machine',
+            specs: [
+              'Calibrated hook-to-needle gap & synchronized feeding clamp',
+              'Supports custom HPGL (.plt) pattern templates',
+              'Preventive lubrication & tension check logged in Machine Record Tracker',
+            ],
+          },
+          {
+            id: 'photo-xyz-gantry',
+            title: 'XYZ Programmable Jig & Stepper Retrofit',
+            group: 'XYZ Projects',
+            status: 'Active Prototype',
+            statusTone: 'amber',
+            description:
+              'Custom-machined XYZ gantry fixture paired with closed-loop stepper motion for repeatable pocket, label, and bartack operations.',
+            // PASTE YOUR XYZ PROJECT PHOTO PATH OR URL HERE (e.g. "./photos/xyz-jig.jpg")
+            imageUrl: '',
+            fallbackType: 'xyz',
+            specs: [
+              'Interchangeable quick-lock template plates for multi-size runs',
+              'Microcontroller pulse driver with optical home-limit sensors',
+              'Emergency stop interlock and dual-hand cycle start safety',
+            ],
+          },
+          {
+            id: 'photo-auto-trimmer-pcb',
+            title: 'Embedded Auto-Trimmer & Backtack Controller',
+            group: 'XYZ Projects',
+            status: 'Field Tested',
+            statusTone: 'emerald',
+            description:
+              'Custom microcontroller board adding programmable backtack stitch counts, optical needle positioning, and solenoid thread trimming.',
+            // PASTE YOUR PROJECT PHOTO PATH OR URL HERE (e.g. "./photos/controller-pcb.jpg")
+            imageUrl: '',
+            fallbackType: 'pcb',
+            specs: [
+              '24V DC isolated solenoid driver stage with thermal protection',
+              'Encoder shaft index sync for reliable needle-up/down stops',
+              'Compact OLED parameter panel for floor operators',
+            ],
+          },
+          {
+            id: 'photo-lockstitch-bench',
+            title: 'High-Speed Direct-Drive Lockstitch Assembly',
+            group: 'Machines',
+            status: 'Maintenance Ready',
+            statusTone: 'sky',
+            description:
+              'Refurbished industrial lockstitch workstation with upgraded servo motor control, LED task lighting, and sensor-ready cycle counter.',
+            // PASTE YOUR MACHINE PHOTO PATH OR URL HERE (e.g. "./photos/lockstitch-bench.jpg")
+            imageUrl: '',
+            fallbackType: 'machine',
+            specs: [
+              'Low-vibration servo motor upgrade for energy savings',
+              'Hall-effect stitch hour tracking for preventive servicing',
+              'Balanced bobbin & thread tension setup for uniform seams',
+            ],
+          },
+        ];
+
+        /* -------------------------------------------------------------------
+           CUSTOM SVG ICON & VISUAL RENDERERS
+           ------------------------------------------------------------------- */
         var svgUid = 0;
 
         function getAppIconSvg(iconKey, sizeClass) {
@@ -1110,8 +1374,69 @@
                 '<circle cx="48" cy="48" r="3" fill="#FBBF24"/>' +
                 '</svg>'
               );
+            case 'web-globe':
+              return (
+                '<svg viewBox="0 0 64 64" fill="none" class="' +
+                sizeClass +
+                '" aria-hidden="true">' +
+                '<defs><linearGradient id="wg-bg-' +
+                uid +
+                '" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">' +
+                '<stop offset="0%" stop-color="#0369A1"/><stop offset="100%" stop-color="#065F46"/>' +
+                '</linearGradient></defs>' +
+                '<rect width="64" height="64" rx="16" fill="url(#wg-bg-' +
+                uid +
+                ')"/>' +
+                '<circle cx="32" cy="32" r="16" stroke="#E0F2FE" stroke-width="2.2"/>' +
+                '<ellipse cx="32" cy="32" rx="7.5" ry="16" stroke="#7DD3FC" stroke-width="2"/>' +
+                '<path d="M16 32H48M19 24H45M19 40H45" stroke="#BAE6FD" stroke-width="1.8" stroke-linecap="round"/>' +
+                '<circle cx="47" cy="17" r="4" fill="#34D399"/>' +
+                '</svg>'
+              );
           }
           return '';
+        }
+
+        function getGalleryFallbackVisual(type) {
+          if (type === 'xyz') {
+            return (
+              '<div class="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 p-6 text-center">' +
+              '<svg viewBox="0 0 180 100" fill="none" class="w-44 h-24 mb-2" aria-hidden="true">' +
+              '<path d="M20 82H160M30 18V82M150 18V82M24 30H156" stroke="#38BDF8" stroke-opacity="0.35" stroke-width="2"/>' +
+              '<rect x="68" y="22" width="44" height="16" rx="3" fill="#0F172A" stroke="#F59E0B" stroke-width="2"/>' +
+              '<path d="M90 38V62" stroke="#22D3EE" stroke-width="2.5" stroke-linecap="round"/>' +
+              '<rect x="52" y="68" width="76" height="10" rx="2" fill="#334155" stroke="#10B981" stroke-width="1.5"/>' +
+              '<circle cx="90" cy="30" r="3" fill="#F59E0B"/>' +
+              '</svg>' +
+              '<span class="text-xs font-medium text-slate-400">XYZ Gantry Photo Slot (Add imageUrl)</span>' +
+              '</div>'
+            );
+          }
+          if (type === 'pcb') {
+            return (
+              '<div class="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-emerald-950 via-slate-900 to-slate-950 p-6 text-center">' +
+              '<svg viewBox="0 0 180 100" fill="none" class="w-44 h-24 mb-2" aria-hidden="true">' +
+              '<rect x="40" y="18" width="100" height="64" rx="6" fill="#064E3B" stroke="#10B981" stroke-width="2"/>' +
+              '<rect x="74" y="34" width="32" height="32" rx="3" fill="#0F172A" stroke="#34D399" stroke-width="1.8"/>' +
+              '<path d="M52 34H74M52 50H74M52 66H74M106 34H128M106 50H128M106 66H128" stroke="#34D399" stroke-width="2" stroke-linecap="round"/>' +
+              '<circle cx="50" cy="26" r="2.5" fill="#FBBF24"/><circle cx="130" cy="26" r="2.5" fill="#FBBF24"/>' +
+              '<circle cx="50" cy="74" r="2.5" fill="#FBBF24"/><circle cx="130" cy="74" r="2.5" fill="#FBBF24"/>' +
+              '</svg>' +
+              '<span class="text-xs font-medium text-slate-400">Hardware Controller Photo Slot (Add imageUrl)</span>' +
+              '</div>'
+            );
+          }
+          return (
+            '<div class="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 p-6 text-center">' +
+            '<svg viewBox="0 0 180 100" fill="none" class="w-44 h-24 mb-2" aria-hidden="true">' +
+            '<rect x="36" y="72" width="108" height="12" rx="3" fill="#F59E0B"/>' +
+            '<path d="M124 72V32C124 25.3726 118.627 20 112 20H54C49.5817 20 46 23.5817 46 28V36C46 38.2091 47.7909 40 50 40H64V34H106V72H124Z" fill="#E2E8F0"/>' +
+            '<path d="M56 40V68" stroke="#38BDF8" stroke-width="2.5" stroke-linecap="round"/>' +
+            '<circle cx="132" cy="36" r="10" fill="#1E293B" stroke="#F59E0B" stroke-width="2.5"/>' +
+            '</svg>' +
+            '<span class="text-xs font-medium text-slate-400">Machine Photo Slot (Add imageUrl)</span>' +
+            '</div>'
+          );
         }
 
         var GOOGLE_PLAY_ICON =
@@ -1122,15 +1447,27 @@
           '<path d="M3.609 1.814c.319-.389.914-.455 1.467-.141L17.213 8.58 13.792 12 3.609 1.814z" fill="#00F076"/>' +
           '</svg>';
 
-        var activeCategory = 'All';
+        /* -------------------------------------------------------------------
+           STATE & DOM REFERENCES
+           ------------------------------------------------------------------- */
+        var activeHubTab = 'apps';
+        var activeAppCategory = 'All';
+        var activeGalleryFilter = 'All';
         var searchQuery = '';
         var toastTimer = null;
 
         var root = document.documentElement;
         var themeToggleBtn = document.getElementById('themeToggleBtn');
-        var heroPreviewGrid = document.getElementById('heroPreviewGrid');
+        var hubTabButtons = Array.prototype.slice.call(document.querySelectorAll('[data-hub-tab]'));
+        var navTabButtons = Array.prototype.slice.call(document.querySelectorAll('[data-nav-tab]'));
+        var hubPanels = {
+          apps: document.getElementById('panel-apps'),
+          videos: document.getElementById('panel-videos'),
+          gallery: document.getElementById('panel-gallery'),
+        };
+
         var categoryTabsEl = document.getElementById('categoryTabs');
-        var appsGridEl = document.getElementById('appsGrid');
+        var appsContainerEl = document.getElementById('appsContainer');
         var searchInput = document.getElementById('searchInput');
         var clearSearchBtn = document.getElementById('clearSearchBtn');
         var resultsSummary = document.getElementById('resultsSummary');
@@ -1138,31 +1475,39 @@
         var emptyResetBtn = document.getElementById('emptyResetBtn');
         var emptyStateEl = document.getElementById('emptyState');
 
-        var appModal = document.getElementById('appModal');
-        var appModalCard = document.getElementById('appModalCard');
-        var modalIconWrap = document.getElementById('modalIconWrap');
-        var modalCategory = document.getElementById('modalCategory');
-        var modalTitle = document.getElementById('app-modal-title');
-        var modalDescription = document.getElementById('modalDescription');
-        var modalHighlights = document.getElementById('modalHighlights');
-        var modalPlayLink = document.getElementById('modalPlayLink');
+        var videosGridEl = document.getElementById('videosGrid');
+        var galleryFilterTabsEl = document.getElementById('galleryFilterTabs');
+        var galleryGridEl = document.getElementById('galleryGrid');
+
+        var detailModal = document.getElementById('detailModal');
+        var detailModalCard = document.getElementById('detailModalCard');
+        var detailModalIconWrap = document.getElementById('detailModalIconWrap');
+        var detailModalKicker = document.getElementById('detailModalKicker');
+        var detailModalTitle = document.getElementById('detailModalTitle');
+        var detailModalMediaWrap = document.getElementById('detailModalMediaWrap');
+        var detailModalDescription = document.getElementById('detailModalDescription');
+        var detailModalListWrap = document.getElementById('detailModalListWrap');
+        var detailModalListTitle = document.getElementById('detailModalListTitle');
+        var detailModalList = document.getElementById('detailModalList');
+        var detailModalPrimaryAction = document.getElementById('detailModalPrimaryAction');
+        var detailModalPrimaryLabel = document.getElementById('detailModalPrimaryLabel');
+        var detailModalInquiryBtn = document.getElementById('detailModalInquiryBtn');
 
         var contactModal = document.getElementById('contactModal');
         var contactModalCard = document.getElementById('contactModalCard');
+        var contactModalContext = document.getElementById('contactModalContext');
         var whatsappActionLink = document.getElementById('whatsappActionLink');
 
         var toastEl = document.getElementById('toast');
         var toastTextEl = document.getElementById('toastText');
 
-        // Theme Toggle
+        /* -------------------------------------------------------------------
+           THEME TOGGLE
+           ------------------------------------------------------------------- */
         function setDarkMode(enableDark) {
           root.classList.toggle('dark', enableDark);
           themeToggleBtn.setAttribute(
             'aria-label',
-            enableDark ? 'Switch to light mode' : 'Switch to dark mode'
-          );
-          themeToggleBtn.setAttribute(
-            'title',
             enableDark ? 'Switch to light mode' : 'Switch to dark mode'
           );
           try {
@@ -1190,93 +1535,93 @@
           toastEl.classList.remove('flex');
         });
 
-        function findAppById(id) {
-          for (var i = 0; i < STUDIO_APPS.length; i++) {
-            if (STUDIO_APPS[i].id === id) return STUDIO_APPS[i];
+        function findById(list, id) {
+          for (var i = 0; i < list.length; i++) {
+            if (list[i].id === id) return list[i];
           }
           return null;
         }
 
-        function openAppModal(app) {
-          modalIconWrap.innerHTML = getAppIconSvg(
-            app.iconKey,
-            'w-16 h-16 rounded-2xl shadow-md shrink-0'
-          );
-          modalCategory.textContent = app.category + ' · Technical App Studio';
-          modalTitle.textContent = app.title;
-          modalDescription.textContent = app.description;
+        /* -------------------------------------------------------------------
+           HUB TAB SWITCHING (3 Main Icon Cards: Apps, Videos, Gallery)
+           ------------------------------------------------------------------- */
+        function setActiveHubTab(tabId, shouldScroll) {
+          activeHubTab = tabId;
 
-          var highlightsHtml = '';
-          for (var i = 0; i < app.highlights.length; i++) {
-            highlightsHtml +=
-              '<li class="flex items-start gap-2.5 text-sm text-slate-600 dark:text-slate-300">' +
-              '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>' +
-              '<span>' +
-              app.highlights[i] +
-              '</span>' +
-              '</li>';
-          }
-          modalHighlights.innerHTML = highlightsHtml;
+          hubTabButtons.forEach(function (btn) {
+            var isSelected = btn.getAttribute('data-hub-tab') === tabId;
+            btn.setAttribute('aria-selected', isSelected ? 'true' : 'false');
 
-          modalPlayLink.setAttribute('href', app.playStoreUrl);
-          appModal.classList.remove('hidden');
-        }
+            var iconBox = btn.querySelector('.hub-icon-box');
+            var countEl = btn.querySelector('.hub-count');
+            var subtextEl = btn.querySelector('.hub-subtext');
 
-        function closeAppModal() {
-          appModal.classList.add('hidden');
-        }
-
-        function openContactModal() {
-          contactModal.classList.remove('hidden');
-        }
-
-        function closeContactModal() {
-          contactModal.classList.add('hidden');
-        }
-
-        // Render Hero Preview Matrix
-        function renderHeroPreview() {
-          var html = '';
-          for (var i = 0; i < STUDIO_APPS.length; i++) {
-            var app = STUDIO_APPS[i];
-            html +=
-              '<button type="button" data-preview-id="' +
-              app.id +
-              '" class="group flex flex-col items-center text-center p-2.5 rounded-xl border border-transparent hover:border-slate-200 dark:hover:border-slate-700/80 hover:bg-slate-100/80 dark:hover:bg-slate-800/60 transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 cursor-pointer">' +
-              getAppIconSvg(
-                app.iconKey,
-                'w-12 h-12 sm:w-14 sm:h-14 rounded-xl shadow-sm group-hover:scale-105 transition-transform duration-150'
-              ) +
-              '<span class="mt-2 text-[11px] font-medium text-slate-700 dark:text-slate-300 line-clamp-1 w-full">' +
-              app.title +
-              '</span>' +
-              '</button>';
-          }
-          heroPreviewGrid.innerHTML = html;
-
-          heroPreviewGrid.querySelectorAll('[data-preview-id]').forEach(function (btn) {
-            btn.addEventListener('click', function () {
-              var app = findAppById(btn.getAttribute('data-preview-id'));
-              if (app) openAppModal(app);
-            });
+            if (isSelected) {
+              btn.className =
+                'hub-tab-btn group text-left rounded-2xl border p-5 sm:p-6 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 cursor-pointer border-emerald-500/70 dark:border-emerald-400/70 bg-slate-900 text-white dark:bg-emerald-500 dark:text-slate-950 shadow-lg';
+              iconBox.className =
+                'hub-icon-box w-12 h-12 rounded-xl flex items-center justify-center transition-colors shrink-0 bg-emerald-500/20 text-emerald-300 dark:bg-slate-950/15 dark:text-slate-950';
+              countEl.className =
+                'text-xs font-semibold tabular-nums hub-count text-emerald-300 dark:text-slate-900';
+              subtextEl.className =
+                'text-xs sm:text-sm leading-relaxed hub-subtext text-slate-300 dark:text-slate-900/80';
+            } else {
+              btn.className =
+                'hub-tab-btn group text-left rounded-2xl border p-5 sm:p-6 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 cursor-pointer border-slate-200/85 dark:border-slate-800/85 bg-white/75 dark:bg-slate-900/60 backdrop-blur-xl text-slate-900 dark:text-white hover:border-emerald-500/45 dark:hover:border-emerald-400/45 hover:-translate-y-0.5';
+              iconBox.className =
+                'hub-icon-box w-12 h-12 rounded-xl flex items-center justify-center transition-colors shrink-0 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-emerald-400';
+              countEl.className =
+                'text-xs font-semibold tabular-nums hub-count text-slate-500 dark:text-slate-400';
+              subtextEl.className =
+                'text-xs sm:text-sm leading-relaxed hub-subtext text-slate-500 dark:text-slate-400';
+            }
           });
+
+          Object.keys(hubPanels).forEach(function (key) {
+            if (key === tabId) {
+              hubPanels[key].classList.remove('hidden');
+            } else {
+              hubPanels[key].classList.add('hidden');
+            }
+          });
+
+          if (shouldScroll) {
+            var hubEl = document.getElementById('hub');
+            if (hubEl) {
+              hubEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          }
         }
 
-        // Category Counts
+        hubTabButtons.forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            setActiveHubTab(btn.getAttribute('data-hub-tab'), false);
+          });
+        });
+
+        navTabButtons.forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            setActiveHubTab(btn.getAttribute('data-nav-tab'), true);
+          });
+        });
+
+        /* -------------------------------------------------------------------
+           PANEL 1: APPS RENDERER (Grouped by Separate Categories)
+           ------------------------------------------------------------------- */
         function getCategoryCount(cat) {
-          if (cat === 'All') return STUDIO_APPS.length;
+          if (cat === 'All') return ALL_APPS.length;
           var count = 0;
-          for (var i = 0; i < STUDIO_APPS.length; i++) {
-            if (STUDIO_APPS[i].category === cat) count++;
+          for (var i = 0; i < ALL_APPS.length; i++) {
+            if (ALL_APPS[i].category === cat) count++;
           }
           return count;
         }
 
-        function renderCategoryTabs() {
+        function renderAppCategoryTabs() {
           var html = '';
-          for (var i = 0; i < CATEGORIES.length; i++) {
-            var cat = CATEGORIES[i];
-            var isActive = activeCategory === cat;
+          for (var i = 0; i < APP_CATEGORIES.length; i++) {
+            var cat = APP_CATEGORIES[i];
+            var isActive = activeAppCategory === cat;
             var btnClass = isActive
               ? 'bg-slate-900 text-white dark:bg-emerald-500 dark:text-slate-950 shadow-sm'
               : 'text-slate-600 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white hover:bg-white/60 dark:hover:bg-slate-800/70';
@@ -1286,7 +1631,7 @@
             html +=
               '<button type="button" role="tab" aria-selected="' +
               (isActive ? 'true' : 'false') +
-              '" data-category="' +
+              '" data-app-category="' +
               cat +
               '" class="px-3.5 py-2 rounded-lg text-xs sm:text-sm font-medium transition-colors whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 ' +
               btnClass +
@@ -1300,10 +1645,10 @@
           }
           categoryTabsEl.innerHTML = html;
 
-          categoryTabsEl.querySelectorAll('[data-category]').forEach(function (btn) {
+          categoryTabsEl.querySelectorAll('[data-app-category]').forEach(function (btn) {
             btn.addEventListener('click', function () {
-              activeCategory = btn.getAttribute('data-category');
-              renderCategoryTabs();
+              activeAppCategory = btn.getAttribute('data-app-category');
+              renderAppCategoryTabs();
               renderApps();
             });
           });
@@ -1311,8 +1656,9 @@
 
         function getFilteredApps() {
           var q = searchQuery.trim().toLowerCase();
-          return STUDIO_APPS.filter(function (app) {
-            var matchesCategory = activeCategory === 'All' || app.category === activeCategory;
+          return ALL_APPS.filter(function (app) {
+            var matchesCategory =
+              activeAppCategory === 'All' || app.category === activeAppCategory;
             if (!matchesCategory) return false;
             if (!q) return true;
             if (app.title.toLowerCase().indexOf(q) !== -1) return true;
@@ -1325,11 +1671,75 @@
           });
         }
 
+        function buildAppCardHtml(app) {
+          var isPlaceholder = app.actionUrl === '#';
+          var buttonIcon =
+            app.type === 'android'
+              ? GOOGLE_PLAY_ICON
+              : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 shrink-0" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>';
+
+          return (
+            '<article class="group relative flex flex-col justify-between rounded-2xl border border-slate-200/85 dark:border-slate-800/85 bg-white/75 dark:bg-slate-900/60 backdrop-blur-xl p-6 shadow-[0_4px_24px_-6px_rgba(15,23,42,0.06)] dark:shadow-[0_10px_30px_-10px_rgba(0,0,0,0.45)] transition-all duration-200 hover:-translate-y-1 hover:border-emerald-500/45 dark:hover:border-emerald-400/45">' +
+            '<div aria-hidden="true" class="pointer-events-none absolute inset-x-0 top-0 h-28 rounded-t-2xl bg-gradient-to-br ' +
+            app.accentClass +
+            ' opacity-60 dark:opacity-45"></div>' +
+            '<div class="relative">' +
+            '<div class="flex items-start justify-between gap-4 mb-5">' +
+            '<button type="button" data-open-app="' +
+            app.id +
+            '" aria-label="Inspect ' +
+            app.title +
+            '" class="rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 cursor-pointer">' +
+            getAppIconSvg(
+              app.iconKey,
+              'w-16 h-16 rounded-2xl shadow-md group-hover:scale-[1.03] transition-transform duration-200'
+            ) +
+            '</button>' +
+            '<span class="inline-flex items-center px-2.5 py-1 rounded-md border border-slate-200/90 dark:border-slate-700/90 bg-white/80 dark:bg-slate-950/60 text-xs font-medium text-slate-700 dark:text-slate-300 whitespace-nowrap shrink-0">' +
+            app.category +
+            '</span>' +
+            '</div>' +
+            '<h3 class="font-display text-xl font-bold tracking-tight text-slate-950 dark:text-white mb-2">' +
+            '<button type="button" data-open-app="' +
+            app.id +
+            '" class="text-left hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors focus-visible:outline-none focus-visible:underline cursor-pointer">' +
+            app.title +
+            '</button>' +
+            '</h3>' +
+            '<p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed line-clamp-2 mb-5 dark:tracking-[0.01em]">' +
+            app.description +
+            '</p>' +
+            '</div>' +
+            '<div class="relative pt-4 border-t border-slate-200/70 dark:border-slate-800/70 flex flex-col gap-3">' +
+            '<div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">' +
+            '<span class="truncate">' +
+            app.platformNote +
+            '</span>' +
+            '<button type="button" data-open-app="' +
+            app.id +
+            '" class="font-semibold text-slate-700 dark:text-slate-200 hover:text-emerald-600 dark:hover:text-emerald-400 whitespace-nowrap shrink-0 ml-2 cursor-pointer">App Details</button>' +
+            '</div>' +
+            '<a href="' +
+            app.actionUrl +
+            '" data-app-link="' +
+            app.title +
+            '" target="' +
+            (isPlaceholder ? '_self' : '_blank') +
+            '" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2.5 px-4 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 dark:bg-white dark:hover:bg-slate-200 text-white dark:text-slate-950 text-sm font-semibold transition-colors whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500">' +
+            buttonIcon +
+            '<span>' +
+            app.actionLabel +
+            '</span>' +
+            '</a>' +
+            '</div>' +
+            '</article>'
+          );
+        }
+
         function renderApps() {
           var filtered = getFilteredApps();
           var trimmed = searchQuery.trim();
 
-          // Update clear button & summary
           if (searchQuery.length > 0) {
             clearSearchBtn.classList.remove('hidden');
             clearSearchBtn.classList.add('inline-flex');
@@ -1338,95 +1748,428 @@
             clearSearchBtn.classList.remove('inline-flex');
           }
 
-          var summaryText = 'Showing ' + filtered.length + ' of ' + STUDIO_APPS.length + ' apps';
-          if (activeCategory !== 'All') summaryText += ' in ' + activeCategory;
+          var summaryText = 'Showing ' + filtered.length + ' of ' + ALL_APPS.length + ' apps';
+          if (activeAppCategory !== 'All') summaryText += ' in ' + activeAppCategory;
           if (trimmed) summaryText += ' matching "' + trimmed + '"';
           resultsSummary.textContent = summaryText;
 
-          if (trimmed || activeCategory !== 'All') {
+          if (trimmed || activeAppCategory !== 'All') {
             resetFiltersBtn.classList.remove('hidden');
           } else {
             resetFiltersBtn.classList.add('hidden');
           }
 
           if (filtered.length === 0) {
-            appsGridEl.classList.add('hidden');
+            appsContainerEl.classList.add('hidden');
             emptyStateEl.classList.remove('hidden');
-            appsGridEl.innerHTML = '';
+            appsContainerEl.innerHTML = '';
             return;
           }
 
           emptyStateEl.classList.add('hidden');
-          appsGridEl.classList.remove('hidden');
+          appsContainerEl.classList.remove('hidden');
 
+          // Group apps cleanly by separate category sections
+          var categoriesToRender = APP_CATEGORIES.slice(1);
           var html = '';
-          for (var i = 0; i < filtered.length; i++) {
-            var app = filtered[i];
-            html +=
-              '<article class="group relative flex flex-col justify-between rounded-2xl border border-slate-200/85 dark:border-slate-800/85 bg-white/75 dark:bg-slate-900/60 backdrop-blur-xl p-6 shadow-[0_4px_24px_-6px_rgba(15,23,42,0.06)] dark:shadow-[0_10px_30px_-10px_rgba(0,0,0,0.45)] transition-all duration-200 hover:-translate-y-1 hover:border-emerald-500/45 dark:hover:border-emerald-400/45">' +
-              '<div aria-hidden="true" class="pointer-events-none absolute inset-x-0 top-0 h-28 rounded-t-2xl bg-gradient-to-br ' +
-              app.accentClass +
-              ' opacity-60 dark:opacity-45"></div>' +
-              '<div class="relative">' +
-              '<div class="flex items-start justify-between gap-4 mb-5">' +
-              '<button type="button" data-open-app="' +
-              app.id +
-              '" aria-label="Inspect ' +
-              app.title +
-              '" class="rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 cursor-pointer">' +
-              getAppIconSvg(
-                app.iconKey,
-                'w-16 h-16 rounded-2xl shadow-md group-hover:scale-[1.03] transition-transform duration-200'
-              ) +
-              '</button>' +
-              '<span class="inline-flex items-center px-2.5 py-1 rounded-md border border-slate-200/90 dark:border-slate-700/90 bg-white/80 dark:bg-slate-950/60 text-xs font-medium text-slate-700 dark:text-slate-300 whitespace-nowrap shrink-0">' +
-              app.category +
-              '</span>' +
-              '</div>' +
-              '<h3 class="font-display text-xl font-bold tracking-tight text-slate-950 dark:text-white mb-2">' +
-              '<button type="button" data-open-app="' +
-              app.id +
-              '" class="text-left hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors focus-visible:outline-none focus-visible:underline cursor-pointer">' +
-              app.title +
-              '</button>' +
-              '</h3>' +
-              '<p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed line-clamp-2 mb-5 dark:tracking-[0.01em]">' +
-              app.description +
-              '</p>' +
-              '</div>' +
-              '<div class="relative pt-4 border-t border-slate-200/70 dark:border-slate-800/70 flex flex-col gap-3">' +
-              '<div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">' +
-              '<span class="truncate">' +
-              app.platformNote +
-              '</span>' +
-              '<button type="button" data-open-app="' +
-              app.id +
-              '" class="font-semibold text-slate-700 dark:text-slate-200 hover:text-emerald-600 dark:hover:text-emerald-400 whitespace-nowrap shrink-0 ml-2 cursor-pointer">App Details</button>' +
-              '</div>' +
-              '<a href="' +
-              app.playStoreUrl +
-              '" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2.5 px-4 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 dark:bg-white dark:hover:bg-slate-200 text-white dark:text-slate-950 text-sm font-semibold transition-colors whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500">' +
-              GOOGLE_PLAY_ICON +
-              '<span>Get it on Google Play</span>' +
-              '</a>' +
-              '</div>' +
-              '</article>';
-          }
-          appsGridEl.innerHTML = html;
 
-          appsGridEl.querySelectorAll('[data-open-app]').forEach(function (btn) {
+          for (var c = 0; c < categoriesToRender.length; c++) {
+            var catName = categoriesToRender[c];
+            var catApps = filtered.filter(function (a) {
+              return a.category === catName;
+            });
+            if (catApps.length === 0) continue;
+
+            html +=
+              '<div>' +
+              '<div class="flex items-center justify-between border-b border-slate-200/80 dark:border-slate-800/80 pb-3 mb-5">' +
+              '<h3 class="font-display text-lg sm:text-xl font-bold tracking-tight text-slate-950 dark:text-white">' +
+              catName +
+              '</h3>' +
+              '<span class="text-xs font-medium text-slate-500 dark:text-slate-400 tabular-nums">' +
+              catApps.length +
+              (catApps.length === 1 ? ' App' : ' Apps') +
+              '</span>' +
+              '</div>' +
+              '<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">';
+
+            for (var i = 0; i < catApps.length; i++) {
+              html += buildAppCardHtml(catApps[i]);
+            }
+
+            html += '</div></div>';
+          }
+
+          appsContainerEl.innerHTML = html;
+
+          appsContainerEl.querySelectorAll('[data-open-app]').forEach(function (btn) {
             btn.addEventListener('click', function () {
-              var app = findAppById(btn.getAttribute('data-open-app'));
-              if (app) openAppModal(app);
+              var app = findById(ALL_APPS, btn.getAttribute('data-open-app'));
+              if (app) openAppDetailModal(app);
+            });
+          });
+
+          appsContainerEl.querySelectorAll('[data-app-link]').forEach(function (link) {
+            link.addEventListener('click', function (e) {
+              if (link.getAttribute('href') === '#') {
+                e.preventDefault();
+                showToast(
+                  link.getAttribute('data-app-link') +
+                    ': Paste your live .ai.studio or web URL in ALL_APPS inside index.html.'
+                );
+              }
             });
           });
         }
 
+        /* -------------------------------------------------------------------
+           PANEL 2: VIDEOS RENDERER
+           ------------------------------------------------------------------- */
+        function renderVideos() {
+          var html = '';
+          for (var i = 0; i < STUDIO_VIDEOS.length; i++) {
+            var vid = STUDIO_VIDEOS[i];
+            var hasEmbed = Boolean(vid.youtubeId);
+
+            var mediaPreviewHtml = hasEmbed
+              ? '<iframe class="w-full h-full" src="https://www.youtube.com/embed/' +
+                vid.youtubeId +
+                '" title="' +
+                vid.title +
+                '" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+              : '<button type="button" data-watch-video="' +
+                vid.id +
+                '" class="w-full h-full flex flex-col items-center justify-center gap-2 text-slate-300 hover:text-white bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 transition-colors cursor-pointer">' +
+                '<span class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-400 flex items-center justify-center">' +
+                '<svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 ml-0.5" aria-hidden="true"><path d="m7 4 12 8-12 8V4z"/></svg>' +
+                '</span>' +
+                '<span class="text-xs font-medium text-slate-400">Video Slot (Add YouTube ID or URL)</span>' +
+                '</button>';
+
+            html +=
+              '<article class="flex flex-col justify-between rounded-2xl border border-slate-200/85 dark:border-slate-800/85 bg-white/75 dark:bg-slate-900/60 backdrop-blur-xl overflow-hidden shadow-[0_4px_24px_-6px_rgba(15,23,42,0.06)] dark:shadow-[0_10px_30px_-10px_rgba(0,0,0,0.45)] transition-all duration-200 hover:-translate-y-1 hover:border-emerald-500/45">' +
+              '<div class="aspect-video w-full bg-slate-900 border-b border-slate-200/70 dark:border-slate-800/80 overflow-hidden">' +
+              mediaPreviewHtml +
+              '</div>' +
+              '<div class="p-6 flex-1 flex flex-col justify-between">' +
+              '<div>' +
+              '<div class="flex items-center justify-between gap-2 text-xs text-slate-500 dark:text-slate-400 mb-2">' +
+              '<span class="font-medium text-emerald-700 dark:text-emerald-400">' +
+              vid.category +
+              '</span>' +
+              '<span>' +
+              vid.duration +
+              '</span>' +
+              '</div>' +
+              '<h3 class="font-display text-lg font-bold tracking-tight text-slate-950 dark:text-white mb-2">' +
+              vid.title +
+              '</h3>' +
+              '<p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-5">' +
+              vid.description +
+              '</p>' +
+              '</div>' +
+              '<div class="pt-4 border-t border-slate-200/70 dark:border-slate-800/70">' +
+              '<a href="' +
+              vid.watchUrl +
+              '" data-video-link="' +
+              vid.id +
+              '" target="' +
+              (vid.watchUrl === '#' ? '_self' : '_blank') +
+              '" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 dark:bg-white dark:hover:bg-slate-200 text-white dark:text-slate-950 text-sm font-semibold transition-colors whitespace-nowrap">' +
+              '<svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 text-emerald-400 dark:text-emerald-600" aria-hidden="true"><path d="m7 4 12 8-12 8V4z"/></svg>' +
+              '<span>Watch Video</span>' +
+              '</a>' +
+              '</div>' +
+              '</div>' +
+              '</article>';
+          }
+          videosGridEl.innerHTML = html;
+
+          videosGridEl.querySelectorAll('[data-watch-video]').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+              var vid = findById(STUDIO_VIDEOS, btn.getAttribute('data-watch-video'));
+              if (vid) openVideoModal(vid);
+            });
+          });
+
+          videosGridEl.querySelectorAll('[data-video-link]').forEach(function (link) {
+            link.addEventListener('click', function (e) {
+              var vid = findById(STUDIO_VIDEOS, link.getAttribute('data-video-link'));
+              if (!vid) return;
+              if (vid.youtubeId) {
+                e.preventDefault();
+                openVideoModal(vid);
+              } else if (link.getAttribute('href') === '#') {
+                e.preventDefault();
+                showToast(
+                  vid.title + ': Paste your YouTube ID or URL in STUDIO_VIDEOS inside index.html.'
+                );
+              }
+            });
+          });
+        }
+
+        /* -------------------------------------------------------------------
+           PANEL 3: MACHINE & XYZ PROJECT GALLERY RENDERER
+           ------------------------------------------------------------------- */
+        function getStatusStyle(tone) {
+          if (tone === 'emerald') {
+            return 'border-emerald-500/30 bg-emerald-500/10 text-emerald-700 dark:text-emerald-300';
+          }
+          if (tone === 'amber') {
+            return 'border-amber-500/30 bg-amber-500/10 text-amber-700 dark:text-amber-300';
+          }
+          return 'border-sky-500/30 bg-sky-500/10 text-sky-700 dark:text-sky-300';
+        }
+
+        function renderGalleryFilterTabs() {
+          var html = '';
+          for (var i = 0; i < GALLERY_FILTERS.length; i++) {
+            var f = GALLERY_FILTERS[i];
+            var isActive = activeGalleryFilter === f;
+            var btnClass = isActive
+              ? 'bg-slate-900 text-white dark:bg-emerald-500 dark:text-slate-950 shadow-sm'
+              : 'text-slate-600 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white';
+            html +=
+              '<button type="button" role="tab" aria-selected="' +
+              (isActive ? 'true' : 'false') +
+              '" data-gallery-filter="' +
+              f +
+              '" class="px-3.5 py-1.5 rounded-lg text-xs font-medium transition-colors whitespace-nowrap shrink-0 cursor-pointer ' +
+              btnClass +
+              '">' +
+              f +
+              '</button>';
+          }
+          galleryFilterTabsEl.innerHTML = html;
+
+          galleryFilterTabsEl.querySelectorAll('[data-gallery-filter]').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+              activeGalleryFilter = btn.getAttribute('data-gallery-filter');
+              renderGalleryFilterTabs();
+              renderGallery();
+            });
+          });
+        }
+
+        function renderGallery() {
+          var items = GALLERY_ITEMS.filter(function (item) {
+            return activeGalleryFilter === 'All' || item.group === activeGalleryFilter;
+          });
+
+          var html = '';
+          for (var i = 0; i < items.length; i++) {
+            var item = items[i];
+            var mediaHtml = item.imageUrl
+              ? '<img src="' +
+                item.imageUrl +
+                '" alt="' +
+                item.title +
+                '" referrerpolicy="no-referrer" class="w-full h-full object-cover" />'
+              : getGalleryFallbackVisual(item.fallbackType);
+
+            html +=
+              '<article class="flex flex-col justify-between rounded-2xl border border-slate-200/85 dark:border-slate-800/85 bg-white/75 dark:bg-slate-900/60 backdrop-blur-xl overflow-hidden shadow-[0_4px_24px_-6px_rgba(15,23,42,0.06)] dark:shadow-[0_10px_30px_-10px_rgba(0,0,0,0.45)] transition-all duration-200 hover:-translate-y-1 hover:border-emerald-500/45">' +
+              '<button type="button" data-open-gallery="' +
+              item.id +
+              '" aria-label="View ' +
+              item.title +
+              '" class="aspect-[16/10] w-full bg-slate-900 border-b border-slate-200/70 dark:border-slate-800/80 overflow-hidden block cursor-pointer">' +
+              mediaHtml +
+              '</button>' +
+              '<div class="p-6 flex-1 flex flex-col justify-between">' +
+              '<div>' +
+              '<div class="flex items-center justify-between gap-3 mb-3">' +
+              '<span class="text-xs font-medium text-slate-500 dark:text-slate-400">' +
+              item.group +
+              '</span>' +
+              '<span class="inline-flex items-center px-2.5 py-0.5 rounded-md border text-xs font-semibold whitespace-nowrap shrink-0 ' +
+              getStatusStyle(item.statusTone) +
+              '">' +
+              item.status +
+              '</span>' +
+              '</div>' +
+              '<h3 class="font-display text-xl font-bold tracking-tight text-slate-950 dark:text-white mb-2">' +
+              item.title +
+              '</h3>' +
+              '<p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-5">' +
+              item.description +
+              '</p>' +
+              '</div>' +
+              '<div class="pt-4 border-t border-slate-200/70 dark:border-slate-800/70">' +
+              '<button type="button" data-open-gallery="' +
+              item.id +
+              '" class="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 dark:bg-white dark:hover:bg-slate-200 text-white dark:text-slate-950 text-sm font-semibold transition-colors whitespace-nowrap cursor-pointer">' +
+              '<span>View Photo &amp; Specs</span>' +
+              '</button>' +
+              '</div>' +
+              '</div>' +
+              '</article>';
+          }
+          galleryGridEl.innerHTML = html;
+
+          galleryGridEl.querySelectorAll('[data-open-gallery]').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+              var item = findById(GALLERY_ITEMS, btn.getAttribute('data-open-gallery'));
+              if (item) openGalleryModal(item);
+            });
+          });
+        }
+
+        /* -------------------------------------------------------------------
+           UNIFIED MODAL HANDLERS (Apps, Videos, Machine & XYZ Photos)
+           ------------------------------------------------------------------- */
+        function resetDetailModal() {
+          detailModalMediaWrap.classList.add('hidden');
+          detailModalMediaWrap.innerHTML = '';
+          detailModalListWrap.classList.remove('hidden');
+          detailModalPrimaryAction.classList.remove('hidden');
+          detailModalInquiryBtn.classList.add('hidden');
+        }
+
+        function openAppDetailModal(app) {
+          resetDetailModal();
+          detailModalIconWrap.innerHTML = getAppIconSvg(
+            app.iconKey,
+            'w-16 h-16 rounded-2xl shadow-md shrink-0'
+          );
+          detailModalKicker.textContent = app.category + ' · Technical App Studio';
+          detailModalTitle.textContent = app.title;
+          detailModalDescription.textContent = app.description;
+          detailModalListTitle.textContent = 'Key Highlights';
+
+          var html = '';
+          for (var i = 0; i < app.highlights.length; i++) {
+            html +=
+              '<li class="flex items-start gap-2.5 text-sm text-slate-600 dark:text-slate-300">' +
+              '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>' +
+              '<span>' +
+              app.highlights[i] +
+              '</span></li>';
+          }
+          detailModalList.innerHTML = html;
+
+          detailModalPrimaryAction.setAttribute('href', app.actionUrl);
+          detailModalPrimaryAction.setAttribute(
+            'target',
+            app.actionUrl === '#' ? '_self' : '_blank'
+          );
+          detailModalPrimaryLabel.textContent = app.actionLabel;
+          detailModalPrimaryAction.onclick = function (e) {
+            if (app.actionUrl === '#') {
+              e.preventDefault();
+              showToast(app.title + ': Paste your live URL in ALL_APPS inside index.html.');
+            }
+          };
+          detailModal.classList.remove('hidden');
+        }
+
+        function openVideoModal(vid) {
+          resetDetailModal();
+          detailModalIconWrap.innerHTML =
+            '<div class="w-12 h-12 rounded-xl bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 flex items-center justify-center">' +
+            '<svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5" aria-hidden="true"><path d="m7 4 12 8-12 8V4z"/></svg>' +
+            '</div>';
+          detailModalKicker.textContent = vid.category + ' · ' + vid.duration;
+          detailModalTitle.textContent = vid.title;
+          detailModalDescription.textContent = vid.description;
+          detailModalListWrap.classList.add('hidden');
+
+          if (vid.youtubeId) {
+            detailModalMediaWrap.innerHTML =
+              '<iframe class="w-full h-full" src="https://www.youtube.com/embed/' +
+              vid.youtubeId +
+              '" title="' +
+              vid.title +
+              '" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+            detailModalMediaWrap.classList.remove('hidden');
+            detailModalPrimaryAction.setAttribute(
+              'href',
+              vid.watchUrl !== '#'
+                ? vid.watchUrl
+                : 'https://www.youtube.com/watch?v=' + vid.youtubeId
+            );
+            detailModalPrimaryAction.setAttribute('target', '_blank');
+            detailModalPrimaryAction.onclick = null;
+            detailModalPrimaryLabel.textContent = 'Open on YouTube';
+          } else {
+            detailModalPrimaryAction.classList.add('hidden');
+            detailModalInquiryBtn.classList.remove('hidden');
+            detailModalInquiryBtn.onclick = function () {
+              closeDetailModal();
+              openContactModal('Video Demo Request: ' + vid.title);
+            };
+          }
+
+          detailModal.classList.remove('hidden');
+        }
+
+        function openGalleryModal(item) {
+          resetDetailModal();
+          detailModalIconWrap.innerHTML =
+            '<div class="w-12 h-12 rounded-xl bg-slate-900 dark:bg-slate-800 text-emerald-400 flex items-center justify-center">' +
+            '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>' +
+            '</div>';
+          detailModalKicker.textContent = item.group + ' · ' + item.status;
+          detailModalTitle.textContent = item.title;
+          detailModalDescription.textContent = item.description;
+          detailModalListTitle.textContent = 'Technical Details';
+
+          detailModalMediaWrap.innerHTML = item.imageUrl
+            ? '<img src="' +
+              item.imageUrl +
+              '" alt="' +
+              item.title +
+              '" referrerpolicy="no-referrer" class="w-full h-full object-cover" />'
+            : getGalleryFallbackVisual(item.fallbackType);
+          detailModalMediaWrap.classList.remove('hidden');
+
+          var html = '';
+          for (var i = 0; i < item.specs.length; i++) {
+            html +=
+              '<li class="flex items-start gap-2.5 text-sm text-slate-600 dark:text-slate-300">' +
+              '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>' +
+              '<span>' +
+              item.specs[i] +
+              '</span></li>';
+          }
+          detailModalList.innerHTML = html;
+
+          detailModalPrimaryAction.classList.add('hidden');
+          detailModalInquiryBtn.classList.remove('hidden');
+          detailModalInquiryBtn.onclick = function () {
+            closeDetailModal();
+            openContactModal('Project Inquiry: ' + item.title);
+          };
+
+          detailModal.classList.remove('hidden');
+        }
+
+        function closeDetailModal() {
+          detailModal.classList.add('hidden');
+          detailModalMediaWrap.innerHTML = '';
+        }
+
+        function openContactModal(contextText) {
+          contactModalContext.textContent =
+            typeof contextText === 'string' && contextText
+              ? contextText
+              : 'App Support, Machine R&D & Custom Inquiries';
+          contactModal.classList.remove('hidden');
+        }
+
+        function closeContactModal() {
+          contactModal.classList.add('hidden');
+        }
+
+        /* -------------------------------------------------------------------
+           SEARCH, FILTER & MODAL EVENT WIRING
+           ------------------------------------------------------------------- */
         function resetFilters() {
           searchQuery = '';
           searchInput.value = '';
-          activeCategory = 'All';
-          renderCategoryTabs();
+          activeAppCategory = 'All';
+          renderAppCategoryTabs();
           renderApps();
           searchInput.focus();
         }
@@ -1446,18 +2189,19 @@
         resetFiltersBtn.addEventListener('click', resetFilters);
         emptyResetBtn.addEventListener('click', resetFilters);
 
-        // Modal wiring
-        document.getElementById('closeAppModalBtn').addEventListener('click', closeAppModal);
-        document.getElementById('modalCloseSecondaryBtn').addEventListener('click', closeAppModal);
-        appModal.addEventListener('click', function (e) {
-          if (e.target === appModal) closeAppModal();
+        document.getElementById('closeDetailModalBtn').addEventListener('click', closeDetailModal);
+        document.getElementById('detailModalCloseBtn').addEventListener('click', closeDetailModal);
+        detailModal.addEventListener('click', function (e) {
+          if (e.target === detailModal) closeDetailModal();
         });
-        appModalCard.addEventListener('click', function (e) {
+        detailModalCard.addEventListener('click', function (e) {
           e.stopPropagation();
         });
 
         document.querySelectorAll('[data-open-contact]').forEach(function (btn) {
-          btn.addEventListener('click', openContactModal);
+          btn.addEventListener('click', function () {
+            openContactModal();
+          });
         });
         document.getElementById('closeContactModalBtn').addEventListener('click', closeContactModal);
         document
@@ -1477,23 +2221,29 @@
           }
         });
 
-        // Keyboard shortcuts ("/" focuses search, "Escape" closes modals)
         window.addEventListener('keydown', function (e) {
           var activeTag = document.activeElement ? document.activeElement.tagName : '';
-          if (e.key === '/' && activeTag !== 'INPUT' && activeTag !== 'TEXTAREA') {
+          if (
+            e.key === '/' &&
+            activeHubTab === 'apps' &&
+            activeTag !== 'INPUT' &&
+            activeTag !== 'TEXTAREA'
+          ) {
             e.preventDefault();
             searchInput.focus();
           } else if (e.key === 'Escape') {
-            closeAppModal();
+            closeDetailModal();
             closeContactModal();
           }
         });
 
-        // Initial Render
         function initApp() {
-          renderHeroPreview();
-          renderCategoryTabs();
+          setActiveHubTab('apps', false);
+          renderAppCategoryTabs();
           renderApps();
+          renderVideos();
+          renderGalleryFilterTabs();
+          renderGallery();
         }
 
         if (document.readyState === 'loading') {
