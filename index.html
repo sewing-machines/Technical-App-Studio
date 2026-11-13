@@ -139,10 +139,10 @@
             </span>
           </a>
 
-          <!-- Zone 2: 3 Concise Navigation Links -->
+          <!-- Zone 2: Concise Navigation Links -->
           <nav
             aria-label="Primary Navigation"
-            class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-600 dark:text-slate-300"
+            class="hidden md:flex items-center gap-5 lg:gap-7 text-sm font-medium text-slate-600 dark:text-slate-300"
           >
             <button
               type="button"
@@ -164,6 +164,13 @@
               class="hover:text-slate-950 dark:hover:text-white hover:underline underline-offset-4 transition-colors whitespace-nowrap shrink-0 cursor-pointer"
             >
               Machine &amp; Project Photos
+            </button>
+            <button
+              type="button"
+              data-nav-tab="parts-books"
+              class="hover:text-slate-950 dark:hover:text-white hover:underline underline-offset-4 transition-colors whitespace-nowrap shrink-0 cursor-pointer"
+            >
+              Parts Books
             </button>
           </nav>
 
@@ -329,13 +336,13 @@
         </section>
 
         <!-- ===================================================================
-             3 PROMINENT ICON NAVIGATION CARDS (Apps | Videos | Machine Photos)
+             4 PROMINENT ICON NAVIGATION CARDS (Apps | Videos | Photos | Parts Books)
              =================================================================== -->
         <section id="hub" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-8">
           <div
             role="tablist"
             aria-label="Main Studio Sections"
-            class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5"
+            class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5"
           >
             <!-- ICON 1: APPS -->
             <button
@@ -442,6 +449,43 @@
               </h2>
               <p class="text-xs sm:text-sm leading-relaxed hub-subtext">
                 Photo showcase of stitching machines, XYZ R&amp;D builds &amp; controllers
+              </p>
+            </button>
+
+            <!-- ICON 4: SEWING MACHINE PARTS BOOKS -->
+            <button
+              type="button"
+              role="tab"
+              aria-selected="false"
+              data-hub-tab="parts-books"
+              class="hub-tab-btn group text-left rounded-2xl border p-5 sm:p-6 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 cursor-pointer"
+            >
+              <div class="flex items-center justify-between gap-4 mb-3.5">
+                <div
+                  class="hub-icon-box w-12 h-12 rounded-xl flex items-center justify-center transition-colors shrink-0"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="w-6 h-6"
+                    aria-hidden="true"
+                  >
+                    <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1 0-5H20" />
+                    <path d="M9 7h6" />
+                    <path d="M9 11h6" />
+                  </svg>
+                </div>
+                <span class="text-xs font-semibold tabular-nums hub-count">28 Manuals</span>
+              </div>
+              <h2 class="font-display text-lg font-bold tracking-tight mb-1">
+                Sewing Machine Parts Books
+              </h2>
+              <p class="text-xs sm:text-sm leading-relaxed hub-subtext">
+                Juki, Pegasus, Siruba, Jack, Zoje, Kansai &amp; Brother parts catalogs
               </p>
             </button>
           </div>
@@ -610,6 +654,250 @@
         </section>
 
         <!-- ===================================================================
+             TAB PANEL 4: SEWING MACHINE PARTS BOOKS
+             =================================================================== -->
+        <section
+          id="panel-parts-books"
+          role="tabpanel"
+          aria-label="Sewing Machine Parts Books"
+          class="hidden hub-panel max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16"
+        >
+          <div class="mb-6 flex flex-col lg:flex-row lg:items-end justify-between gap-4">
+            <div>
+              <p class="text-xs font-medium text-emerald-700 dark:text-emerald-400 mb-1">
+                Official Technical PDF Library
+              </p>
+              <h2 class="font-display text-2xl sm:text-3xl font-bold tracking-tight text-slate-950 dark:text-white">
+                Sewing Machine Parts Books
+              </h2>
+              <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">
+                Select a machine company below to view all model buttons and open their PDF parts catalogs.
+              </p>
+            </div>
+
+            <!-- Quick Model Search Input -->
+            <div class="relative w-full lg:w-80 shrink-0">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400"
+                aria-hidden="true"
+              >
+                <circle cx="11" cy="11" r="8" />
+                <path d="m21 21-4.3-4.3" />
+              </svg>
+              <input
+                id="partsSearchInput"
+                type="search"
+                placeholder="Search model (e.g. LK-1850, W600UT)..."
+                aria-label="Search machine parts book by model"
+                class="w-full h-11 pl-10 pr-10 rounded-xl border border-slate-200 dark:border-slate-700/80 bg-white/85 dark:bg-slate-900/75 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/70 focus:border-emerald-500 transition-colors"
+              />
+              <button
+                type="button"
+                id="clearPartsSearchBtn"
+                aria-label="Clear model search"
+                class="hidden absolute right-2.5 top-1/2 -translate-y-1/2 w-7 h-7 items-center justify-center rounded-lg text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-200/60 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="w-4 h-4"
+                  aria-hidden="true"
+                >
+                  <path d="M18 6 6 18" />
+                  <path d="m6 6 12 12" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Step 1: Company / Brand Buttons -->
+          <div class="mb-7">
+            <p class="text-xs font-semibold uppercase tracking-wider text-slate-500 dark:text-slate-400 mb-3">
+              Select Machine Company
+            </p>
+            <div
+              id="partsBrandGrid"
+              role="tablist"
+              aria-label="Sewing Machine Brands"
+              class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-3"
+            ></div>
+          </div>
+
+          <!-- Step 2: Active Brand Machine Model Buttons -->
+          <div
+            class="rounded-2xl border border-slate-200/85 dark:border-slate-800/85 bg-white/75 dark:bg-slate-900/60 backdrop-blur-xl p-5 sm:p-6 shadow-[0_4px_24px_-6px_rgba(15,23,42,0.06)] dark:shadow-[0_10px_30px_-10px_rgba(0,0,0,0.45)]"
+          >
+            <div
+              class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-4 mb-5 border-b border-slate-200/70 dark:border-slate-800/70"
+            >
+              <div>
+                <h3
+                  id="partsActiveBrandTitle"
+                  class="font-display text-lg sm:text-xl font-bold tracking-tight text-slate-950 dark:text-white"
+                >
+                  Juki Parts Books
+                </h3>
+                <p
+                  id="partsActiveBrandDesc"
+                  class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-0.5"
+                ></p>
+              </div>
+              <span
+                id="partsActiveModelCount"
+                class="text-xs font-semibold tabular-nums text-emerald-700 dark:text-emerald-400"
+              ></span>
+            </div>
+
+            <div
+              id="partsModelsGrid"
+              class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5"
+            ></div>
+
+            <div id="partsEmptyState" class="hidden py-10 text-center">
+              <p
+                id="partsEmptyTitle"
+                class="font-display text-base font-semibold text-slate-900 dark:text-white mb-1.5"
+              >
+                No models found
+              </p>
+              <p
+                id="partsEmptyDesc"
+                class="text-sm text-slate-500 dark:text-slate-400 max-w-md mx-auto mb-4"
+              ></p>
+              <div class="flex flex-wrap items-center justify-center gap-3">
+                <button
+                  type="button"
+                  id="resetPartsSearchBtn"
+                  class="hidden inline-flex items-center justify-center px-4 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 dark:bg-emerald-500 dark:hover:bg-emerald-400 text-white dark:text-slate-950 text-xs font-semibold transition-colors cursor-pointer"
+                >
+                  Clear Search
+                </button>
+                <a
+                  href="mailto:aasoosajid@gmail.com?subject=Sewing%20Machine%20Parts%20Book%20Request&body=Hello%20Technical%20App%20Studio%2C%0A%0APlease%20send%20me%20the%20parts%20book%20for%3A%0AMachine%20Brand%3A%20%0AModel%20Number%3A%20"
+                  class="inline-flex items-center justify-center gap-2 px-4 py-2 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 hover:border-emerald-500/60 text-slate-800 dark:text-slate-200 text-xs font-semibold transition-colors"
+                >
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" aria-hidden="true">
+                    <rect width="20" height="16" x="2" y="4" rx="2" />
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                  </svg>
+                  <span>Request via Email (aasoosajid@gmail.com)</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Request Specific Parts Book Banner (Gmail) -->
+          <div
+            class="mt-6 rounded-2xl border border-emerald-500/25 dark:border-emerald-500/30 bg-white/80 dark:bg-slate-900/70 backdrop-blur-xl p-5 sm:p-6 flex flex-col lg:flex-row lg:items-center justify-between gap-4 shadow-[0_4px_24px_-6px_rgba(15,23,42,0.05)]"
+          >
+            <div class="flex items-start gap-3.5 max-w-2xl">
+              <div
+                class="w-11 h-11 rounded-xl bg-emerald-500/15 text-emerald-700 dark:text-emerald-400 flex items-center justify-center shrink-0 mt-0.5"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="w-5 h-5"
+                  aria-hidden="true"
+                >
+                  <rect width="20" height="16" x="2" y="4" rx="2" />
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="font-display text-base sm:text-lg font-bold text-slate-950 dark:text-white">
+                  Need a Specific Sewing Machine Parts Book?
+                </h3>
+                <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed mt-1">
+                  If you need any specific machine brand or model parts book that is not listed above,
+                  send a message with the company &amp; model number to
+                  <a
+                    href="mailto:aasoosajid@gmail.com?subject=Sewing%20Machine%20Parts%20Book%20Request"
+                    class="font-semibold text-emerald-700 dark:text-emerald-400 hover:underline"
+                    >aasoosajid@gmail.com</a
+                  >.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-2.5 shrink-0">
+              <a
+                href="mailto:aasoosajid@gmail.com?subject=Sewing%20Machine%20Parts%20Book%20Request&body=Hello%20Technical%20App%20Studio%2C%0A%0APlease%20send%20me%20the%20parts%20book%20for%3A%0AMachine%20Brand%3A%20%0AModel%20Number%3A%20"
+                class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 dark:bg-emerald-500 dark:hover:bg-emerald-400 text-white dark:text-slate-950 text-xs sm:text-sm font-semibold transition-colors whitespace-nowrap"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="w-4 h-4 shrink-0"
+                  aria-hidden="true"
+                >
+                  <rect width="20" height="16" x="2" y="4" rx="2" />
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                </svg>
+                <span>Request Book on Gmail</span>
+              </a>
+              <a
+                href="https://wa.me/923174893831?text=Hello%20Technical%20App%20Studio%2C%20I%20need%20a%20specific%20sewing%20machine%20parts%20book."
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 dark:bg-emerald-500/20 dark:hover:bg-emerald-500/30 text-white dark:text-emerald-300 border border-transparent dark:border-emerald-500/40 text-xs sm:text-sm font-semibold transition-colors whitespace-nowrap"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 shrink-0" aria-hidden="true">
+                  <path
+                    d="M12.031 2c-5.516 0-9.969 4.453-9.969 9.969 0 1.766.469 3.484 1.344 5l-1.406 5.156 5.281-1.375a9.92 9.92 0 0 0 4.75 1.219h.004c5.512 0 9.965-4.453 9.965-9.969 0-2.656-1.035-5.156-2.914-7.035A9.888 9.888 0 0 0 12.031 2zm5.805 14.172c-.246.691-1.43 1.324-1.984 1.406-.508.074-1.152.105-1.855-.121-.426-.137-.977-.32-1.676-.621-2.945-1.273-4.867-4.242-5.016-4.438-.145-.195-1.195-1.59-1.195-3.035 0-1.445.754-2.156 1.023-2.449.266-.293.582-.367.777-.367.195 0 .391.004.562.012.18.008.422-.07.66.504.246.59.836 2.043.91 2.191.074.148.125.32.023.516-.098.195-.148.316-.297.488-.148.172-.312.383-.445.516-.148.148-.305.309-.133.605.176.297.777 1.281 1.668 2.074 1.148 1.023 2.113 1.34 2.41 1.488.297.148.469.125.645-.074.172-.199.742-.867.941-1.164.199-.297.398-.246.668-.148.273.098 1.727.816 2.023.965.297.148.496.223.566.344.074.125.074.719-.172 1.41z"
+                  />
+                </svg>
+                <span>WhatsApp</span>
+              </a>
+              <button
+                type="button"
+                data-copy-imo="+923054682335"
+                class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-sky-600 hover:bg-sky-700 dark:bg-sky-500/20 dark:hover:bg-sky-500/30 text-white dark:text-sky-300 border border-transparent dark:border-sky-500/40 text-xs sm:text-sm font-semibold transition-colors whitespace-nowrap cursor-pointer"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="w-4 h-4 shrink-0"
+                  aria-hidden="true"
+                >
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+                <span>imo: +92 305 4682335</span>
+              </button>
+              <button
+                type="button"
+                data-copy-email="aasoosajid@gmail.com"
+                class="inline-flex items-center justify-center gap-1.5 px-3.5 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-950/60 hover:bg-slate-100 dark:hover:bg-slate-800 text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-200 transition-colors whitespace-nowrap cursor-pointer"
+              >
+                <span>Copy Gmail</span>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===================================================================
              COMPACT CONTACT / WHATSAPP FOOTER STRIP
              =================================================================== -->
         <section id="contact" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12">
@@ -621,23 +909,71 @@
                 Direct Support &amp; Custom Project Inquiries
               </h2>
               <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                Need help with an Android app, stitching machine automation, or an XYZ hardware build?
-                Message Technical App Studio directly on WhatsApp.
+                Need help with an Android app, stitching machine parts book, or an XYZ hardware build?
+                Email us at
+                <a
+                  href="mailto:aasoosajid@gmail.com"
+                  class="font-semibold text-emerald-700 dark:text-emerald-400 hover:underline"
+                  >aasoosajid@gmail.com</a
+                >, message on WhatsApp (<span class="font-medium">+92 317 4893831</span>), or contact on
+                imo (<span class="font-medium">+92 305 4682335</span>).
               </p>
             </div>
 
-            <button
-              type="button"
-              data-open-contact
-              class="inline-flex items-center justify-center gap-2.5 px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 dark:bg-emerald-500 dark:hover:bg-emerald-400 text-white dark:text-slate-950 text-sm font-semibold transition-colors whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 cursor-pointer"
-            >
-              <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 shrink-0" aria-hidden="true">
-                <path
-                  d="M12.031 2c-5.516 0-9.969 4.453-9.969 9.969 0 1.766.469 3.484 1.344 5l-1.406 5.156 5.281-1.375a9.92 9.92 0 0 0 4.75 1.219h.004c5.512 0 9.965-4.453 9.965-9.969 0-2.656-1.035-5.156-2.914-7.035A9.888 9.888 0 0 0 12.031 2zm5.805 14.172c-.246.691-1.43 1.324-1.984 1.406-.508.074-1.152.105-1.855-.121-.426-.137-.977-.32-1.676-.621-2.945-1.273-4.867-4.242-5.016-4.438-.145-.195-1.195-1.59-1.195-3.035 0-1.445.754-2.156 1.023-2.449.266-.293.582-.367.777-.367.195 0 .391.004.562.012.18.008.422-.07.66.504.246.59.836 2.043.91 2.191.074.148.125.32.023.516-.098.195-.148.316-.297.488-.148.172-.312.383-.445.516-.148.148-.305.309-.133.605.176.297.777 1.281 1.668 2.074 1.148 1.023 2.113 1.34 2.41 1.488.297.148.469.125.645-.074.172-.199.742-.867.941-1.164.199-.297.398-.246.668-.148.273.098 1.727.816 2.023.965.297.148.496.223.566.344.074.125.074.719-.172 1.41z"
-                />
-              </svg>
-              <span>Contact / WhatsApp</span>
-            </button>
+            <div class="flex flex-wrap items-center gap-3 shrink-0">
+              <a
+                href="mailto:aasoosajid@gmail.com?subject=Technical%20App%20Studio%20Inquiry"
+                class="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-950/60 hover:border-emerald-500/60 text-slate-800 dark:text-slate-100 text-sm font-semibold transition-colors whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0"
+                  aria-hidden="true"
+                >
+                  <rect width="20" height="16" x="2" y="4" rx="2" />
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                </svg>
+                <span>aasoosajid@gmail.com</span>
+              </a>
+
+              <button
+                type="button"
+                data-copy-imo="+923054682335"
+                class="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl border border-sky-500/40 bg-sky-500/10 hover:bg-sky-500/20 text-sky-700 dark:text-sky-300 text-sm font-semibold transition-colors whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 cursor-pointer"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="w-4 h-4 shrink-0"
+                  aria-hidden="true"
+                >
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+                <span>imo: +92 305 4682335</span>
+              </button>
+
+              <button
+                type="button"
+                data-open-contact
+                class="inline-flex items-center justify-center gap-2.5 px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 dark:bg-emerald-500 dark:hover:bg-emerald-400 text-white dark:text-slate-950 text-sm font-semibold transition-colors whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 cursor-pointer"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 shrink-0" aria-hidden="true">
+                  <path
+                    d="M12.031 2c-5.516 0-9.969 4.453-9.969 9.969 0 1.766.469 3.484 1.344 5l-1.406 5.156 5.281-1.375a9.92 9.92 0 0 0 4.75 1.219h.004c5.512 0 9.965-4.453 9.965-9.969 0-2.656-1.035-5.156-2.914-7.035A9.888 9.888 0 0 0 12.031 2zm5.805 14.172c-.246.691-1.43 1.324-1.984 1.406-.508.074-1.152.105-1.855-.121-.426-.137-.977-.32-1.676-.621-2.945-1.273-4.867-4.242-5.016-4.438-.145-.195-1.195-1.59-1.195-3.035 0-1.445.754-2.156 1.023-2.449.266-.293.582-.367.777-.367.195 0 .391.004.562.012.18.008.422-.07.66.504.246.59.836 2.043.91 2.191.074.148.125.32.023.516-.098.195-.148.316-.297.488-.148.172-.312.383-.445.516-.148.148-.305.309-.133.605.176.297.777 1.281 1.668 2.074 1.148 1.023 2.113 1.34 2.41 1.488.297.148.469.125.645-.074.172-.199.742-.867.941-1.164.199-.297.398-.246.668-.148.273.098 1.727.816 2.023.965.297.148.496.223.566.344.074.125.074.719-.172 1.41z"
+                  />
+                </svg>
+                <span>Contact / WhatsApp</span>
+              </button>
+            </div>
           </div>
         </section>
       </main>
@@ -675,7 +1011,10 @@
             &copy; 2026 Technical App Studio. All rights reserved.
           </p>
 
-          <div class="flex items-center gap-5 text-xs font-medium text-slate-600 dark:text-slate-300">
+          <div class="flex flex-wrap items-center justify-center gap-5 text-xs font-medium text-slate-600 dark:text-slate-300">
+            <a href="mailto:aasoosajid@gmail.com" class="hover:text-slate-950 dark:hover:text-white">
+              aasoosajid@gmail.com
+            </a>
             <a href="#hub" class="hover:text-slate-950 dark:hover:text-white">Top Hub</a>
             <button
               type="button"
@@ -851,17 +1190,34 @@
         </div>
 
         <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-5">
-          Connect directly on WhatsApp for Android app support, industrial stitching machine
-          automation, or custom hardware and software inquiries.
+          Need a specific sewing machine parts book, Android app support, or custom automation help?
+          Reach out via Email, WhatsApp, or imo.
         </p>
 
         <div class="space-y-3">
-          <!-- ===============================================================
-               PASTE YOUR WHATSAPP LINK HERE (e.g. href="https://wa.me/923001234567")
-               =============================================================== -->
+          <a
+            href="mailto:aasoosajid@gmail.com?subject=Technical%20App%20Studio%20%E2%80%94%20Parts%20Book%20%2F%20Support%20Request"
+            class="w-full inline-flex items-center justify-center gap-2.5 px-4 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 dark:bg-white dark:hover:bg-slate-200 text-white dark:text-slate-950 text-sm font-semibold transition-colors"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="w-4 h-4 shrink-0"
+              aria-hidden="true"
+            >
+              <rect width="20" height="16" x="2" y="4" rx="2" />
+              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+            </svg>
+            <span>Email: aasoosajid@gmail.com</span>
+          </a>
+
           <a
             id="whatsappActionLink"
-            href="#"
+            href="https://wa.me/923174893831"
             target="_blank"
             rel="noopener noreferrer"
             class="w-full inline-flex items-center justify-center gap-2.5 px-4 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 dark:bg-emerald-500 dark:hover:bg-emerald-400 text-white dark:text-slate-950 text-sm font-semibold transition-colors"
@@ -871,8 +1227,28 @@
                 d="M12.031 2c-5.516 0-9.969 4.453-9.969 9.969 0 1.766.469 3.484 1.344 5l-1.406 5.156 5.281-1.375a9.92 9.92 0 0 0 4.75 1.219h.004c5.512 0 9.965-4.453 9.965-9.969 0-2.656-1.035-5.156-2.914-7.035A9.888 9.888 0 0 0 12.031 2zm5.805 14.172c-.246.691-1.43 1.324-1.984 1.406-.508.074-1.152.105-1.855-.121-.426-.137-.977-.32-1.676-.621-2.945-1.273-4.867-4.242-5.016-4.438-.145-.195-1.195-1.59-1.195-3.035 0-1.445.754-2.156 1.023-2.449.266-.293.582-.367.777-.367.195 0 .391.004.562.012.18.008.422-.07.66.504.246.59.836 2.043.91 2.191.074.148.125.32.023.516-.098.195-.148.316-.297.488-.148.172-.312.383-.445.516-.148.148-.305.309-.133.605.176.297.777 1.281 1.668 2.074 1.148 1.023 2.113 1.34 2.41 1.488.297.148.469.125.645-.074.172-.199.742-.867.941-1.164.199-.297.398-.246.668-.148.273.098 1.727.816 2.023.965.297.148.496.223.566.344.074.125.074.719-.172 1.41z"
               />
             </svg>
-            <span>Chat on WhatsApp</span>
+            <span>WhatsApp: +92 317 4893831</span>
           </a>
+
+          <button
+            type="button"
+            data-copy-imo="+923054682335"
+            class="w-full inline-flex items-center justify-center gap-2.5 px-4 py-3 rounded-xl bg-sky-600 hover:bg-sky-700 dark:bg-sky-500 dark:hover:bg-sky-400 text-white dark:text-slate-950 text-sm font-semibold transition-colors cursor-pointer"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="w-4 h-4 shrink-0"
+              aria-hidden="true"
+            >
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+            <span>imo: +92 305 4682335 (Tap to Copy)</span>
+          </button>
 
           <button
             type="button"
@@ -1218,6 +1594,218 @@
         ];
 
         /* -------------------------------------------------------------------
+           4. SEWING MACHINE PARTS BOOKS (Brands -> Model PDF Buttons)
+           To add a new model button under any brand, add { model: '...', docType: 'Parts Book PDF', url: '...' }.
+           To add Brother links later, add model objects inside the brother `models: []` array.
+           ------------------------------------------------------------------- */
+        var PARTS_BOOKS = [
+          {
+            id: 'juki',
+            name: 'Juki',
+            tagline: 'Lockstitch, Bartack, Buttonhole, Overlock & Coverstitch',
+            accent: 'amber',
+            models: [
+              {
+                model: 'DDL-5550',
+                docType: 'Parts Book PDF',
+                url: 'https://www.supsew.com/download/Juki/Juki%20DDL-5550.pdf',
+              },
+              {
+                model: 'LBH-1790',
+                docType: 'Parts Book PDF',
+                url: 'https://www.supsew.com/download/Juki/Juki%20LBH-1790.pdf',
+              },
+              {
+                model: 'LK-1900A',
+                docType: 'Parts Book PDF',
+                url: 'https://www.supsew.com/download/Juki/Juki%20LK-1900A.pdf',
+              },
+              {
+                model: 'LK-1850',
+                docType: 'Parts Book PDF',
+                url: 'https://www.supsew.com/download/Juki/Juki%20LK-1850.pdf',
+              },
+              {
+                model: 'MO-6700S (Subclasses Parts List)',
+                docType: 'Parts List PDF',
+                url: 'https://www.supsew.com/download/Juki/Juki%20MO-6700S%20Subclasses%20Parts%20List.pdf',
+              },
+              {
+                model: 'MO-2300-DD4 / MO-2314-BD4 / MO-2316-DD4',
+                docType: 'Parts Book PDF',
+                url: 'https://www.supsew.com/download//Juki/Juki%20MO-2300-DD4%3B%20MO-2314-BD4%3B%20MO-2316-DD4.pdf',
+              },
+              {
+                model: 'MF-7800',
+                docType: 'Parts Book PDF',
+                url: 'https://www.supsew.com/download/Juki/Juki%20MF-7800.pdf',
+              },
+            ],
+          },
+          {
+            id: 'pegasus',
+            name: 'Pegasus',
+            tagline: 'Overlock, Interlock & Cylinder-Bed Parts Catalogs',
+            accent: 'sky',
+            models: [
+              {
+                model: 'W600UT',
+                docType: 'Parts Book PDF',
+                url: 'https://www.supsew.com/download/Pegasus/Pegasus%20W600UT.pdf',
+              },
+              {
+                model: 'W644, W664',
+                docType: 'Parts Book PDF',
+                url: 'https://www.supsew.com/download/Pegasus/Pegasus%20W644,%20W664.pdf',
+              },
+              {
+                model: 'M832, M852',
+                docType: 'Parts Book PDF',
+                url: 'https://www.supsew.com/download/Pegasus/Pegasus%20M832,%20M852.pdf',
+              },
+              {
+                model: 'M700 (9758-1)',
+                docType: 'Parts Book PDF',
+                url: 'https://www.pegasus-europa.de/parts/M700_9758-1.pdf',
+              },
+              {
+                model: 'EX3200, EX5200',
+                docType: 'Parts Book PDF',
+                url: 'https://www.supsew.com/download/Pegasus/Pegasus%20EX3200,%205200.pdf',
+              },
+              {
+                model: 'EX5100',
+                docType: 'Parts Book PDF',
+                url: 'https://www.supsew.com/download/Pegasus/Pegasus%20EX5100.pdf',
+              },
+              {
+                model: 'EXT Series',
+                docType: 'Parts Book PDF',
+                url: 'https://www.supsew.com/download/Pegasus/Pegasus%20EXT%20Series.pdf',
+              },
+              {
+                model: 'FS700',
+                docType: 'Parts Book PDF',
+                url: 'https://www.supsew.com/download/Pegasus/Pegasus%20FS700.pdf',
+              },
+              {
+                model: 'WT200',
+                docType: 'Parts Book PDF',
+                url: 'https://www.supsew.com/download/Pegasus/Pegasus%20WT200.pdf',
+              },
+              {
+                model: 'W600UT (Instruction Manual)',
+                docType: 'Instruction Manual PDF',
+                url: 'https://www.supsew.com/download/Pegasus/Pegasus%20W600UT%20Instruction%20Manual.pdf',
+              },
+              {
+                model: 'W542 / W562',
+                docType: 'Parts Book PDF',
+                url: 'https://www.supsew.com/download/Pegasus/Pegasus%20W542;%20W562.pdf',
+              },
+              {
+                model: 'W1600',
+                docType: 'Parts Book PDF',
+                url: 'https://www.supsew.com/download/Pegasus/Pegasus%20W1600.pdf',
+              },
+            ],
+          },
+          {
+            id: 'siruba',
+            name: 'Siruba',
+            tagline: 'Interlock, Flatlock & Chainstitch Parts Books',
+            accent: 'emerald',
+            models: [
+              {
+                model: 'VC008',
+                docType: 'Parts Book PDF',
+                url: 'https://www.supsew.com/download/Siruba/Siruba%20VC008.pdf',
+              },
+              {
+                model: 'C007K D, C858K D',
+                docType: 'Parts Book PDF',
+                url: 'https://www.supsew.com/download/Siruba/Siruba%20C007K%20D,%20C858K%20D.pdf',
+              },
+              {
+                model: 'F007J',
+                docType: 'Parts Book PDF',
+                url: 'https://www.szwalnicze.com/cat_siruba/siruba_F007J.pdf',
+              },
+            ],
+          },
+          {
+            id: 'jack',
+            name: 'Jack',
+            tagline: 'Direct-Drive & Computerized Lockstitch Catalogs',
+            accent: 'violet',
+            models: [
+              {
+                model: 'A5E',
+                docType: 'Parts Book PDF',
+                url: 'https://www.supsew.com/download/Jack/Jack%20A5E%20-%20Parts%20Book.pdf',
+              },
+              {
+                model: 'A6F-E',
+                docType: 'Parts Book PDF',
+                url: 'https://www.supsew.com/download/Jack/Jack%20A6F-E%20-%20Parts%20Book.pdf',
+              },
+            ],
+          },
+          {
+            id: 'zoje',
+            name: 'Zoje',
+            tagline: 'High-Speed Industrial Interlock Series',
+            accent: 'cyan',
+            models: [
+              {
+                model: 'ZJ-W122 & ZJ-W222 (NEW)',
+                docType: 'Parts Book PDF',
+                url: 'https://www.supsew.com/download/Zoje/Zoje%20ZJ-W122%20&%20ZJ-W222%20(NEW).pdf',
+              },
+            ],
+          },
+          {
+            id: 'kansai',
+            name: 'Kansai',
+            tagline: 'Multi-Needle Special Chainstitch Machines',
+            accent: 'amber',
+            models: [
+              {
+                model: 'DFB-1012PS, 1412PS',
+                docType: 'Instruction Manual PDF',
+                url: 'https://www.supsew.com/download/Kansai/Kansai%20DFB-1012PS,%201412PS%20Instruction%20Manual.pdf',
+              },
+            ],
+          },
+          {
+            id: 'brother',
+            name: 'Brother',
+            tagline: 'Industrial Lockstitch & Electronic Pattern Machines',
+            accent: 'sky',
+            // PASTE YOUR BROTHER MACHINE MODEL LINKS INSIDE THIS ARRAY LATER
+            models: [],
+          },
+          {
+            id: 'supsew-direct',
+            name: 'Supsew Direct',
+            tagline: 'Direct Parts Book Downloads (Rename model labels anytime in PARTS_BOOKS)',
+            accent: 'emerald',
+            models: [
+              {
+                model: 'Supsew Parts Book #62389',
+                docType: 'Direct PDF Download',
+                url: 'https://www.supsew.com/?wpfb_dl=62389',
+              },
+              {
+                model: 'Supsew Parts Book #63371',
+                docType: 'Direct PDF Download',
+                url: 'https://www.supsew.com/?wpfb_dl=63371',
+              },
+            ],
+          },
+        ];
+
+        /* -------------------------------------------------------------------
            CUSTOM SVG ICON & VISUAL RENDERERS
            ------------------------------------------------------------------- */
         var svgUid = 0;
@@ -1453,6 +2041,8 @@
         var activeHubTab = 'apps';
         var activeAppCategory = 'All';
         var activeGalleryFilter = 'All';
+        var activePartsBrandId = 'juki';
+        var partsSearchQuery = '';
         var searchQuery = '';
         var toastTimer = null;
 
@@ -1464,6 +2054,7 @@
           apps: document.getElementById('panel-apps'),
           videos: document.getElementById('panel-videos'),
           gallery: document.getElementById('panel-gallery'),
+          'parts-books': document.getElementById('panel-parts-books'),
         };
 
         var categoryTabsEl = document.getElementById('categoryTabs');
@@ -1478,6 +2069,18 @@
         var videosGridEl = document.getElementById('videosGrid');
         var galleryFilterTabsEl = document.getElementById('galleryFilterTabs');
         var galleryGridEl = document.getElementById('galleryGrid');
+
+        var partsSearchInput = document.getElementById('partsSearchInput');
+        var clearPartsSearchBtn = document.getElementById('clearPartsSearchBtn');
+        var resetPartsSearchBtn = document.getElementById('resetPartsSearchBtn');
+        var partsBrandGridEl = document.getElementById('partsBrandGrid');
+        var partsActiveBrandTitleEl = document.getElementById('partsActiveBrandTitle');
+        var partsActiveBrandDescEl = document.getElementById('partsActiveBrandDesc');
+        var partsActiveModelCountEl = document.getElementById('partsActiveModelCount');
+        var partsModelsGridEl = document.getElementById('partsModelsGrid');
+        var partsEmptyStateEl = document.getElementById('partsEmptyState');
+        var partsEmptyTitleEl = document.getElementById('partsEmptyTitle');
+        var partsEmptyDescEl = document.getElementById('partsEmptyDesc');
 
         var detailModal = document.getElementById('detailModal');
         var detailModalCard = document.getElementById('detailModalCard');
@@ -2017,6 +2620,181 @@
         }
 
         /* -------------------------------------------------------------------
+           PANEL 4: SEWING MACHINE PARTS BOOKS RENDERER
+           ------------------------------------------------------------------- */
+        function escapeHtml(str) {
+          return String(str)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;');
+        }
+
+        function findPartsBrandById(brandId) {
+          for (var i = 0; i < PARTS_BOOKS.length; i++) {
+            if (PARTS_BOOKS[i].id === brandId) return PARTS_BOOKS[i];
+          }
+          return PARTS_BOOKS[0];
+        }
+
+        function renderPartsBrands() {
+          var html = '';
+          var hasSearch = partsSearchQuery.trim().length > 0;
+
+          for (var i = 0; i < PARTS_BOOKS.length; i++) {
+            var brand = PARTS_BOOKS[i];
+            var isSelected = !hasSearch && brand.id === activePartsBrandId;
+            var count = brand.models.length;
+            var cardClass = isSelected
+              ? 'border-emerald-500/80 dark:border-emerald-400/80 bg-slate-900 text-white dark:bg-emerald-500 dark:text-slate-950 shadow-md'
+              : 'border-slate-200/85 dark:border-slate-800/85 bg-white/80 dark:bg-slate-900/65 text-slate-900 dark:text-white hover:border-emerald-500/45 dark:hover:border-emerald-400/45 hover:-translate-y-0.5';
+            var countClass = isSelected
+              ? 'text-emerald-300 dark:text-slate-900/85'
+              : 'text-slate-500 dark:text-slate-400';
+
+            html +=
+              '<button type="button" role="tab" aria-selected="' +
+              (isSelected ? 'true' : 'false') +
+              '" data-parts-brand="' +
+              brand.id +
+              '" class="text-left rounded-xl border px-3.5 py-3 transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 cursor-pointer ' +
+              cardClass +
+              '">' +
+              '<div class="font-display text-sm sm:text-base font-bold tracking-tight truncate">' +
+              escapeHtml(brand.name) +
+              '</div>' +
+              '<div class="text-[11px] font-medium tabular-nums mt-0.5 ' +
+              countClass +
+              '">' +
+              (count === 0
+                ? 'Ready for links'
+                : count + (count === 1 ? ' Model' : ' Models')) +
+              '</div>' +
+              '</button>';
+          }
+
+          partsBrandGridEl.innerHTML = html;
+
+          partsBrandGridEl.querySelectorAll('[data-parts-brand]').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+              activePartsBrandId = btn.getAttribute('data-parts-brand');
+              if (partsSearchQuery.trim()) {
+                partsSearchQuery = '';
+                partsSearchInput.value = '';
+              }
+              renderPartsBrands();
+              renderPartsModels();
+            });
+          });
+        }
+
+        function renderPartsModels() {
+          var q = partsSearchQuery.trim().toLowerCase();
+
+          if (partsSearchQuery.length > 0) {
+            clearPartsSearchBtn.classList.remove('hidden');
+            clearPartsSearchBtn.classList.add('inline-flex');
+          } else {
+            clearPartsSearchBtn.classList.add('hidden');
+            clearPartsSearchBtn.classList.remove('inline-flex');
+          }
+
+          var itemsToRender = [];
+
+          if (q) {
+            for (var b = 0; b < PARTS_BOOKS.length; b++) {
+              var br = PARTS_BOOKS[b];
+              for (var m = 0; m < br.models.length; m++) {
+                var md = br.models[m];
+                if (
+                  md.model.toLowerCase().indexOf(q) !== -1 ||
+                  br.name.toLowerCase().indexOf(q) !== -1 ||
+                  md.docType.toLowerCase().indexOf(q) !== -1
+                ) {
+                  itemsToRender.push({
+                    brandName: br.name,
+                    model: md.model,
+                    docType: md.docType,
+                    url: md.url,
+                  });
+                }
+              }
+            }
+            partsActiveBrandTitleEl.textContent = 'Search Results across All Brands';
+            partsActiveBrandDescEl.textContent =
+              'Matching machine models for "' + partsSearchQuery.trim() + '"';
+            partsActiveModelCountEl.textContent =
+              itemsToRender.length + (itemsToRender.length === 1 ? ' Manual' : ' Manuals');
+          } else {
+            var activeBrand = findPartsBrandById(activePartsBrandId);
+            partsActiveBrandTitleEl.textContent = activeBrand.name + ' Parts Books';
+            partsActiveBrandDescEl.textContent = activeBrand.tagline;
+            partsActiveModelCountEl.textContent =
+              activeBrand.models.length +
+              (activeBrand.models.length === 1 ? ' Model Manual' : ' Model Manuals');
+
+            for (var i = 0; i < activeBrand.models.length; i++) {
+              itemsToRender.push({
+                brandName: activeBrand.name,
+                model: activeBrand.models[i].model,
+                docType: activeBrand.models[i].docType,
+                url: activeBrand.models[i].url,
+              });
+            }
+          }
+
+          if (itemsToRender.length === 0) {
+            partsModelsGridEl.classList.add('hidden');
+            partsModelsGridEl.innerHTML = '';
+            partsEmptyStateEl.classList.remove('hidden');
+            if (q) {
+              partsEmptyTitleEl.textContent = 'No matching machine models found';
+              partsEmptyDescEl.textContent =
+                'Try another model number such as DDL-5550, LK-1850, W600UT, or F007J.';
+              resetPartsSearchBtn.classList.remove('hidden');
+            } else {
+              var currentBrand = findPartsBrandById(activePartsBrandId);
+              partsEmptyTitleEl.textContent = currentBrand.name + ' links coming soon';
+              partsEmptyDescEl.textContent =
+                'Add ' +
+                currentBrand.name +
+                ' machine model PDF URLs inside PARTS_BOOKS in index.html whenever ready.';
+              resetPartsSearchBtn.classList.add('hidden');
+            }
+            return;
+          }
+
+          partsEmptyStateEl.classList.add('hidden');
+          partsModelsGridEl.classList.remove('hidden');
+
+          var html = '';
+          for (var j = 0; j < itemsToRender.length; j++) {
+            var entry = itemsToRender[j];
+            html +=
+              '<a href="' +
+              escapeHtml(entry.url) +
+              '" target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between gap-3 rounded-xl border border-slate-200/90 dark:border-slate-800/90 bg-slate-50/80 dark:bg-slate-950/65 hover:bg-white dark:hover:bg-slate-900 hover:border-emerald-500/60 dark:hover:border-emerald-400/60 p-4 transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500">' +
+              '<div class="min-w-0">' +
+              '<div class="text-[11px] font-semibold uppercase tracking-wider text-emerald-700 dark:text-emerald-400 mb-0.5">' +
+              escapeHtml(entry.brandName) +
+              ' · ' +
+              escapeHtml(entry.docType) +
+              '</div>' +
+              '<div class="font-display text-base font-bold text-slate-950 dark:text-white group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors break-words">' +
+              escapeHtml(entry.model) +
+              '</div>' +
+              '</div>' +
+              '<span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-900 dark:bg-emerald-500 text-white dark:text-slate-950 text-xs font-semibold shrink-0 group-hover:bg-emerald-600 dark:group-hover:bg-emerald-400 transition-colors">' +
+              '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M12 18v-6"/><path d="m9 15 3 3 3-3"/></svg>' +
+              '<span>PDF</span>' +
+              '</span>' +
+              '</a>';
+          }
+
+          partsModelsGridEl.innerHTML = html;
+        }
+
+        /* -------------------------------------------------------------------
            UNIFIED MODAL HANDLERS (Apps, Videos, Machine & XYZ Photos)
            ------------------------------------------------------------------- */
         function resetDetailModal() {
@@ -2151,10 +2929,17 @@
         }
 
         function openContactModal(contextText) {
-          contactModalContext.textContent =
-            typeof contextText === 'string' && contextText
-              ? contextText
-              : 'App Support, Machine R&D & Custom Inquiries';
+          var hasContext = typeof contextText === 'string' && contextText;
+          contactModalContext.textContent = hasContext
+            ? contextText
+            : 'App Support, Machine R&D & Custom Inquiries';
+          var waText = hasContext
+            ? 'Hello Technical App Studio, ' + contextText
+            : 'Hello Technical App Studio, I would like to inquire about your apps, machines, or parts books.';
+          whatsappActionLink.setAttribute(
+            'href',
+            'https://wa.me/923174893831?text=' + encodeURIComponent(waText)
+          );
           contactModal.classList.remove('hidden');
         }
 
@@ -2189,6 +2974,23 @@
         resetFiltersBtn.addEventListener('click', resetFilters);
         emptyResetBtn.addEventListener('click', resetFilters);
 
+        partsSearchInput.addEventListener('input', function (e) {
+          partsSearchQuery = e.target.value;
+          renderPartsBrands();
+          renderPartsModels();
+        });
+
+        function clearPartsSearch() {
+          partsSearchQuery = '';
+          partsSearchInput.value = '';
+          renderPartsBrands();
+          renderPartsModels();
+          partsSearchInput.focus();
+        }
+
+        clearPartsSearchBtn.addEventListener('click', clearPartsSearch);
+        resetPartsSearchBtn.addEventListener('click', clearPartsSearch);
+
         document.getElementById('closeDetailModalBtn').addEventListener('click', closeDetailModal);
         document.getElementById('detailModalCloseBtn').addEventListener('click', closeDetailModal);
         detailModal.addEventListener('click', function (e) {
@@ -2221,16 +3023,56 @@
           }
         });
 
+        document.querySelectorAll('[data-copy-email]').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var emailAddr = btn.getAttribute('data-copy-email');
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+              navigator.clipboard.writeText(emailAddr).then(
+                function () {
+                  showToast('Email copied: ' + emailAddr);
+                },
+                function () {
+                  showToast('Email: ' + emailAddr);
+                }
+              );
+            } else {
+              showToast('Email: ' + emailAddr);
+            }
+          });
+        });
+
+        document.querySelectorAll('[data-copy-imo]').forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            var imoNum = btn.getAttribute('data-copy-imo');
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+              navigator.clipboard.writeText(imoNum).then(
+                function () {
+                  showToast('imo number copied: ' + imoNum + ' — Search & message on imo.');
+                },
+                function () {
+                  showToast('imo number: ' + imoNum);
+                }
+              );
+            } else {
+              showToast('imo number: ' + imoNum);
+            }
+          });
+        });
+
         window.addEventListener('keydown', function (e) {
           var activeTag = document.activeElement ? document.activeElement.tagName : '';
           if (
             e.key === '/' &&
-            activeHubTab === 'apps' &&
+            (activeHubTab === 'apps' || activeHubTab === 'parts-books') &&
             activeTag !== 'INPUT' &&
             activeTag !== 'TEXTAREA'
           ) {
             e.preventDefault();
-            searchInput.focus();
+            if (activeHubTab === 'parts-books') {
+              partsSearchInput.focus();
+            } else {
+              searchInput.focus();
+            }
           } else if (e.key === 'Escape') {
             closeDetailModal();
             closeContactModal();
@@ -2244,6 +3086,8 @@
           renderVideos();
           renderGalleryFilterTabs();
           renderGallery();
+          renderPartsBrands();
+          renderPartsModels();
         }
 
         if (document.readyState === 'loading') {
