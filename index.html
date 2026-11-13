@@ -4,29 +4,1486 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Technical App Studio — Smart Tools, Productivity &amp; Games for Everyone</title>
-    <meta name="description" content="Official Android app showcase portfolio for Technical App Studio — Smart Tools, Productivity & Games for Everyone." />
-    <meta property="og:title" content="Technical App Studio — Smart Tools, Productivity &amp; Games for Everyone" />
-    <meta property="og:description" content="Explore published Android apps from Technical App Studio: Machine Record Tracker, All Documents Reader, All-in-One Calculator, PLT File Viewer, Construction Cost Calculator, and Dots & Boxes Premium Edition." />
+    <meta
+      name="description"
+      content="Official Android app showcase portfolio for Technical App Studio — Smart Tools, Productivity & Games for Everyone."
+    />
+    <meta
+      property="og:title"
+      content="Technical App Studio — Smart Tools, Productivity &amp; Games for Everyone"
+    />
+    <meta
+      property="og:description"
+      content="Explore published Android apps from Technical App Studio: Machine Record Tracker, All Documents Reader, All-in-One Calculator, PLT File Viewer, Construction Cost Calculator, and Dots & Boxes Premium Edition."
+    />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary_large_image" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Prevent theme flash before first paint -->
     <script>
       (function () {
         try {
           var saved = localStorage.getItem('tas-theme');
-          var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+          var prefersDark =
+            window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
           if (saved === 'dark' || (!saved && prefersDark)) {
             document.documentElement.classList.add('dark');
           }
         } catch (e) {}
       })();
     </script>
+
+    <!-- Tailwind CSS Play CDN (zero-build, works directly on GitHub Pages) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              display: ['Outfit', 'system-ui', '-apple-system', 'sans-serif'],
+              sans: ['Plus Jakarta Sans', 'system-ui', '-apple-system', 'sans-serif'],
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      html {
+        font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+        scroll-behavior: smooth;
+      }
+      h1,
+      h2,
+      h3,
+      .font-display {
+        font-family: 'Outfit', system-ui, -apple-system, sans-serif;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+    </style>
   </head>
-  <body class="bg-slate-50 text-slate-900 dark:bg-[#070B12] dark:text-slate-100 antialiased selection:bg-emerald-500/20 selection:text-emerald-700 dark:selection:text-emerald-300">
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+
+  <body
+    class="bg-slate-50 text-slate-900 dark:bg-[#070B12] dark:text-slate-100 antialiased selection:bg-emerald-500/20 selection:text-emerald-700 dark:selection:text-emerald-300 transition-colors duration-200"
+  >
+    <div class="relative min-h-screen flex flex-col overflow-x-hidden">
+      <!-- Subtle Ambient Background Mesh for Glassmorphism Refraction -->
+      <div aria-hidden="true" class="pointer-events-none fixed inset-0 overflow-hidden">
+        <div
+          class="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[480px] rounded-full bg-emerald-500/10 dark:bg-emerald-500/12 blur-[120px]"
+        ></div>
+        <div
+          class="absolute top-1/3 -right-40 w-[520px] h-[520px] rounded-full bg-sky-500/8 dark:bg-blue-600/10 blur-[130px]"
+        ></div>
+      </div>
+
+      <!-- Top Bar: Clean 3-Zone Header -->
+      <header
+        class="sticky top-0 z-40 border-b border-slate-200/80 dark:border-slate-800/80 bg-white/80 dark:bg-[#070B12]/80 backdrop-blur-xl"
+      >
+        <div
+          class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4 sm:gap-8"
+        >
+          <!-- Zone 1: Brand Title + Clean Logo Icon -->
+          <a
+            href="#top"
+            class="flex items-center gap-3 whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 rounded-lg"
+          >
+            <svg
+              viewBox="0 0 40 40"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-8 h-8 shrink-0"
+              aria-hidden="true"
+            >
+              <rect width="40" height="40" rx="10" class="fill-slate-900 dark:fill-emerald-500" />
+              <path
+                d="M11 13.5C11 12.6716 11.6716 12 12.5 12H27.5C28.3284 12 29 12.6716 29 13.5V16.5C29 17.3284 28.3284 18 27.5 18H22.75V28.5C22.75 29.3284 22.0784 30 21.25 30H18.75C17.9216 30 17.25 29.3284 17.25 28.5V18H12.5C11.6716 18 11 17.3284 11 16.5V13.5Z"
+                class="fill-white dark:fill-slate-950"
+              />
+              <circle cx="28.5" cy="26.5" r="3" class="fill-emerald-400 dark:fill-slate-950" />
+            </svg>
+            <span class="font-display text-lg font-bold tracking-tight text-slate-900 dark:text-white">
+              Technical App Studio
+            </span>
+          </a>
+
+          <!-- Zone 2: Concise Single-Line Navigation Links -->
+          <nav
+            aria-label="Primary Navigation"
+            class="hidden md:flex items-center gap-7 text-sm font-medium text-slate-600 dark:text-slate-300"
+          >
+            <a
+              href="#apps"
+              class="hover:text-slate-950 dark:hover:text-white hover:underline underline-offset-4 transition-colors whitespace-nowrap shrink-0"
+            >
+              Apps
+            </a>
+            <a
+              href="#capabilities"
+              class="hover:text-slate-950 dark:hover:text-white hover:underline underline-offset-4 transition-colors whitespace-nowrap shrink-0"
+            >
+              Standards
+            </a>
+            <a
+              href="#contact"
+              class="hover:text-slate-950 dark:hover:text-white hover:underline underline-offset-4 transition-colors whitespace-nowrap shrink-0"
+            >
+              Contact
+            </a>
+          </nav>
+
+          <!-- Zone 3: Theme Switcher + Primary Action -->
+          <div class="flex items-center gap-2.5 shrink-0">
+            <button
+              type="button"
+              id="themeToggleBtn"
+              aria-label="Toggle dark and light mode"
+              title="Toggle dark and light mode"
+              class="inline-flex items-center justify-center w-10 h-10 rounded-xl border border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 cursor-pointer"
+            >
+              <!-- Sun icon (shown in dark mode) -->
+              <svg
+                id="sunIcon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="w-4 h-4 hidden dark:block"
+                aria-hidden="true"
+              >
+                <circle cx="12" cy="12" r="4" />
+                <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+              </svg>
+              <!-- Moon icon (shown in light mode) -->
+              <svg
+                id="moonIcon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="w-4 h-4 block dark:hidden"
+                aria-hidden="true"
+              >
+                <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+              </svg>
+            </button>
+
+            <button
+              type="button"
+              data-open-contact
+              class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900 dark:bg-emerald-500 text-white dark:text-slate-950 text-xs sm:text-sm font-semibold hover:bg-slate-800 dark:hover:bg-emerald-400 transition-colors whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 cursor-pointer"
+            >
+              <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 shrink-0" aria-hidden="true">
+                <path
+                  d="M12.031 2c-5.516 0-9.969 4.453-9.969 9.969 0 1.766.469 3.484 1.344 5l-1.406 5.156 5.281-1.375a9.92 9.92 0 0 0 4.75 1.219h.004c5.512 0 9.965-4.453 9.965-9.969 0-2.656-1.035-5.156-2.914-7.035A9.888 9.888 0 0 0 12.031 2zm5.805 14.172c-.246.691-1.43 1.324-1.984 1.406-.508.074-1.152.105-1.855-.121-.426-.137-.977-.32-1.676-.621-2.945-1.273-4.867-4.242-5.016-4.438-.145-.195-1.195-1.59-1.195-3.035 0-1.445.754-2.156 1.023-2.449.266-.293.582-.367.777-.367.195 0 .391.004.562.012.18.008.422-.07.66.504.246.59.836 2.043.91 2.191.074.148.125.32.023.516-.098.195-.148.316-.297.488-.148.172-.312.383-.445.516-.148.148-.305.309-.133.605.176.297.777 1.281 1.668 2.074 1.148 1.023 2.113 1.34 2.41 1.488.297.148.469.125.645-.074.172-.199.742-.867.941-1.164.199-.297.398-.246.668-.148.273.098 1.727.816 2.023.965.297.148.496.223.566.344.074.125.074.719-.172 1.41z"
+                />
+              </svg>
+              <span>Contact / WhatsApp</span>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <main id="top" class="relative z-10 flex-1">
+        <!-- Hero Showcase Section -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-10 sm:pt-14 sm:pb-12">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch">
+            <!-- Left Column: Studio Proposition -->
+            <div class="lg:col-span-7 flex flex-col justify-center">
+              <p
+                class="text-xs sm:text-sm font-medium text-emerald-700 dark:text-emerald-400 tracking-wide mb-3"
+              >
+                Official Android App Showcase · Google Play Publisher
+              </p>
+
+              <h1
+                class="font-display font-bold tracking-tight text-slate-950 dark:text-white leading-[1.08] mb-5"
+                style="font-size: clamp(2.15rem, 4vw, 3.35rem); text-wrap: balance"
+              >
+                Smart Tools, Productivity &amp; Games for Everyone
+              </h1>
+
+              <p
+                class="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl leading-relaxed mb-7 dark:tracking-[0.01em]"
+              >
+                Technical App Studio builds fast, focused Android applications for workshop
+                operations, multi-format document reading, CAD plotting, construction planning,
+                and classic strategy play.
+              </p>
+
+              <div class="flex flex-wrap items-center gap-3 mb-8">
+                <a
+                  href="#apps"
+                  class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 dark:bg-emerald-500 dark:hover:bg-emerald-400 text-white dark:text-slate-950 font-semibold text-sm transition-colors whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500"
+                >
+                  <span>Browse All 6 Apps</span>
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="w-4 h-4"
+                    aria-hidden="true"
+                  >
+                    <path d="M7 7h10v10" />
+                    <path d="M7 17 17 7" />
+                  </svg>
+                </a>
+
+                <button
+                  type="button"
+                  data-open-contact
+                  class="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-white/80 dark:bg-slate-900/60 hover:bg-slate-100 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200 font-semibold text-sm transition-colors whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 cursor-pointer"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    class="w-4 h-4 text-emerald-600 dark:text-emerald-400"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M12.031 2c-5.516 0-9.969 4.453-9.969 9.969 0 1.766.469 3.484 1.344 5l-1.406 5.156 5.281-1.375a9.92 9.92 0 0 0 4.75 1.219h.004c5.512 0 9.965-4.453 9.965-9.969 0-2.656-1.035-5.156-2.914-7.035A9.888 9.888 0 0 0 12.031 2zm5.805 14.172c-.246.691-1.43 1.324-1.984 1.406-.508.074-1.152.105-1.855-.121-.426-.137-.977-.32-1.676-.621-2.945-1.273-4.867-4.242-5.016-4.438-.145-.195-1.195-1.59-1.195-3.035 0-1.445.754-2.156 1.023-2.449.266-.293.582-.367.777-.367.195 0 .391.004.562.012.18.008.422-.07.66.504.246.59.836 2.043.91 2.191.074.148.125.32.023.516-.098.195-.148.316-.297.488-.148.172-.312.383-.445.516-.148.148-.305.309-.133.605.176.297.777 1.281 1.668 2.074 1.148 1.023 2.113 1.34 2.41 1.488.297.148.469.125.645-.074.172-.199.742-.867.941-1.164.199-.297.398-.246.668-.148.273.098 1.727.816 2.023.965.297.148.496.223.566.344.074.125.074.719-.172 1.41z"
+                    />
+                  </svg>
+                  <span>Contact / WhatsApp</span>
+                </button>
+              </div>
+
+              <!-- Quiet Unboxed Studio Metadata Strip -->
+              <div
+                class="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs sm:text-sm text-slate-500 dark:text-slate-400 tabular-nums"
+              >
+                <span>6 Published Android Apps</span>
+                <span aria-hidden="true">·</span>
+                <span>4 Specialized Categories</span>
+                <span aria-hidden="true">·</span>
+                <span>Direct Google Play Distribution</span>
+              </div>
+            </div>
+
+            <!-- Right Column: Interactive Storefront Preview Matrix -->
+            <div class="lg:col-span-5 flex">
+              <div
+                class="w-full rounded-2xl border border-slate-200/80 dark:border-slate-800/80 bg-white/70 dark:bg-slate-900/55 backdrop-blur-xl p-5 sm:p-6 shadow-[0_8px_32px_-8px_rgba(15,23,42,0.08)] dark:shadow-[0_12px_40px_-10px_rgba(0,0,0,0.5)] flex flex-col justify-between"
+              >
+                <div
+                  class="flex items-center justify-between gap-2 pb-4 border-b border-slate-200/70 dark:border-slate-800/80"
+                >
+                  <div>
+                    <h2 class="font-display text-sm font-semibold text-slate-900 dark:text-white">
+                      Studio Release Suite
+                    </h2>
+                    <p class="text-xs text-slate-500 dark:text-slate-400">
+                      Select any app to inspect highlights
+                    </p>
+                  </div>
+                  <span
+                    class="text-xs font-medium text-emerald-700 dark:text-emerald-400 tabular-nums"
+                  >
+                    6 / 6 Live
+                  </span>
+                </div>
+
+                <div id="heroPreviewGrid" class="grid grid-cols-3 gap-3 my-5"></div>
+
+                <div
+                  class="pt-3 border-t border-slate-200/70 dark:border-slate-800/80 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400"
+                >
+                  <span>Compatible with Android Smartphones &amp; Tablets</span>
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="w-4 h-4 shrink-0 text-slate-400"
+                    aria-hidden="true"
+                  >
+                    <rect width="14" height="20" x="5" y="2" rx="2" ry="2" />
+                    <path d="M12 18h.01" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Storefront Toolbar: Live Search + Category Filter Buttons -->
+        <section
+          id="apps"
+          aria-label="Published Android Apps"
+          class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16"
+        >
+          <div
+            class="rounded-2xl border border-slate-200/80 dark:border-slate-800/80 bg-white/75 dark:bg-slate-900/60 backdrop-blur-xl p-4 sm:p-5 mb-8 shadow-[0_4px_24px_-6px_rgba(15,23,42,0.05)]"
+          >
+            <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+              <!-- Live Search Input -->
+              <div class="relative flex-1 max-w-xl">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400"
+                  aria-hidden="true"
+                >
+                  <circle cx="11" cy="11" r="8" />
+                  <path d="m21 21-4.3-4.3" />
+                </svg>
+                <input
+                  id="searchInput"
+                  type="search"
+                  placeholder="Search apps by name, file type, or feature..."
+                  aria-label="Search Android apps"
+                  class="w-full h-11 pl-10 pr-10 rounded-xl border border-slate-200 dark:border-slate-700/80 bg-slate-50/80 dark:bg-slate-950/60 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/70 focus:border-emerald-500 transition-colors"
+                />
+                <button
+                  type="button"
+                  id="clearSearchBtn"
+                  aria-label="Clear search query"
+                  class="hidden absolute right-2.5 top-1/2 -translate-y-1/2 w-7 h-7 items-center justify-center rounded-lg text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 hover:bg-slate-200/60 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="w-4 h-4"
+                    aria-hidden="true"
+                  >
+                    <path d="M18 6 6 18" />
+                    <path d="m6 6 12 12" />
+                  </svg>
+                </button>
+              </div>
+
+              <!-- Category Filter Buttons -->
+              <div
+                id="categoryTabs"
+                role="tablist"
+                aria-label="Filter apps by category"
+                class="flex items-center gap-1.5 overflow-x-auto pb-1 lg:pb-0 p-1 rounded-xl bg-slate-100/90 dark:bg-slate-950/70 border border-slate-200/70 dark:border-slate-800/80"
+              ></div>
+            </div>
+
+            <!-- Quiet Unboxed Result Summary -->
+            <div
+              class="mt-3 pt-3 border-t border-slate-200/60 dark:border-slate-800/60 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 tabular-nums"
+            >
+              <span id="resultsSummary">Showing 6 of 6 apps</span>
+              <button
+                type="button"
+                id="resetFiltersBtn"
+                class="hidden font-medium text-emerald-700 dark:text-emerald-400 hover:underline cursor-pointer"
+              >
+                Reset filters
+              </button>
+            </div>
+          </div>
+
+          <!-- App Showcase Grid -->
+          <div id="appsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+
+          <!-- Empty Search State -->
+          <div
+            id="emptyState"
+            class="hidden rounded-2xl border border-slate-200/80 dark:border-slate-800/80 bg-white/75 dark:bg-slate-900/60 backdrop-blur-xl p-10 text-center"
+          >
+            <p class="font-display text-lg font-semibold text-slate-900 dark:text-white mb-2">
+              No matching apps found
+            </p>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mb-5 max-w-md mx-auto">
+              Try adjusting your search keywords or switching back to all categories.
+            </p>
+            <button
+              type="button"
+              id="emptyResetBtn"
+              class="inline-flex items-center justify-center px-5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 dark:bg-emerald-500 dark:hover:bg-emerald-400 text-white dark:text-slate-950 text-sm font-semibold transition-colors cursor-pointer"
+            >
+              Show All 6 Apps
+            </button>
+          </div>
+        </section>
+
+        <!-- Studio Engineering Standards -->
+        <section id="capabilities" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+          <div class="border-t border-slate-200/80 dark:border-slate-800/80 pt-12">
+            <div class="max-w-2xl mb-8">
+              <p class="text-xs font-medium text-emerald-700 dark:text-emerald-400 tracking-wide mb-2">
+                Studio Craftsmanship
+              </p>
+              <h2
+                class="font-display text-2xl sm:text-3xl font-bold tracking-tight text-slate-950 dark:text-white"
+                style="text-wrap: balance"
+              >
+                Built for everyday clarity and field reliability
+              </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div
+                class="rounded-2xl border border-slate-200/80 dark:border-slate-800/80 bg-white/65 dark:bg-slate-900/50 backdrop-blur-xl p-6"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="w-5 h-5 text-emerald-600 dark:text-emerald-400 mb-3"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"
+                  />
+                </svg>
+                <h3 class="font-display text-base font-semibold text-slate-900 dark:text-white mb-1.5">
+                  01. Fast, Lightweight Builds
+                </h3>
+                <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                  Optimized Android binaries that launch immediately and run smoothly across
+                  modern and budget devices alike.
+                </p>
+              </div>
+
+              <div
+                class="rounded-2xl border border-slate-200/80 dark:border-slate-800/80 bg-white/65 dark:bg-slate-900/50 backdrop-blur-xl p-6"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="w-5 h-5 text-emerald-600 dark:text-emerald-400 mb-3"
+                  aria-hidden="true"
+                >
+                  <path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z" />
+                  <path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65" />
+                  <path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65" />
+                </svg>
+                <h3 class="font-display text-base font-semibold text-slate-900 dark:text-white mb-1.5">
+                  02. Offline-Ready Workflows
+                </h3>
+                <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                  Core calculators, document readers, PLT viewers, and machine records work
+                  reliably on job sites and factory floors without constant connectivity.
+                </p>
+              </div>
+
+              <div
+                class="rounded-2xl border border-slate-200/80 dark:border-slate-800/80 bg-white/65 dark:bg-slate-900/50 backdrop-blur-xl p-6"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="w-5 h-5 text-emerald-600 dark:text-emerald-400 mb-3"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"
+                  />
+                  <path d="m9 12 2 2 4-4" />
+                </svg>
+                <h3 class="font-display text-base font-semibold text-slate-900 dark:text-white mb-1.5">
+                  03. Focused Privacy &amp; UX
+                </h3>
+                <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed">
+                  Clean Material-inspired layouts with zero unnecessary clutter, keeping your
+                  files, calculations, and records right at hand.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Contact / WhatsApp Banner -->
+        <section id="contact" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16">
+          <div
+            class="rounded-2xl border border-slate-200/85 dark:border-slate-800/85 bg-white/75 dark:bg-slate-900/65 backdrop-blur-xl p-6 sm:p-10 flex flex-col md:flex-row md:items-center justify-between gap-6"
+          >
+            <div class="max-w-xl">
+              <p class="text-xs font-medium text-emerald-700 dark:text-emerald-400 mb-2">
+                Support &amp; Custom Android Inquiries
+              </p>
+              <h2 class="font-display text-2xl sm:text-3xl font-bold tracking-tight text-slate-950 dark:text-white mb-2">
+                Need help with an app or custom business tool?
+              </h2>
+              <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+                Reach out to Technical App Studio directly for app support, feature
+                suggestions, or tailored Android utility development.
+              </p>
+            </div>
+
+            <div class="flex flex-wrap items-center gap-3 shrink-0">
+              <button
+                type="button"
+                data-open-contact
+                class="inline-flex items-center gap-2.5 px-5 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 dark:bg-emerald-500 dark:hover:bg-emerald-400 text-white dark:text-slate-950 text-sm font-semibold transition-colors whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 cursor-pointer"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 shrink-0" aria-hidden="true">
+                  <path
+                    d="M12.031 2c-5.516 0-9.969 4.453-9.969 9.969 0 1.766.469 3.484 1.344 5l-1.406 5.156 5.281-1.375a9.92 9.92 0 0 0 4.75 1.219h.004c5.512 0 9.965-4.453 9.965-9.969 0-2.656-1.035-5.156-2.914-7.035A9.888 9.888 0 0 0 12.031 2zm5.805 14.172c-.246.691-1.43 1.324-1.984 1.406-.508.074-1.152.105-1.855-.121-.426-.137-.977-.32-1.676-.621-2.945-1.273-4.867-4.242-5.016-4.438-.145-.195-1.195-1.59-1.195-3.035 0-1.445.754-2.156 1.023-2.449.266-.293.582-.367.777-.367.195 0 .391.004.562.012.18.008.422-.07.66.504.246.59.836 2.043.91 2.191.074.148.125.32.023.516-.098.195-.148.316-.297.488-.148.172-.312.383-.445.516-.148.148-.305.309-.133.605.176.297.777 1.281 1.668 2.074 1.148 1.023 2.113 1.34 2.41 1.488.297.148.469.125.645-.074.172-.199.742-.867.941-1.164.199-.297.398-.246.668-.148.273.098 1.727.816 2.023.965.297.148.496.223.566.344.074.125.074.719-.172 1.41z"
+                  />
+                </svg>
+                <span>Contact / WhatsApp</span>
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <!-- Clean Quiet Footer -->
+      <footer
+        class="relative z-10 border-t border-slate-200/80 dark:border-slate-800/80 bg-white/60 dark:bg-[#070B12]/70 backdrop-blur-xl"
+      >
+        <div
+          class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex flex-col sm:flex-row items-center justify-between gap-4"
+        >
+          <div class="flex items-center gap-2.5">
+            <svg
+              viewBox="0 0 40 40"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              class="w-6 h-6 shrink-0"
+              aria-hidden="true"
+            >
+              <rect width="40" height="40" rx="10" class="fill-slate-900 dark:fill-emerald-500" />
+              <path
+                d="M11 13.5C11 12.6716 11.6716 12 12.5 12H27.5C28.3284 12 29 12.6716 29 13.5V16.5C29 17.3284 28.3284 18 27.5 18H22.75V28.5C22.75 29.3284 22.0784 30 21.25 30H18.75C17.9216 30 17.25 29.3284 17.25 28.5V18H12.5C11.6716 18 11 17.3284 11 16.5V13.5Z"
+                class="fill-white dark:fill-slate-950"
+              />
+              <circle cx="28.5" cy="26.5" r="3" class="fill-emerald-400 dark:fill-slate-950" />
+            </svg>
+            <span class="font-display text-sm font-semibold text-slate-900 dark:text-white">
+              Technical App Studio
+            </span>
+          </div>
+
+          <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 text-center">
+            &copy; 2026 Technical App Studio. All rights reserved.
+          </p>
+
+          <div class="flex items-center gap-5 text-xs font-medium text-slate-600 dark:text-slate-300">
+            <a href="#apps" class="hover:text-slate-950 dark:hover:text-white">Apps</a>
+            <button
+              type="button"
+              data-open-contact
+              class="hover:text-slate-950 dark:hover:text-white cursor-pointer"
+            >
+              Contact / WhatsApp
+            </button>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- App Detail Modal -->
+    <div
+      id="appModal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="app-modal-title"
+      class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/60 backdrop-blur-sm"
+    >
+      <div
+        id="appModalCard"
+        class="relative w-full max-w-lg rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-7 shadow-2xl"
+      >
+        <button
+          type="button"
+          id="closeAppModalBtn"
+          aria-label="Close app details"
+          class="absolute right-4 top-4 w-9 h-9 inline-flex items-center justify-center rounded-xl text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="w-4 h-4"
+            aria-hidden="true"
+          >
+            <path d="M18 6 6 18" />
+            <path d="m6 6 12 12" />
+          </svg>
+        </button>
+
+        <div class="flex items-center gap-4 mb-5 pr-8">
+          <div id="modalIconWrap" class="shrink-0"></div>
+          <div>
+            <span
+              id="modalCategory"
+              class="inline-block text-xs font-medium text-emerald-700 dark:text-emerald-400 mb-1"
+            ></span>
+            <h3
+              id="app-modal-title"
+              class="font-display text-xl sm:text-2xl font-bold text-slate-950 dark:text-white"
+            ></h3>
+          </div>
+        </div>
+
+        <p
+          id="modalDescription"
+          class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-5"
+        ></p>
+
+        <div class="mb-6">
+          <h4 class="text-xs font-semibold text-slate-900 dark:text-white uppercase tracking-wider mb-3">
+            Key Highlights
+          </h4>
+          <ul id="modalHighlights" class="space-y-2.5"></ul>
+        </div>
+
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a
+            id="modalPlayLink"
+            href="#"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex-1 inline-flex items-center justify-center gap-2.5 px-5 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 dark:bg-emerald-500 dark:hover:bg-emerald-400 text-white dark:text-slate-950 text-sm font-semibold transition-colors"
+          >
+            <svg viewBox="0 0 24 24" fill="none" class="w-4 h-4 shrink-0" aria-hidden="true">
+              <path
+                d="M3.609 1.814L13.792 12 3.61 22.186a1.75 1.75 0 0 1-.61-1.335V3.149c0-.52.231-.995.609-1.335z"
+                fill="#32BBFF"
+              />
+              <path
+                d="M17.213 8.579L13.792 12l3.421 3.421 3.864-2.199c.903-.514.903-1.93 0-2.444l-3.864-2.199z"
+                fill="#FFCE00"
+              />
+              <path
+                d="M3.609 22.186L13.792 12l3.421 3.421-12.137 6.906c-.553.314-1.148.248-1.467-.141z"
+                fill="#F14336"
+              />
+              <path
+                d="M3.609 1.814c.319-.389.914-.455 1.467-.141L17.213 8.58 13.792 12 3.609 1.814z"
+                fill="#00F076"
+              />
+            </svg>
+            <span>Get it on Google Play</span>
+          </a>
+          <button
+            type="button"
+            id="modalCloseSecondaryBtn"
+            class="px-5 py-3 rounded-xl border border-slate-200 dark:border-slate-700 text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact / WhatsApp Modal -->
+    <div
+      id="contactModal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="contact-modal-title"
+      class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/60 backdrop-blur-sm"
+    >
+      <div
+        id="contactModalCard"
+        class="relative w-full max-w-md rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 sm:p-7 shadow-2xl"
+      >
+        <button
+          type="button"
+          id="closeContactModalBtn"
+          aria-label="Close contact dialog"
+          class="absolute right-4 top-4 w-9 h-9 inline-flex items-center justify-center rounded-xl text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="w-4 h-4"
+            aria-hidden="true"
+          >
+            <path d="M18 6 6 18" />
+            <path d="m6 6 12 12" />
+          </svg>
+        </button>
+
+        <div class="flex items-center gap-3 mb-4">
+          <svg
+            viewBox="0 0 40 40"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-9 h-9 shrink-0"
+            aria-hidden="true"
+          >
+            <rect width="40" height="40" rx="10" class="fill-slate-900 dark:fill-emerald-500" />
+            <path
+              d="M11 13.5C11 12.6716 11.6716 12 12.5 12H27.5C28.3284 12 29 12.6716 29 13.5V16.5C29 17.3284 28.3284 18 27.5 18H22.75V28.5C22.75 29.3284 22.0784 30 21.25 30H18.75C17.9216 30 17.25 29.3284 17.25 28.5V18H12.5C11.6716 18 11 17.3284 11 16.5V13.5Z"
+              class="fill-white dark:fill-slate-950"
+            />
+            <circle cx="28.5" cy="26.5" r="3" class="fill-emerald-400 dark:fill-slate-950" />
+          </svg>
+          <div>
+            <h3
+              id="contact-modal-title"
+              class="font-display text-lg font-bold text-slate-950 dark:text-white"
+            >
+              Contact Technical App Studio
+            </h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400">
+              Support, Feedback &amp; Inquiries
+            </p>
+          </div>
+        </div>
+
+        <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-5">
+          Connect directly on WhatsApp for quick app support, business licensing, or
+          collaboration requests.
+        </p>
+
+        <div class="space-y-3">
+          <!-- Replace "#" with your WhatsApp link, e.g. https://wa.me/15551234567 -->
+          <a
+            id="whatsappActionLink"
+            href="#"
+            class="w-full inline-flex items-center justify-center gap-2.5 px-4 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 dark:bg-emerald-500 dark:hover:bg-emerald-400 text-white dark:text-slate-950 text-sm font-semibold transition-colors"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 shrink-0" aria-hidden="true">
+              <path
+                d="M12.031 2c-5.516 0-9.969 4.453-9.969 9.969 0 1.766.469 3.484 1.344 5l-1.406 5.156 5.281-1.375a9.92 9.92 0 0 0 4.75 1.219h.004c5.512 0 9.965-4.453 9.965-9.969 0-2.656-1.035-5.156-2.914-7.035A9.888 9.888 0 0 0 12.031 2zm5.805 14.172c-.246.691-1.43 1.324-1.984 1.406-.508.074-1.152.105-1.855-.121-.426-.137-.977-.32-1.676-.621-2.945-1.273-4.867-4.242-5.016-4.438-.145-.195-1.195-1.59-1.195-3.035 0-1.445.754-2.156 1.023-2.449.266-.293.582-.367.777-.367.195 0 .391.004.562.012.18.008.422-.07.66.504.246.59.836 2.043.91 2.191.074.148.125.32.023.516-.098.195-.148.316-.297.488-.148.172-.312.383-.445.516-.148.148-.305.309-.133.605.176.297.777 1.281 1.668 2.074 1.148 1.023 2.113 1.34 2.41 1.488.297.148.469.125.645-.074.172-.199.742-.867.941-1.164.199-.297.398-.246.668-.148.273.098 1.727.816 2.023.965.297.148.496.223.566.344.074.125.074.719-.172 1.41z"
+              />
+            </svg>
+            <span>Chat on WhatsApp</span>
+          </a>
+
+          <button
+            type="button"
+            id="contactCloseSecondaryBtn"
+            class="w-full px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-700 text-sm font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Non-intrusive Toast Notification -->
+    <div
+      id="toast"
+      role="status"
+      aria-live="polite"
+      class="hidden fixed bottom-5 right-5 z-50 max-w-sm rounded-xl border border-slate-200 dark:border-slate-700 bg-white/95 dark:bg-slate-900/95 backdrop-blur-md px-4 py-3 shadow-lg items-start gap-3 text-xs sm:text-sm text-slate-700 dark:text-slate-200"
+    >
+      <span id="toastText" class="flex-1 leading-snug"></span>
+      <button
+        type="button"
+        id="closeToastBtn"
+        aria-label="Dismiss notification"
+        class="text-slate-400 hover:text-slate-700 dark:hover:text-white cursor-pointer"
+      >
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="w-4 h-4"
+          aria-hidden="true"
+        >
+          <path d="M18 6 6 18" />
+          <path d="m6 6 12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Vanilla JavaScript Application Logic -->
+    <script>
+      (function () {
+        var CATEGORIES = ['All', 'Business', 'Productivity', 'Tools', 'Board'];
+
+        var STUDIO_APPS = [
+          {
+            id: 'machine-record-tracker',
+            title: 'Machine Record Tracker',
+            category: 'Business',
+            description:
+              'Easily manage, track, and maintain service records and operations for industrial and stitching machines.',
+            iconKey: 'machine-record',
+            playStoreUrl:
+              'https://play.google.com/store/apps/details?id=com.aistudio.machinerecordtracker.rkpz',
+            highlights: [
+              'Log daily machine maintenance, part replacements, and technician notes',
+              'Track stitching unit operational status across workshop floors',
+              'Instant service history lookup organized by machine serial or bay',
+            ],
+            platformNote: 'Android · Offline-Ready Workshop Ledger',
+            accentClass: 'from-amber-500/15 to-slate-500/10',
+          },
+          {
+            id: 'all-documents-reader',
+            title: 'All Documents Reader',
+            category: 'Productivity',
+            description:
+              'A fast, all-in-one file viewer to open and read PDF, Word, Excel, and text documents seamlessly on your phone.',
+            iconKey: 'documents-reader',
+            playStoreUrl:
+              'https://play.google.com/store/apps/details?id=com.aistudio.omnireader.mfxkpl',
+            highlights: [
+              'Unified viewer for PDF, DOCX, XLSX, PPT, and plain TXT files',
+              'Smart folder indexing with instant filename search',
+              'Clean full-screen reading mode with smooth pinch-to-zoom',
+            ],
+            platformNote: 'Android · Multi-Format Document Suite',
+            accentClass: 'from-blue-500/15 to-indigo-500/10',
+          },
+          {
+            id: 'all-in-one-calculator',
+            title: 'All-in-One Calculator',
+            category: 'Tools',
+            description:
+              'Perform everyday math, scientific calculations, unit conversions, and financial estimates in one smart tool.',
+            iconKey: 'calculator',
+            playStoreUrl:
+              'https://play.google.com/store/apps/details?id=com.sajid.allinonecalculator.offcal',
+            highlights: [
+              'Standard, scientific, and engineering calculation modes',
+              'Built-in converter for length, mass, area, currency, and temperature',
+              'Loan, EMI, discount, and percentage financial calculators',
+            ],
+            platformNote: 'Android · Everyday & Scientific Utility',
+            accentClass: 'from-emerald-500/15 to-teal-500/10',
+          },
+          {
+            id: 'plt-file-viewer',
+            title: 'PLT File Viewer',
+            category: 'Productivity',
+            description:
+              'View, zoom, and inspect HPGL (.plt) plotter and CAD vector design files directly on your Android device.',
+            iconKey: 'plt-viewer',
+            playStoreUrl:
+              'https://play.google.com/store/apps/details?id=com.aistudio.pltviewer.xywzqp',
+            highlights: [
+              'Accurate HPGL (.plt) vector line and pen-color rendering',
+              'High-precision pan and zoom for inspecting garment & CAD patterns',
+              'Open plotter files directly from device storage or messaging apps',
+            ],
+            platformNote: 'Android · CAD & HPGL Plotter Inspector',
+            accentClass: 'from-cyan-500/15 to-blue-500/10',
+          },
+          {
+            id: 'construction-cost-calculator',
+            title: 'Construction Cost Calculator',
+            category: 'Tools',
+            description:
+              'Estimate building materials, cement, bricks, and total house construction expenses accurately before you build.',
+            iconKey: 'construction-cost',
+            playStoreUrl:
+              'https://play.google.com/store/apps/details?id=com.aistudio.constcalc.mepvsy',
+            highlights: [
+              'Calculate cement bags, sand, aggregate, steel, and brick quantities',
+              'Break down grey structure vs. finishing budgets by square footage',
+              'Save and compare project material estimates on-site',
+            ],
+            platformNote: 'Android · Civil & Home Cost Estimator',
+            accentClass: 'from-sky-500/15 to-amber-500/10',
+          },
+          {
+            id: 'dots-and-boxes-premium',
+            title: 'Dots & Boxes Premium Edition',
+            category: 'Board',
+            description:
+              'Enjoy the classic pen-and-paper strategy board game with sleek neon visuals, smart AI, and multiplayer modes.',
+            iconKey: 'dots-boxes',
+            playStoreUrl:
+              'https://play.google.com/store/apps/details?id=com.sajid.dots.and.boxes',
+            highlights: [
+              'Crisp neon grid aesthetics with smooth haptic-friendly line placement',
+              'Adaptive single-player AI with multiple strategic difficulty levels',
+              'Pass-and-play local multiplayer on multiple board sizes',
+            ],
+            platformNote: 'Android · Classic Strategy Board Game',
+            accentClass: 'from-violet-500/15 to-cyan-500/10',
+          },
+        ];
+
+        var svgUid = 0;
+
+        function getAppIconSvg(iconKey, sizeClass) {
+          var uid = ++svgUid;
+          switch (iconKey) {
+            case 'machine-record':
+              return (
+                '<svg viewBox="0 0 64 64" fill="none" class="' +
+                sizeClass +
+                '" aria-hidden="true">' +
+                '<defs><linearGradient id="mrt-bg-' +
+                uid +
+                '" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">' +
+                '<stop offset="0%" stop-color="#1E293B"/><stop offset="100%" stop-color="#0F172A"/>' +
+                '</linearGradient></defs>' +
+                '<rect width="64" height="64" rx="16" fill="url(#mrt-bg-' +
+                uid +
+                ')"/>' +
+                '<rect x="12" y="42" width="40" height="7" rx="2.5" fill="#F59E0B"/>' +
+                '<path d="M42 42V22C42 18.6863 39.3137 16 36 16H19C16.7909 16 15 17.7909 15 20V25C15 26.1046 15.8954 27 17 27H23V24H35V42H42Z" fill="#E2E8F0"/>' +
+                '<rect x="18" y="27" width="3" height="7" rx="1" fill="#94A3B8"/>' +
+                '<path d="M19.5 34V40.5" stroke="#38BDF8" stroke-width="1.8" stroke-linecap="round"/>' +
+                '<path d="M16 40.5H23" stroke="#CBD5E1" stroke-width="2" stroke-linecap="round"/>' +
+                '<circle cx="45" cy="24" r="5" fill="#334155" stroke="#F59E0B" stroke-width="2"/>' +
+                '<circle cx="45" cy="24" r="1.5" fill="#F59E0B"/>' +
+                '<rect x="27" y="11" width="5" height="5" rx="1" fill="#F59E0B"/>' +
+                '<path d="M27 32H32M27 36H32" stroke="#64748B" stroke-width="2" stroke-linecap="round"/>' +
+                '</svg>'
+              );
+            case 'documents-reader':
+              return (
+                '<svg viewBox="0 0 64 64" fill="none" class="' +
+                sizeClass +
+                '" aria-hidden="true">' +
+                '<defs><linearGradient id="adr-bg-' +
+                uid +
+                '" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">' +
+                '<stop offset="0%" stop-color="#1D4ED8"/><stop offset="100%" stop-color="#1E3A8A"/>' +
+                '</linearGradient></defs>' +
+                '<rect width="64" height="64" rx="16" fill="url(#adr-bg-' +
+                uid +
+                ')"/>' +
+                '<path d="M12 20C12 17.7909 13.7909 16 16 16H26L29.5 20H48C50.2091 20 52 21.7909 52 24V44C52 46.2091 50.2091 48 48 48H16C13.7909 48 12 46.2091 12 44V20Z" fill="#60A5FA"/>' +
+                '<rect x="17" y="18" width="14" height="18" rx="2" fill="#EF4444"/>' +
+                '<rect x="25" y="15" width="14" height="20" rx="2" fill="#F8FAFC"/>' +
+                '<rect x="33" y="18" width="14" height="18" rx="2" fill="#10B981"/>' +
+                '<path d="M28 20H36M28 24H36M28 28H33" stroke="#1E40AF" stroke-width="1.8" stroke-linecap="round"/>' +
+                '<path d="M12 26C12 24.8954 12.8954 24 14 24H50C51.1046 24 52 24.8954 52 26V44C52 46.2091 50.2091 48 48 48H16C13.7909 48 12 46.2091 12 44V26Z" fill="#3B82F6"/>' +
+                '<path d="M20 35H44M20 40H36" stroke="#DBEAFE" stroke-width="2.2" stroke-linecap="round"/>' +
+                '</svg>'
+              );
+            case 'calculator':
+              return (
+                '<svg viewBox="0 0 64 64" fill="none" class="' +
+                sizeClass +
+                '" aria-hidden="true">' +
+                '<defs><linearGradient id="calc-bg-' +
+                uid +
+                '" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">' +
+                '<stop offset="0%" stop-color="#0F172A"/><stop offset="100%" stop-color="#064E3B"/>' +
+                '</linearGradient></defs>' +
+                '<rect width="64" height="64" rx="16" fill="url(#calc-bg-' +
+                uid +
+                ')"/>' +
+                '<rect x="15" y="10" width="34" height="44" rx="6" fill="#1E293B" stroke="#34D399" stroke-width="1.5"/>' +
+                '<rect x="19" y="14" width="26" height="10" rx="2.5" fill="#022C22" stroke="#10B981" stroke-width="1"/>' +
+                '<path d="M34 19H41M39 17V21" stroke="#34D399" stroke-width="1.6" stroke-linecap="round"/>' +
+                '<circle cx="24" cy="19" r="1.4" fill="#34D399"/>' +
+                '<circle cx="28.5" cy="19" r="1.4" fill="#34D399"/>' +
+                '<rect x="19" y="28" width="6" height="5" rx="1.5" fill="#475569"/>' +
+                '<rect x="27" y="28" width="6" height="5" rx="1.5" fill="#475569"/>' +
+                '<rect x="35" y="28" width="10" height="5" rx="1.5" fill="#0EA5E9"/>' +
+                '<rect x="19" y="36" width="6" height="5" rx="1.5" fill="#475569"/>' +
+                '<rect x="27" y="36" width="6" height="5" rx="1.5" fill="#475569"/>' +
+                '<rect x="35" y="36" width="10" height="5" rx="1.5" fill="#0EA5E9"/>' +
+                '<rect x="19" y="44" width="6" height="5" rx="1.5" fill="#475569"/>' +
+                '<rect x="27" y="44" width="6" height="5" rx="1.5" fill="#475569"/>' +
+                '<rect x="35" y="44" width="10" height="5" rx="1.5" fill="#10B981"/>' +
+                '</svg>'
+              );
+            case 'plt-viewer':
+              return (
+                '<svg viewBox="0 0 64 64" fill="none" class="' +
+                sizeClass +
+                '" aria-hidden="true">' +
+                '<defs><linearGradient id="plt-bg-' +
+                uid +
+                '" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">' +
+                '<stop offset="0%" stop-color="#0C4A6E"/><stop offset="100%" stop-color="#0F172A"/>' +
+                '</linearGradient></defs>' +
+                '<rect width="64" height="64" rx="16" fill="url(#plt-bg-' +
+                uid +
+                ')"/>' +
+                '<path d="M16 12V52M26.6 12V52M37.3 12V52M48 12V52M12 16H52M12 26.6H52M12 37.3H52M12 48H52" stroke="#38BDF8" stroke-opacity="0.22" stroke-width="1"/>' +
+                '<path d="M15 44C19 26 29 22 36 32C41 39 47 34 49 20" stroke="#22D3EE" stroke-width="2.5" stroke-linecap="round"/>' +
+                '<rect x="13" y="42" width="4" height="4" rx="1" fill="#F8FAFC"/>' +
+                '<rect x="34" y="30" width="4" height="4" rx="1" fill="#F8FAFC"/>' +
+                '<path d="M42 13L51 22L38 35L29 36L30 27L42 13Z" fill="#F8FAFC" stroke="#0284C7" stroke-width="1.5" stroke-linejoin="round"/>' +
+                '<path d="M39 16L48 25" stroke="#0284C7" stroke-width="1.5"/>' +
+                '</svg>'
+              );
+            case 'construction-cost':
+              return (
+                '<svg viewBox="0 0 64 64" fill="none" class="' +
+                sizeClass +
+                '" aria-hidden="true">' +
+                '<defs><linearGradient id="ccc-bg-' +
+                uid +
+                '" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">' +
+                '<stop offset="0%" stop-color="#1E3A8A"/><stop offset="100%" stop-color="#0F172A"/>' +
+                '</linearGradient></defs>' +
+                '<rect width="64" height="64" rx="16" fill="url(#ccc-bg-' +
+                uid +
+                ')"/>' +
+                '<path d="M16 12V52M32 12V52M48 12V52M12 20H52M12 36H52M12 50H52" stroke="#93C5FD" stroke-opacity="0.18" stroke-width="1"/>' +
+                '<rect x="20" y="16" width="5" height="34" fill="#F59E0B"/>' +
+                '<path d="M12 20H50L46 16H14L12 20Z" fill="#FBBF24"/>' +
+                '<rect x="11" y="20" width="6" height="4" rx="1" fill="#CBD5E1"/>' +
+                '<path d="M22.5 11L44 16M22.5 11L14 16" stroke="#FDE68A" stroke-width="1.4"/>' +
+                '<path d="M41 20V31" stroke="#E2E8F0" stroke-width="1.6"/>' +
+                '<rect x="35" y="31" width="12" height="8" rx="1.5" fill="#38BDF8"/>' +
+                '<rect x="14" y="48" width="36" height="4" rx="1" fill="#E2E8F0"/>' +
+                '</svg>'
+              );
+            case 'dots-boxes':
+              return (
+                '<svg viewBox="0 0 64 64" fill="none" class="' +
+                sizeClass +
+                '" aria-hidden="true">' +
+                '<defs><linearGradient id="db-bg-' +
+                uid +
+                '" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">' +
+                '<stop offset="0%" stop-color="#18181B"/><stop offset="100%" stop-color="#09090B"/>' +
+                '</linearGradient></defs>' +
+                '<rect width="64" height="64" rx="16" fill="url(#db-bg-' +
+                uid +
+                ')"/>' +
+                '<rect x="16" y="16" width="16" height="16" fill="#06B6D4" fill-opacity="0.24"/>' +
+                '<rect x="32" y="32" width="16" height="16" fill="#F59E0B" fill-opacity="0.24"/>' +
+                '<path d="M16 16H32M16 16V32M32 16V32M16 32H32" stroke="#22D3EE" stroke-width="2.6" stroke-linecap="round"/>' +
+                '<path d="M32 32H48M32 32V48M48 32V48M32 48H48" stroke="#FBBF24" stroke-width="2.6" stroke-linecap="round"/>' +
+                '<path d="M32 16H48" stroke="#3F3F46" stroke-width="2" stroke-dasharray="3 3" stroke-linecap="round"/>' +
+                '<path d="M16 32V48H32" stroke="#10B981" stroke-width="2.2" stroke-linecap="round"/>' +
+                '<circle cx="16" cy="16" r="3" fill="#F8FAFC"/>' +
+                '<circle cx="32" cy="16" r="3" fill="#F8FAFC"/>' +
+                '<circle cx="48" cy="16" r="3" fill="#71717A"/>' +
+                '<circle cx="16" cy="32" r="3" fill="#F8FAFC"/>' +
+                '<circle cx="32" cy="32" r="3" fill="#22D3EE"/>' +
+                '<circle cx="48" cy="32" r="3" fill="#F8FAFC"/>' +
+                '<circle cx="16" cy="48" r="3" fill="#10B981"/>' +
+                '<circle cx="32" cy="48" r="3" fill="#F8FAFC"/>' +
+                '<circle cx="48" cy="48" r="3" fill="#FBBF24"/>' +
+                '</svg>'
+              );
+          }
+          return '';
+        }
+
+        var GOOGLE_PLAY_ICON =
+          '<svg viewBox="0 0 24 24" fill="none" class="w-4 h-4 shrink-0" aria-hidden="true">' +
+          '<path d="M3.609 1.814L13.792 12 3.61 22.186a1.75 1.75 0 0 1-.61-1.335V3.149c0-.52.231-.995.609-1.335z" fill="#32BBFF"/>' +
+          '<path d="M17.213 8.579L13.792 12l3.421 3.421 3.864-2.199c.903-.514.903-1.93 0-2.444l-3.864-2.199z" fill="#FFCE00"/>' +
+          '<path d="M3.609 22.186L13.792 12l3.421 3.421-12.137 6.906c-.553.314-1.148.248-1.467-.141z" fill="#F14336"/>' +
+          '<path d="M3.609 1.814c.319-.389.914-.455 1.467-.141L17.213 8.58 13.792 12 3.609 1.814z" fill="#00F076"/>' +
+          '</svg>';
+
+        var activeCategory = 'All';
+        var searchQuery = '';
+        var toastTimer = null;
+
+        var root = document.documentElement;
+        var themeToggleBtn = document.getElementById('themeToggleBtn');
+        var heroPreviewGrid = document.getElementById('heroPreviewGrid');
+        var categoryTabsEl = document.getElementById('categoryTabs');
+        var appsGridEl = document.getElementById('appsGrid');
+        var searchInput = document.getElementById('searchInput');
+        var clearSearchBtn = document.getElementById('clearSearchBtn');
+        var resultsSummary = document.getElementById('resultsSummary');
+        var resetFiltersBtn = document.getElementById('resetFiltersBtn');
+        var emptyResetBtn = document.getElementById('emptyResetBtn');
+        var emptyStateEl = document.getElementById('emptyState');
+
+        var appModal = document.getElementById('appModal');
+        var appModalCard = document.getElementById('appModalCard');
+        var modalIconWrap = document.getElementById('modalIconWrap');
+        var modalCategory = document.getElementById('modalCategory');
+        var modalTitle = document.getElementById('app-modal-title');
+        var modalDescription = document.getElementById('modalDescription');
+        var modalHighlights = document.getElementById('modalHighlights');
+        var modalPlayLink = document.getElementById('modalPlayLink');
+
+        var contactModal = document.getElementById('contactModal');
+        var contactModalCard = document.getElementById('contactModalCard');
+        var whatsappActionLink = document.getElementById('whatsappActionLink');
+
+        var toastEl = document.getElementById('toast');
+        var toastTextEl = document.getElementById('toastText');
+
+        // Theme Toggle
+        function setDarkMode(enableDark) {
+          root.classList.toggle('dark', enableDark);
+          themeToggleBtn.setAttribute(
+            'aria-label',
+            enableDark ? 'Switch to light mode' : 'Switch to dark mode'
+          );
+          themeToggleBtn.setAttribute(
+            'title',
+            enableDark ? 'Switch to light mode' : 'Switch to dark mode'
+          );
+          try {
+            localStorage.setItem('tas-theme', enableDark ? 'dark' : 'light');
+          } catch (e) {}
+        }
+
+        themeToggleBtn.addEventListener('click', function () {
+          setDarkMode(!root.classList.contains('dark'));
+        });
+
+        function showToast(msg) {
+          toastTextEl.textContent = msg;
+          toastEl.classList.remove('hidden');
+          toastEl.classList.add('flex');
+          if (toastTimer) clearTimeout(toastTimer);
+          toastTimer = setTimeout(function () {
+            toastEl.classList.add('hidden');
+            toastEl.classList.remove('flex');
+          }, 3600);
+        }
+
+        document.getElementById('closeToastBtn').addEventListener('click', function () {
+          toastEl.classList.add('hidden');
+          toastEl.classList.remove('flex');
+        });
+
+        function findAppById(id) {
+          for (var i = 0; i < STUDIO_APPS.length; i++) {
+            if (STUDIO_APPS[i].id === id) return STUDIO_APPS[i];
+          }
+          return null;
+        }
+
+        function openAppModal(app) {
+          modalIconWrap.innerHTML = getAppIconSvg(
+            app.iconKey,
+            'w-16 h-16 rounded-2xl shadow-md shrink-0'
+          );
+          modalCategory.textContent = app.category + ' · Technical App Studio';
+          modalTitle.textContent = app.title;
+          modalDescription.textContent = app.description;
+
+          var highlightsHtml = '';
+          for (var i = 0; i < app.highlights.length; i++) {
+            highlightsHtml +=
+              '<li class="flex items-start gap-2.5 text-sm text-slate-600 dark:text-slate-300">' +
+              '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>' +
+              '<span>' +
+              app.highlights[i] +
+              '</span>' +
+              '</li>';
+          }
+          modalHighlights.innerHTML = highlightsHtml;
+
+          modalPlayLink.setAttribute('href', app.playStoreUrl);
+          appModal.classList.remove('hidden');
+        }
+
+        function closeAppModal() {
+          appModal.classList.add('hidden');
+        }
+
+        function openContactModal() {
+          contactModal.classList.remove('hidden');
+        }
+
+        function closeContactModal() {
+          contactModal.classList.add('hidden');
+        }
+
+        // Render Hero Preview Matrix
+        function renderHeroPreview() {
+          var html = '';
+          for (var i = 0; i < STUDIO_APPS.length; i++) {
+            var app = STUDIO_APPS[i];
+            html +=
+              '<button type="button" data-preview-id="' +
+              app.id +
+              '" class="group flex flex-col items-center text-center p-2.5 rounded-xl border border-transparent hover:border-slate-200 dark:hover:border-slate-700/80 hover:bg-slate-100/80 dark:hover:bg-slate-800/60 transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 cursor-pointer">' +
+              getAppIconSvg(
+                app.iconKey,
+                'w-12 h-12 sm:w-14 sm:h-14 rounded-xl shadow-sm group-hover:scale-105 transition-transform duration-150'
+              ) +
+              '<span class="mt-2 text-[11px] font-medium text-slate-700 dark:text-slate-300 line-clamp-1 w-full">' +
+              app.title +
+              '</span>' +
+              '</button>';
+          }
+          heroPreviewGrid.innerHTML = html;
+
+          heroPreviewGrid.querySelectorAll('[data-preview-id]').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+              var app = findAppById(btn.getAttribute('data-preview-id'));
+              if (app) openAppModal(app);
+            });
+          });
+        }
+
+        // Category Counts
+        function getCategoryCount(cat) {
+          if (cat === 'All') return STUDIO_APPS.length;
+          var count = 0;
+          for (var i = 0; i < STUDIO_APPS.length; i++) {
+            if (STUDIO_APPS[i].category === cat) count++;
+          }
+          return count;
+        }
+
+        function renderCategoryTabs() {
+          var html = '';
+          for (var i = 0; i < CATEGORIES.length; i++) {
+            var cat = CATEGORIES[i];
+            var isActive = activeCategory === cat;
+            var btnClass = isActive
+              ? 'bg-slate-900 text-white dark:bg-emerald-500 dark:text-slate-950 shadow-sm'
+              : 'text-slate-600 dark:text-slate-300 hover:text-slate-950 dark:hover:text-white hover:bg-white/60 dark:hover:bg-slate-800/70';
+            var countClass = isActive
+              ? 'text-slate-300 dark:text-slate-900/80'
+              : 'text-slate-400 dark:text-slate-500';
+            html +=
+              '<button type="button" role="tab" aria-selected="' +
+              (isActive ? 'true' : 'false') +
+              '" data-category="' +
+              cat +
+              '" class="px-3.5 py-2 rounded-lg text-xs sm:text-sm font-medium transition-colors whitespace-nowrap shrink-0 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 ' +
+              btnClass +
+              '">' +
+              cat +
+              ' <span class="ml-1 tabular-nums text-[11px] ' +
+              countClass +
+              '">' +
+              getCategoryCount(cat) +
+              '</span></button>';
+          }
+          categoryTabsEl.innerHTML = html;
+
+          categoryTabsEl.querySelectorAll('[data-category]').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+              activeCategory = btn.getAttribute('data-category');
+              renderCategoryTabs();
+              renderApps();
+            });
+          });
+        }
+
+        function getFilteredApps() {
+          var q = searchQuery.trim().toLowerCase();
+          return STUDIO_APPS.filter(function (app) {
+            var matchesCategory = activeCategory === 'All' || app.category === activeCategory;
+            if (!matchesCategory) return false;
+            if (!q) return true;
+            if (app.title.toLowerCase().indexOf(q) !== -1) return true;
+            if (app.category.toLowerCase().indexOf(q) !== -1) return true;
+            if (app.description.toLowerCase().indexOf(q) !== -1) return true;
+            for (var i = 0; i < app.highlights.length; i++) {
+              if (app.highlights[i].toLowerCase().indexOf(q) !== -1) return true;
+            }
+            return false;
+          });
+        }
+
+        function renderApps() {
+          var filtered = getFilteredApps();
+          var trimmed = searchQuery.trim();
+
+          // Update clear button & summary
+          if (searchQuery.length > 0) {
+            clearSearchBtn.classList.remove('hidden');
+            clearSearchBtn.classList.add('inline-flex');
+          } else {
+            clearSearchBtn.classList.add('hidden');
+            clearSearchBtn.classList.remove('inline-flex');
+          }
+
+          var summaryText = 'Showing ' + filtered.length + ' of ' + STUDIO_APPS.length + ' apps';
+          if (activeCategory !== 'All') summaryText += ' in ' + activeCategory;
+          if (trimmed) summaryText += ' matching "' + trimmed + '"';
+          resultsSummary.textContent = summaryText;
+
+          if (trimmed || activeCategory !== 'All') {
+            resetFiltersBtn.classList.remove('hidden');
+          } else {
+            resetFiltersBtn.classList.add('hidden');
+          }
+
+          if (filtered.length === 0) {
+            appsGridEl.classList.add('hidden');
+            emptyStateEl.classList.remove('hidden');
+            appsGridEl.innerHTML = '';
+            return;
+          }
+
+          emptyStateEl.classList.add('hidden');
+          appsGridEl.classList.remove('hidden');
+
+          var html = '';
+          for (var i = 0; i < filtered.length; i++) {
+            var app = filtered[i];
+            html +=
+              '<article class="group relative flex flex-col justify-between rounded-2xl border border-slate-200/85 dark:border-slate-800/85 bg-white/75 dark:bg-slate-900/60 backdrop-blur-xl p-6 shadow-[0_4px_24px_-6px_rgba(15,23,42,0.06)] dark:shadow-[0_10px_30px_-10px_rgba(0,0,0,0.45)] transition-all duration-200 hover:-translate-y-1 hover:border-emerald-500/45 dark:hover:border-emerald-400/45">' +
+              '<div aria-hidden="true" class="pointer-events-none absolute inset-x-0 top-0 h-28 rounded-t-2xl bg-gradient-to-br ' +
+              app.accentClass +
+              ' opacity-60 dark:opacity-45"></div>' +
+              '<div class="relative">' +
+              '<div class="flex items-start justify-between gap-4 mb-5">' +
+              '<button type="button" data-open-app="' +
+              app.id +
+              '" aria-label="Inspect ' +
+              app.title +
+              '" class="rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 cursor-pointer">' +
+              getAppIconSvg(
+                app.iconKey,
+                'w-16 h-16 rounded-2xl shadow-md group-hover:scale-[1.03] transition-transform duration-200'
+              ) +
+              '</button>' +
+              '<span class="inline-flex items-center px-2.5 py-1 rounded-md border border-slate-200/90 dark:border-slate-700/90 bg-white/80 dark:bg-slate-950/60 text-xs font-medium text-slate-700 dark:text-slate-300 whitespace-nowrap shrink-0">' +
+              app.category +
+              '</span>' +
+              '</div>' +
+              '<h3 class="font-display text-xl font-bold tracking-tight text-slate-950 dark:text-white mb-2">' +
+              '<button type="button" data-open-app="' +
+              app.id +
+              '" class="text-left hover:text-emerald-700 dark:hover:text-emerald-400 transition-colors focus-visible:outline-none focus-visible:underline cursor-pointer">' +
+              app.title +
+              '</button>' +
+              '</h3>' +
+              '<p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed line-clamp-2 mb-5 dark:tracking-[0.01em]">' +
+              app.description +
+              '</p>' +
+              '</div>' +
+              '<div class="relative pt-4 border-t border-slate-200/70 dark:border-slate-800/70 flex flex-col gap-3">' +
+              '<div class="flex items-center justify-between text-xs text-slate-500 dark:text-slate-400">' +
+              '<span class="truncate">' +
+              app.platformNote +
+              '</span>' +
+              '<button type="button" data-open-app="' +
+              app.id +
+              '" class="font-semibold text-slate-700 dark:text-slate-200 hover:text-emerald-600 dark:hover:text-emerald-400 whitespace-nowrap shrink-0 ml-2 cursor-pointer">App Details</button>' +
+              '</div>' +
+              '<a href="' +
+              app.playStoreUrl +
+              '" target="_blank" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2.5 px-4 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 dark:bg-white dark:hover:bg-slate-200 text-white dark:text-slate-950 text-sm font-semibold transition-colors whitespace-nowrap shrink-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500">' +
+              GOOGLE_PLAY_ICON +
+              '<span>Get it on Google Play</span>' +
+              '</a>' +
+              '</div>' +
+              '</article>';
+          }
+          appsGridEl.innerHTML = html;
+
+          appsGridEl.querySelectorAll('[data-open-app]').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+              var app = findAppById(btn.getAttribute('data-open-app'));
+              if (app) openAppModal(app);
+            });
+          });
+        }
+
+        function resetFilters() {
+          searchQuery = '';
+          searchInput.value = '';
+          activeCategory = 'All';
+          renderCategoryTabs();
+          renderApps();
+          searchInput.focus();
+        }
+
+        searchInput.addEventListener('input', function (e) {
+          searchQuery = e.target.value;
+          renderApps();
+        });
+
+        clearSearchBtn.addEventListener('click', function () {
+          searchQuery = '';
+          searchInput.value = '';
+          renderApps();
+          searchInput.focus();
+        });
+
+        resetFiltersBtn.addEventListener('click', resetFilters);
+        emptyResetBtn.addEventListener('click', resetFilters);
+
+        // Modal wiring
+        document.getElementById('closeAppModalBtn').addEventListener('click', closeAppModal);
+        document.getElementById('modalCloseSecondaryBtn').addEventListener('click', closeAppModal);
+        appModal.addEventListener('click', function (e) {
+          if (e.target === appModal) closeAppModal();
+        });
+        appModalCard.addEventListener('click', function (e) {
+          e.stopPropagation();
+        });
+
+        document.querySelectorAll('[data-open-contact]').forEach(function (btn) {
+          btn.addEventListener('click', openContactModal);
+        });
+        document.getElementById('closeContactModalBtn').addEventListener('click', closeContactModal);
+        document
+          .getElementById('contactCloseSecondaryBtn')
+          .addEventListener('click', closeContactModal);
+        contactModal.addEventListener('click', function (e) {
+          if (e.target === contactModal) closeContactModal();
+        });
+        contactModalCard.addEventListener('click', function (e) {
+          e.stopPropagation();
+        });
+
+        whatsappActionLink.addEventListener('click', function (e) {
+          if (whatsappActionLink.getAttribute('href') === '#') {
+            e.preventDefault();
+            showToast('WhatsApp placeholder: Replace href="#" with https://wa.me/YOUR_NUMBER.');
+          }
+        });
+
+        // Keyboard shortcuts ("/" focuses search, "Escape" closes modals)
+        window.addEventListener('keydown', function (e) {
+          var activeTag = document.activeElement ? document.activeElement.tagName : '';
+          if (e.key === '/' && activeTag !== 'INPUT' && activeTag !== 'TEXTAREA') {
+            e.preventDefault();
+            searchInput.focus();
+          } else if (e.key === 'Escape') {
+            closeAppModal();
+            closeContactModal();
+          }
+        });
+
+        // Initial Render
+        renderHeroPreview();
+        renderCategoryTabs();
+        renderApps();
+      })();
+    </script>
   </body>
 </html>
-
