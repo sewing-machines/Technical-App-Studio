@@ -43,23 +43,33 @@
     <!-- Tailwind CSS Play CDN (zero-build, works directly on GitHub Pages) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            fontFamily: {
-              display: ['Outfit', 'system-ui', '-apple-system', 'sans-serif'],
-              sans: ['Plus Jakarta Sans', 'system-ui', '-apple-system', 'sans-serif'],
+      if (typeof tailwind !== 'undefined') {
+        tailwind.config = {
+          darkMode: 'class',
+          theme: {
+            extend: {
+              fontFamily: {
+                display: ['Outfit', 'system-ui', '-apple-system', 'sans-serif'],
+                sans: ['Plus Jakarta Sans', 'system-ui', '-apple-system', 'sans-serif'],
+              },
             },
           },
-        },
-      };
+        };
+      }
     </script>
 
     <style>
       html {
         font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
         scroll-behavior: smooth;
+      }
+      body {
+        background-color: #f8fafc;
+        color: #0f172a;
+      }
+      html.dark body {
+        background-color: #070b12;
+        color: #f8fafc;
       }
       h1,
       h2,
@@ -1480,9 +1490,17 @@
         });
 
         // Initial Render
-        renderHeroPreview();
-        renderCategoryTabs();
-        renderApps();
+        function initApp() {
+          renderHeroPreview();
+          renderCategoryTabs();
+          renderApps();
+        }
+
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', initApp);
+        } else {
+          initApp();
+        }
       })();
     </script>
   </body>
