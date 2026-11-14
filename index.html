@@ -412,10 +412,10 @@
                   Apps &amp; Software
                 </h2>
                 <span class="hub-count block text-[11px] sm:text-xs font-semibold tabular-nums mt-0.5">
-                  8 Apps
+                  6 Apps
                 </span>
                 <p class="hidden sm:block text-[11px] truncate mt-0.5 hub-subtext">
-                  Play Store &amp; web tools
+                  Published on Google Play
                 </p>
               </div>
             </button>
@@ -443,10 +443,10 @@
                   Machine Videos
                 </h2>
                 <span class="hub-count block text-[11px] sm:text-xs font-semibold tabular-nums mt-0.5">
-                  3 Videos
+                  37 Videos
                 </span>
                 <p class="hidden sm:block text-[11px] truncate mt-0.5 hub-subtext">
-                  Repairs &amp; timing demos
+                  Machine modification clips
                 </p>
               </div>
             </button>
@@ -474,10 +474,10 @@
                   Machines &amp; XYZ
                 </h2>
                 <span class="hub-count block text-[11px] sm:text-xs font-semibold tabular-nums mt-0.5">
-                  4 Projects
+                  Coming Soon
                 </span>
                 <p class="hidden sm:block text-[11px] truncate mt-0.5 hub-subtext">
-                  Hardware &amp; photo gallery
+                  Ready for real photos
                 </p>
               </div>
             </button>
@@ -505,7 +505,7 @@
                   Parts Books
                 </h2>
                 <span class="hub-count block text-[11px] sm:text-xs font-semibold tabular-nums mt-0.5">
-                  409 PDFs
+                  406 PDFs
                 </span>
                 <p class="hidden sm:block text-[11px] truncate mt-0.5 hub-subtext">
                   12 machine brands
@@ -640,7 +640,7 @@
             <div
               class="mt-3 pt-3 border-t border-slate-200/60 dark:border-slate-800/60 flex items-center justify-between text-xs text-slate-500 dark:text-slate-400 tabular-nums"
             >
-              <span id="resultsSummary">Showing 8 of 8 apps across 5 categories</span>
+              <span id="resultsSummary">Showing 6 of 6 apps across 4 categories</span>
               <button
                 type="button"
                 id="resetFiltersBtn"
@@ -682,23 +682,23 @@
           id="panel-videos"
           role="tabpanel"
           aria-label="Machine and Tech Videos"
-          class="hidden hub-panel max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16"
+          class="hidden hub-panel max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 pb-16"
         >
-          <div class="mb-6 flex flex-col sm:flex-row sm:items-end justify-between gap-3">
+          <div class="mb-5 flex flex-col sm:flex-row sm:items-end justify-between gap-2.5">
             <div>
               <p class="text-xs font-medium text-emerald-700 dark:text-emerald-400 mb-1">
-                Technical Walkthroughs &amp; Field Demos
+                Workshop Field Clips &amp; Demos
               </p>
               <h2 class="font-display text-2xl sm:text-3xl font-bold tracking-tight text-slate-950 dark:text-white">
-                Machine &amp; Innovation Videos
+                Machine Modification Videos
               </h2>
             </div>
-            <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400">
-              Stitching machine repairs, timing guides &amp; automation tests
+            <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 tabular-nums">
+              37 workshop modification videos · Preview, Play &amp; Download
             </p>
           </div>
 
-          <div id="videosGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+          <div id="videosGrid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-2 sm:gap-4"></div>
         </section>
 
         <!-- ===================================================================
@@ -774,7 +774,7 @@
               <input
                 id="partsSearchInput"
                 type="search"
-                placeholder="Search 409 models (DDL-8700, LK-1850, VC008)..."
+                placeholder="Search 406 models (DDL-8700, LK-1850, VC008)..."
                 aria-label="Search machine parts book by model or website"
                 class="w-full h-11 pl-10 pr-10 rounded-xl border border-slate-200 dark:border-slate-700/80 bg-white/85 dark:bg-slate-900/75 text-sm text-slate-900 dark:text-slate-100 placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-amber-500/70 focus:border-amber-500 transition-colors"
               />
@@ -829,7 +829,7 @@
                   Machine Parts Books
                 </span>
                 <span id="partsModeBooksCount" class="block text-xs sm:text-sm font-semibold tabular-nums mt-0.5 opacity-85">
-                  409 PDFs · 12 Machine Brands
+                  406 PDFs · 12 Machine Brands
                 </span>
               </span>
             </button>
@@ -1611,7 +1611,7 @@
       (function () {
         /* -------------------------------------------------------------------
            1. ALL APPS (Organized into Separate Categories)
-           Includes all 6 published Google Play apps + 2 Web & Beta tools.
+           Includes all 6 published Google Play apps.
            ------------------------------------------------------------------- */
         var APP_CATEGORIES = [
           'All',
@@ -1619,7 +1619,6 @@
           'Productivity',
           'Tools',
           'Board',
-          'Web & Beta',
         ];
 
         var ALL_APPS = [
@@ -1744,84 +1743,344 @@
             platformNote: 'Android · Google Play',
             accentClass: 'from-violet-500/15 to-cyan-500/10',
           },
-
-          // --- CATEGORY: Web & Beta (Unlisted / Live Browser Apps) ---
-          {
-            id: 'pattern-stitch-estimator',
-            title: 'Garment Pattern & Stitch Estimator (Beta)',
-            category: 'Web & Beta',
-            type: 'web',
-            description:
-              'Browser-based utility for calculating thread consumption, stitch density (SPI), and pattern seam allowance estimates.',
-            iconKey: 'web-globe',
-            actionLabel: 'Open Live App',
-            // PASTE YOUR .ai.studio OR LIVE WEB APP URL BELOW (replace "#")
-            actionUrl: '#',
-            highlights: [
-              'Instant thread yardage & bobbin change calculations',
-              'Runs directly in desktop and mobile browsers with zero install',
-            ],
-            platformNote: 'Web Tool · Browser Preview',
-            accentClass: 'from-sky-500/15 to-emerald-500/10',
-          },
-          {
-            id: 'floor-diagnostics-helper',
-            title: 'Floor Machine Diagnostics Helper (Web Tool)',
-            category: 'Web & Beta',
-            type: 'web',
-            description:
-              'Interactive troubleshooting checklist and fault-code reference built for sewing floor mechanics and line supervisors.',
-            iconKey: 'web-globe',
-            actionLabel: 'Open Live App',
-            // PASTE YOUR .ai.studio OR LIVE WEB APP URL BELOW (replace "#")
-            actionUrl: '#',
-            highlights: [
-              'Quick fault-code lookup for servo motors & pattern controllers',
-              'Step-by-step preventive inspection checklists',
-            ],
-            platformNote: 'Web Tool · Beta Release',
-            accentClass: 'from-teal-500/15 to-cyan-500/10',
-          },
         ];
 
         /* -------------------------------------------------------------------
-           2. MACHINE & INNOVATION VIDEOS
-           Paste "youtubeId" (e.g. "abcd1234xyz") for embedded player OR
-           paste "watchUrl" (e.g. "https://youtu.be/...") for direct link.
+           2. MACHINE MODIFICATION VIDEOS (37 Real Cloudflare R2 MP4 Clips)
            ------------------------------------------------------------------- */
         var STUDIO_VIDEOS = [
           {
-            id: 'video-hook-timing',
-            title: 'Industrial Lockstitch Hook & Needle Timing Calibration',
-            category: 'Machine Maintenance',
-            duration: 'Step-by-Step Tutorial',
-            description:
-              'Practical bench walkthrough covering needle-bar height, rotary hook clearance, and skipped-stitch troubleshooting on heavy-duty machines.',
-            // PASTE YOUTUBE ID OR DIRECT URL BELOW
-            youtubeId: '',
-            watchUrl: '#',
+            id: 'vid-01',
+            num: '01',
+            title: 'Pneumatic Cylinder Fixture Setup',
+            recordedDate: '2022-09-29',
+            duration: '01:02',
+            posterUrl: './assets/video-thumbs/01.webp',
+            videoUrl: 'https://pub-dcfbf26a7f4e400a970b6df041e7a3f5.r2.dev/machine%20modification%20videos/20220929_133251.mp4',
           },
           {
-            id: 'video-pattern-machine',
-            title: 'Automated Pattern Sewer Feeding & Clamp Synchronization',
-            category: 'Automation Demo',
-            duration: 'Workshop Demo',
-            description:
-              'Demonstrating synchronized pneumatic clamp timing, XY stepper feed accuracy, and cycle-time optimization for repeatable stitching.',
-            // PASTE YOUTUBE ID OR DIRECT URL BELOW
-            youtubeId: '',
-            watchUrl: '#',
+            id: 'vid-02',
+            num: '02',
+            title: '',
+            recordedDate: '2024-07-29',
+            duration: '01:15',
+            posterUrl: './assets/video-thumbs/02.webp',
+            videoUrl: 'https://pub-dcfbf26a7f4e400a970b6df041e7a3f5.r2.dev/machine%20modification%20videos/20240729_131713.mp4',
           },
           {
-            id: 'video-servo-retrofit',
-            title: 'Custom Sensor & Microcontroller Retrofit on Sewing Head',
-            category: 'Hardware Innovation',
-            duration: 'R&D Showcase',
-            description:
-              'Field test of a custom optical thread-break detector and automated presser-foot lift controller running on an industrial stitching line.',
-            // PASTE YOUTUBE ID OR DIRECT URL BELOW
-            youtubeId: '',
-            watchUrl: '#',
+            id: 'vid-03',
+            num: '03',
+            title: '',
+            recordedDate: '2024-08-10',
+            duration: '00:34',
+            posterUrl: './assets/video-thumbs/03.webp',
+            videoUrl: 'https://pub-dcfbf26a7f4e400a970b6df041e7a3f5.r2.dev/machine%20modification%20videos/20240810_161142.mp4',
+          },
+          {
+            id: 'vid-04',
+            num: '04',
+            title: 'Lockstitch Attachment Screen Demo',
+            recordedDate: '2024-03-29',
+            duration: '00:17',
+            posterUrl: './assets/video-thumbs/04.webp',
+            videoUrl: 'https://pub-dcfbf26a7f4e400a970b6df041e7a3f5.r2.dev/machine%20modification%20videos/Screenrecorder-2024-03-29-10-41-04-625.mp4',
+          },
+          {
+            id: 'vid-05',
+            num: '05',
+            title: '',
+            recordedDate: '2024-07-29',
+            duration: '00:46',
+            posterUrl: './assets/video-thumbs/05.webp',
+            videoUrl: 'https://pub-dcfbf26a7f4e400a970b6df041e7a3f5.r2.dev/machine%20modification%20videos/VID-20240729-WA0067.mp4',
+          },
+          {
+            id: 'vid-06',
+            num: '06',
+            title: '',
+            recordedDate: '2024-07-29',
+            duration: '00:52',
+            posterUrl: './assets/video-thumbs/06.webp',
+            videoUrl: 'https://pub-dcfbf26a7f4e400a970b6df041e7a3f5.r2.dev/machine%20modification%20videos/VID-20240729-WA0068.mp4',
+          },
+          {
+            id: 'vid-07',
+            num: '07',
+            title: '',
+            recordedDate: '2024-07-29',
+            duration: '01:04',
+            posterUrl: './assets/video-thumbs/07.webp',
+            videoUrl: 'https://pub-dcfbf26a7f4e400a970b6df041e7a3f5.r2.dev/machine%20modification%20videos/VID-20240729-WA0069.mp4',
+          },
+          {
+            id: 'vid-08',
+            num: '08',
+            title: 'Pneumatic Cylinder Fixture Setup',
+            recordedDate: '2024-07-29',
+            duration: '01:02',
+            posterUrl: './assets/video-thumbs/08.webp',
+            videoUrl: 'https://pub-dcfbf26a7f4e400a970b6df041e7a3f5.r2.dev/machine%20modification%20videos/VID-20240729-WA0086.mp4',
+          },
+          {
+            id: 'vid-09',
+            num: '09',
+            title: '',
+            recordedDate: '2024-07-29',
+            duration: '00:54',
+            posterUrl: './assets/video-thumbs/09.webp',
+            videoUrl: 'https://pub-dcfbf26a7f4e400a970b6df041e7a3f5.r2.dev/machine%20modification%20videos/VID-20240729-WA0088.mp4',
+          },
+          {
+            id: 'vid-10',
+            num: '10',
+            title: '',
+            recordedDate: '2024-07-29',
+            duration: '00:25',
+            posterUrl: './assets/video-thumbs/10.webp',
+            videoUrl: 'https://pub-dcfbf26a7f4e400a970b6df041e7a3f5.r2.dev/machine%20modification%20videos/VID-20240729-WA0089.mp4',
+          },
+          {
+            id: 'vid-11',
+            num: '11',
+            title: '',
+            recordedDate: '2024-07-29',
+            duration: '00:23',
+            posterUrl: './assets/video-thumbs/11.webp',
+            videoUrl: 'https://pub-dcfbf26a7f4e400a970b6df041e7a3f5.r2.dev/machine%20modification%20videos/VID-20240729-WA0090.mp4',
+          },
+          {
+            id: 'vid-12',
+            num: '12',
+            title: '',
+            recordedDate: '2024-07-29',
+            duration: '00:22',
+            posterUrl: './assets/video-thumbs/12.webp',
+            videoUrl: 'https://pub-dcfbf26a7f4e400a970b6df041e7a3f5.r2.dev/machine%20modification%20videos/VID-20240729-WA0093.mp4',
+          },
+          {
+            id: 'vid-13',
+            num: '13',
+            title: '',
+            recordedDate: '2024-07-29',
+            duration: '00:28',
+            posterUrl: './assets/video-thumbs/13.webp',
+            videoUrl: 'https://pub-dcfbf26a7f4e400a970b6df041e7a3f5.r2.dev/machine%20modification%20videos/VID-20240729-WA0095.mp4',
+          },
+          {
+            id: 'vid-14',
+            num: '14',
+            title: 'Custom Metal Pattern Clamp / Jig',
+            recordedDate: '2024-07-29',
+            duration: '00:31',
+            posterUrl: './assets/video-thumbs/14.webp',
+            videoUrl: 'https://pub-dcfbf26a7f4e400a970b6df041e7a3f5.r2.dev/machine%20modification%20videos/VID-20240729-WA0097.mp4',
+          },
+          {
+            id: 'vid-15',
+            num: '15',
+            title: '',
+            recordedDate: '2024-07-29',
+            duration: '01:04',
+            posterUrl: './assets/video-thumbs/15.webp',
+            videoUrl: 'https://pub-dcfbf26a7f4e400a970b6df041e7a3f5.r2.dev/machine%20modification%20videos/VID-20240729-WA0099.mp4',
+          },
+          {
+            id: 'vid-16',
+            num: '16',
+            title: '',
+            recordedDate: '2024-07-29',
+            duration: '00:29',
+            posterUrl: './assets/video-thumbs/16.webp',
+            videoUrl: 'https://pub-dcfbf26a7f4e400a970b6df041e7a3f5.r2.dev/machine%20modification%20videos/VID-20240729-WA0098.mp4',
+          },
+          {
+            id: 'vid-17',
+            num: '17',
+            title: '',
+            recordedDate: '2024-07-29',
+            duration: '00:28',
+            posterUrl: './assets/video-thumbs/17.webp',
+            videoUrl: 'https://pub-dcfbf26a7f4e400a970b6df041e7a3f5.r2.dev/machine%20modification%20videos/VID-20240729-WA0096.mp4',
+          },
+          {
+            id: 'vid-18',
+            num: '18',
+            title: '',
+            recordedDate: '2024-09-09',
+            duration: '00:24',
+            posterUrl: './assets/video-thumbs/18.webp',
+            videoUrl: 'https://pub-dcfbf26a7f4e400a970b6df041e7a3f5.r2.dev/machine%20modification%20videos/VID-20240909-WA0000.mp4',
+          },
+          {
+            id: 'vid-19',
+            num: '19',
+            title: '',
+            recordedDate: '2025-01-02',
+            duration: '00:18',
+            posterUrl: './assets/video-thumbs/19.webp',
+            videoUrl: 'https://pub-dcfbf26a7f4e400a970b6df041e7a3f5.r2.dev/machine%20modification%20videos/VID-20250102-WA0000.mp4',
+          },
+          {
+            id: 'vid-20',
+            num: '20',
+            title: 'Rotary Hook & Timing Bench Adjustment',
+            recordedDate: '2025-01-02',
+            duration: '02:32',
+            posterUrl: './assets/video-thumbs/20.webp',
+            videoUrl: 'https://pub-dcfbf26a7f4e400a970b6df041e7a3f5.r2.dev/machine%20modification%20videos/VID-20250102-WA0001.mp4',
+          },
+          {
+            id: 'vid-21',
+            num: '21',
+            title: '',
+            recordedDate: '2025-01-02',
+            duration: '00:56',
+            posterUrl: './assets/video-thumbs/21.webp',
+            videoUrl: 'https://pub-dcfbf26a7f4e400a970b6df041e7a3f5.r2.dev/machine%20modification%20videos/VID-20250102-WA0002.mp4',
+          },
+          {
+            id: 'vid-22',
+            num: '22',
+            title: '',
+            recordedDate: '2023-09-04',
+            duration: '00:41',
+            posterUrl: './assets/video-thumbs/22.webp',
+            videoUrl: 'https://pub-dcfbf26a7f4e400a970b6df041e7a3f5.r2.dev/machine%20modification%20videos/VID_20230904_171426.mp4',
+          },
+          {
+            id: 'vid-23',
+            num: '23',
+            title: '',
+            recordedDate: '2024-01-18',
+            duration: '00:29',
+            posterUrl: './assets/video-thumbs/23.webp',
+            videoUrl: 'https://pub-dcfbf26a7f4e400a970b6df041e7a3f5.r2.dev/machine%20modification%20videos/VID_20240118_105529.mp4',
+          },
+          {
+            id: 'vid-24',
+            num: '24',
+            title: '',
+            recordedDate: '2024-03-25',
+            duration: '01:04',
+            posterUrl: './assets/video-thumbs/24.webp',
+            videoUrl: 'https://pub-dcfbf26a7f4e400a970b6df041e7a3f5.r2.dev/machine%20modification%20videos/VID_20240325_114912.mp4',
+          },
+          {
+            id: 'vid-25',
+            num: '25',
+            title: '',
+            recordedDate: '2024-03-28',
+            duration: '00:24',
+            posterUrl: './assets/video-thumbs/25.webp',
+            videoUrl: 'https://pub-dcfbf26a7f4e400a970b6df041e7a3f5.r2.dev/machine%20modification%20videos/VID_20240328_102740.mp4',
+          },
+          {
+            id: 'vid-26',
+            num: '26',
+            title: 'Custom Metal Pattern Clamp / Jig',
+            recordedDate: '2024-03-30',
+            duration: '00:31',
+            posterUrl: './assets/video-thumbs/26.webp',
+            videoUrl: 'https://pub-dcfbf26a7f4e400a970b6df041e7a3f5.r2.dev/machine%20modification%20videos/VID_20240330_170902.mp4',
+          },
+          {
+            id: 'vid-27',
+            num: '27',
+            title: '',
+            recordedDate: '2024-04-03',
+            duration: '00:28',
+            posterUrl: './assets/video-thumbs/27.webp',
+            videoUrl: 'https://pub-dcfbf26a7f4e400a970b6df041e7a3f5.r2.dev/machine%20modification%20videos/VID_20240403_114534.mp4',
+          },
+          {
+            id: 'vid-28',
+            num: '28',
+            title: '',
+            recordedDate: '2024-04-04',
+            duration: '00:11',
+            posterUrl: './assets/video-thumbs/28.webp',
+            videoUrl: 'https://pub-dcfbf26a7f4e400a970b6df041e7a3f5.r2.dev/machine%20modification%20videos/VID_20240404_081315.mp4',
+          },
+          {
+            id: 'vid-29',
+            num: '29',
+            title: '',
+            recordedDate: '2024-04-06',
+            duration: '00:32',
+            posterUrl: './assets/video-thumbs/29.webp',
+            videoUrl: 'https://pub-dcfbf26a7f4e400a970b6df041e7a3f5.r2.dev/machine%20modification%20videos/VID_20240406_170448.mp4',
+          },
+          {
+            id: 'vid-30',
+            num: '30',
+            title: '',
+            recordedDate: '2024-04-15',
+            duration: '00:16',
+            posterUrl: './assets/video-thumbs/30.webp',
+            videoUrl: 'https://pub-dcfbf26a7f4e400a970b6df041e7a3f5.r2.dev/machine%20modification%20videos/VID_20240415_120317.mp4',
+          },
+          {
+            id: 'vid-31',
+            num: '31',
+            title: '',
+            recordedDate: '2024-04-23',
+            duration: '00:18',
+            posterUrl: './assets/video-thumbs/31.webp',
+            videoUrl: 'https://pub-dcfbf26a7f4e400a970b6df041e7a3f5.r2.dev/machine%20modification%20videos/VID_20240423_195709.mp4',
+          },
+          {
+            id: 'vid-32',
+            num: '32',
+            title: '',
+            recordedDate: '2024-04-25',
+            duration: '00:15',
+            posterUrl: './assets/video-thumbs/32.webp',
+            videoUrl: 'https://pub-dcfbf26a7f4e400a970b6df041e7a3f5.r2.dev/machine%20modification%20videos/VID_20240425_190455.mp4',
+          },
+          {
+            id: 'vid-33',
+            num: '33',
+            title: 'Fusing / Heat-Press Conveyor Machine',
+            recordedDate: '2024-05-02',
+            duration: '00:18',
+            posterUrl: './assets/video-thumbs/33.webp',
+            videoUrl: 'https://pub-dcfbf26a7f4e400a970b6df041e7a3f5.r2.dev/machine%20modification%20videos/VID_20240502_151343.mp4',
+          },
+          {
+            id: 'vid-34',
+            num: '34',
+            title: 'Fusing / Heat-Press Roller Assembly',
+            recordedDate: '2024-05-02',
+            duration: '00:25',
+            posterUrl: './assets/video-thumbs/34.webp',
+            videoUrl: 'https://pub-dcfbf26a7f4e400a970b6df041e7a3f5.r2.dev/machine%20modification%20videos/VID_20240502_151420.mp4',
+          },
+          {
+            id: 'vid-35',
+            num: '35',
+            title: 'Multi-Machine Workshop Line',
+            recordedDate: '2024-05-06',
+            duration: '00:08',
+            posterUrl: './assets/video-thumbs/35.webp',
+            videoUrl: 'https://pub-dcfbf26a7f4e400a970b6df041e7a3f5.r2.dev/machine%20modification%20videos/VID_20240506_113225.mp4',
+          },
+          {
+            id: 'vid-36',
+            num: '36',
+            title: '',
+            recordedDate: '2024-05-07',
+            duration: '00:28',
+            posterUrl: './assets/video-thumbs/36.webp',
+            videoUrl: 'https://pub-dcfbf26a7f4e400a970b6df041e7a3f5.r2.dev/machine%20modification%20videos/VID_20240507_175238.mp4',
+          },
+          {
+            id: 'vid-37',
+            num: '37',
+            title: '',
+            recordedDate: '2024-05-09',
+            duration: '00:22',
+            posterUrl: './assets/video-thumbs/37.webp',
+            videoUrl: 'https://pub-dcfbf26a7f4e400a970b6df041e7a3f5.r2.dev/machine%20modification%20videos/VID_20240509_132303.mp4',
           },
         ];
 
@@ -1835,76 +2094,7 @@
            ------------------------------------------------------------------- */
         var GALLERY_FILTERS = ['All', 'Machines', 'XYZ Projects'];
 
-        var GALLERY_ITEMS = [
-          {
-            id: 'photo-pattern-sewer',
-            title: 'Programmable CNC Pattern Stitching Machine',
-            group: 'Machines',
-            status: 'Workshop Unit',
-            statusTone: 'emerald',
-            description:
-              'Heavy-duty pattern sewing head tuned for precision leather, strap, and heavy webbing reinforcement stitches.',
-            // PASTE YOUR MACHINE PHOTO PATH OR URL HERE (e.g. "./photos/pattern-machine.jpg")
-            imageUrl: '',
-            fallbackType: 'machine',
-            specs: [
-              'Calibrated hook-to-needle gap & synchronized feeding clamp',
-              'Supports custom HPGL (.plt) pattern templates',
-              'Preventive lubrication & tension check logged in Machine Record Tracker',
-            ],
-          },
-          {
-            id: 'photo-xyz-gantry',
-            title: 'XYZ Programmable Jig & Stepper Retrofit',
-            group: 'XYZ Projects',
-            status: 'Active Prototype',
-            statusTone: 'amber',
-            description:
-              'Custom-machined XYZ gantry fixture paired with closed-loop stepper motion for repeatable pocket, label, and bartack operations.',
-            // PASTE YOUR XYZ PROJECT PHOTO PATH OR URL HERE (e.g. "./photos/xyz-jig.jpg")
-            imageUrl: '',
-            fallbackType: 'xyz',
-            specs: [
-              'Interchangeable quick-lock template plates for multi-size runs',
-              'Microcontroller pulse driver with optical home-limit sensors',
-              'Emergency stop interlock and dual-hand cycle start safety',
-            ],
-          },
-          {
-            id: 'photo-auto-trimmer-pcb',
-            title: 'Embedded Auto-Trimmer & Backtack Controller',
-            group: 'XYZ Projects',
-            status: 'Field Tested',
-            statusTone: 'emerald',
-            description:
-              'Custom microcontroller board adding programmable backtack stitch counts, optical needle positioning, and solenoid thread trimming.',
-            // PASTE YOUR PROJECT PHOTO PATH OR URL HERE (e.g. "./photos/controller-pcb.jpg")
-            imageUrl: '',
-            fallbackType: 'pcb',
-            specs: [
-              '24V DC isolated solenoid driver stage with thermal protection',
-              'Encoder shaft index sync for reliable needle-up/down stops',
-              'Compact OLED parameter panel for floor operators',
-            ],
-          },
-          {
-            id: 'photo-lockstitch-bench',
-            title: 'High-Speed Direct-Drive Lockstitch Assembly',
-            group: 'Machines',
-            status: 'Maintenance Ready',
-            statusTone: 'sky',
-            description:
-              'Refurbished industrial lockstitch workstation with upgraded servo motor control, LED task lighting, and sensor-ready cycle counter.',
-            // PASTE YOUR MACHINE PHOTO PATH OR URL HERE (e.g. "./photos/lockstitch-bench.jpg")
-            imageUrl: '',
-            fallbackType: 'machine',
-            specs: [
-              'Low-vibration servo motor upgrade for energy savings',
-              'Hall-effect stitch hour tracking for preventive servicing',
-              'Balanced bobbin & thread tension setup for uniform seams',
-            ],
-          },
-        ];
+        var GALLERY_ITEMS = [];
 
         /* -------------------------------------------------------------------
            4. SEWING MACHINE PARTS BOOKS (Brands -> Model PDF Buttons)
@@ -3975,69 +4165,54 @@
     ]
   },
   {
-    "id": "more-manuals",
-    "name": "More Manuals",
-    "tagline": "General Electrical, Mechanical & Parts Catalog PDFs",
+    "id": "jin",
+    "name": "JIN (By Juki)",
+    "tagline": "Juki International Series — L-1, M-1, F-1, C-1, B-1, H-1, K-1, NA-10UT & NAP-3020",
     "models": [
       {
-        "model": "elect_eg",
-        "docType": "Electrical Diagram PDF",
-        "url": "https://pub-dcfbf26a7f4e400a970b6df041e7a3f5.r2.dev/Sewing%20machine%20parts%20book/elect_eg.pdf"
-      },
-      {
-        "model": "mecha_eg",
-        "docType": "Mechanical Manual PDF",
-        "url": "https://pub-dcfbf26a7f4e400a970b6df041e7a3f5.r2.dev/Sewing%20machine%20parts%20book/mecha_eg.pdf"
-      },
-      {
-        "model": "part-book-pdf",
-        "docType": "Parts Book PDF",
-        "url": "https://pub-dcfbf26a7f4e400a970b6df041e7a3f5.r2.dev/Sewing%20machine%20parts%20book/part-book-pdf.pdf"
-      },
-      {
-        "model": "partbook",
-        "docType": "Parts Book PDF",
-        "url": "https://pub-dcfbf26a7f4e400a970b6df041e7a3f5.r2.dev/Sewing%20machine%20parts%20book/partbook.pdf"
-      },
-      {
-        "model": "partslist",
-        "docType": "Parts List PDF",
-        "url": "https://pub-dcfbf26a7f4e400a970b6df041e7a3f5.r2.dev/Sewing%20machine%20parts%20book/partslist.pdf"
-      },
-      {
-        "model": "partslist_2K",
-        "docType": "Parts List PDF",
-        "url": "https://pub-dcfbf26a7f4e400a970b6df041e7a3f5.r2.dev/Sewing%20machine%20parts%20book/partslist_2K.pdf"
-      },
-      {
-        "model": "partslist_2k",
-        "docType": "Parts List PDF",
-        "url": "https://pub-dcfbf26a7f4e400a970b6df041e7a3f5.r2.dev/Sewing%20machine%20parts%20book/partslist_2k.pdf"
-      },
-      {
-        "model": "partslist_c_eg",
-        "docType": "Parts List PDF",
-        "url": "https://pub-dcfbf26a7f4e400a970b6df041e7a3f5.r2.dev/Sewing%20machine%20parts%20book/partslist_c_eg.pdf"
-      },
-      {
-        "model": "partslist_eg",
+        "model": "L-1 / M-1 / F-1S / K-1E Parts List (partslist_eg)",
         "docType": "Parts List PDF",
         "url": "https://pub-dcfbf26a7f4e400a970b6df041e7a3f5.r2.dev/Sewing%20machine%20parts%20book/partslist_eg.pdf"
       },
       {
-        "model": "partslist_f_eg",
+        "model": "L-1 Mechanical Parts (mecha_eg)",
+        "docType": "Mechanical Manual PDF",
+        "url": "https://pub-dcfbf26a7f4e400a970b6df041e7a3f5.r2.dev/Sewing%20machine%20parts%20book/mecha_eg.pdf"
+      },
+      {
+        "model": "F-1 / M-1C / M-1F Parts List (partslist_f_eg)",
         "docType": "Parts List PDF",
         "url": "https://pub-dcfbf26a7f4e400a970b6df041e7a3f5.r2.dev/Sewing%20machine%20parts%20book/partslist_f_eg.pdf"
       },
       {
-        "model": "partslists.htm",
+        "model": "F-1 / M-1C / M-1F Parts List C (partslist_c_eg)",
         "docType": "Parts List PDF",
-        "url": "https://pub-dcfbf26a7f4e400a970b6df041e7a3f5.r2.dev/Sewing%20machine%20parts%20book/partslists.htm.pdf"
+        "url": "https://pub-dcfbf26a7f4e400a970b6df041e7a3f5.r2.dev/Sewing%20machine%20parts%20book/partslist_c_eg.pdf"
       },
       {
-        "model": "simple_eg",
+        "model": "F-1 / M-1C / M-1F Electrical Parts (elect_eg)",
+        "docType": "Electrical Diagram PDF",
+        "url": "https://pub-dcfbf26a7f4e400a970b6df041e7a3f5.r2.dev/Sewing%20machine%20parts%20book/elect_eg.pdf"
+      },
+      {
+        "model": "F-1 Quick Parts Guide (simple_eg)",
         "docType": "Parts Book PDF",
         "url": "https://pub-dcfbf26a7f4e400a970b6df041e7a3f5.r2.dev/Sewing%20machine%20parts%20book/simple_eg.pdf"
+      },
+      {
+        "model": "C-1 / C-1A Series Parts List (partslist_2K)",
+        "docType": "Parts List PDF",
+        "url": "https://pub-dcfbf26a7f4e400a970b6df041e7a3f5.r2.dev/Sewing%20machine%20parts%20book/partslist_2K.pdf"
+      },
+      {
+        "model": "B-1E / B-1M / H-1 Series Parts List (partslist_2k)",
+        "docType": "Parts List PDF",
+        "url": "https://pub-dcfbf26a7f4e400a970b6df041e7a3f5.r2.dev/Sewing%20machine%20parts%20book/partslist_2k.pdf"
+      },
+      {
+        "model": "NA-10UT / NAP-3020 Parts List (partslist)",
+        "docType": "Parts List PDF",
+        "url": "https://pub-dcfbf26a7f4e400a970b6df041e7a3f5.r2.dev/Sewing%20machine%20parts%20book/partslist.pdf"
       }
     ]
   }
@@ -4813,60 +4988,108 @@
         /* -------------------------------------------------------------------
            PANEL 2: VIDEOS RENDERER
            ------------------------------------------------------------------- */
+        function downloadR2MediaFile(url, filename, buttonEl, endpointPath) {
+          if (!url) return;
+          var labelEl = buttonEl ? buttonEl.querySelector('.dl-label') : null;
+          var originalLabel = labelEl ? labelEl.textContent : 'Download';
+          if (buttonEl) buttonEl.disabled = true;
+          if (labelEl) labelEl.textContent = 'Starting...';
+
+          checkServerDownloadProxy()
+            .then(function (proxyReady) {
+              if (proxyReady) {
+                var routePath = endpointPath || '/api/download-file';
+                var proxyHref =
+                  routePath +
+                  '?url=' +
+                  encodeURIComponent(url) +
+                  '&filename=' +
+                  encodeURIComponent(filename);
+                triggerHiddenAnchor(proxyHref, filename, false);
+                showToast('Downloading: ' + filename);
+                return;
+              }
+              return fetch(url, { mode: 'cors' })
+                .then(function (res) {
+                  if (!res.ok) throw new Error('Fetch failed');
+                  return res.blob();
+                })
+                .then(function (blob) {
+                  var blobUrl = URL.createObjectURL(blob);
+                  triggerHiddenAnchor(blobUrl, filename, false);
+                  showToast('Downloading: ' + filename);
+                  setTimeout(function () {
+                    URL.revokeObjectURL(blobUrl);
+                  }, 15000);
+                })
+                .catch(function () {
+                  triggerHiddenAnchor(url, filename, true);
+                  showToast('Opened video — use the browser Download option to save.');
+                });
+            })
+            .finally(function () {
+              setTimeout(function () {
+                if (buttonEl) buttonEl.disabled = false;
+                if (labelEl) labelEl.textContent = originalLabel;
+              }, 900);
+            });
+        }
+
         function renderVideos() {
           var html = '';
           for (var i = 0; i < STUDIO_VIDEOS.length; i++) {
             var vid = STUDIO_VIDEOS[i];
-            var hasEmbed = Boolean(vid.youtubeId);
-
-            var mediaPreviewHtml = hasEmbed
-              ? '<iframe class="w-full h-full" src="https://www.youtube.com/embed/' +
-                vid.youtubeId +
-                '" title="' +
-                vid.title +
-                '" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
-              : '<button type="button" data-watch-video="' +
-                vid.id +
-                '" class="w-full h-full flex flex-col items-center justify-center gap-2 text-slate-300 hover:text-white bg-gradient-to-br from-slate-900 via-slate-800 to-slate-950 transition-colors cursor-pointer">' +
-                '<span class="w-12 h-12 rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-400 flex items-center justify-center">' +
-                '<svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 ml-0.5" aria-hidden="true"><path d="m7 4 12 8-12 8V4z"/></svg>' +
-                '</span>' +
-                '<span class="text-xs font-medium text-slate-400">Video Slot (Add YouTube ID or URL)</span>' +
-                '</button>';
+            var fileBasename = decodeURIComponent(vid.videoUrl.split('/').pop() || 'video.mp4');
+            var hasTitle = Boolean(vid.title && vid.title.trim());
 
             html +=
-              '<article class="flex flex-col justify-between rounded-2xl border border-slate-200/85 dark:border-slate-800/85 bg-white/75 dark:bg-slate-900/60 backdrop-blur-xl overflow-hidden shadow-[0_4px_24px_-6px_rgba(15,23,42,0.06)] dark:shadow-[0_10px_30px_-10px_rgba(0,0,0,0.45)] transition-all duration-200 hover:-translate-y-1 hover:border-emerald-500/45">' +
-              '<div class="aspect-video w-full bg-slate-900 border-b border-slate-200/70 dark:border-slate-800/80 overflow-hidden">' +
-              mediaPreviewHtml +
+              '<article class="flex flex-col justify-between rounded-xl sm:rounded-2xl border border-slate-200/85 dark:border-slate-800/85 bg-white/75 dark:bg-slate-900/60 backdrop-blur-xl overflow-hidden shadow-[0_4px_18px_-6px_rgba(15,23,42,0.06)] dark:shadow-[0_8px_24px_-10px_rgba(0,0,0,0.45)] transition-all duration-200 hover:border-rose-500/45">' +
+              '<div class="relative aspect-[4/5] w-full bg-slate-950 border-b border-slate-200/70 dark:border-slate-800/80 overflow-hidden">' +
+              '<video controls preload="none" playsinline poster="' +
+              escapeHtml(vid.posterUrl) +
+              '" class="w-full h-full object-contain bg-slate-950">' +
+              '<source src="' +
+              escapeHtml(vid.videoUrl) +
+              '" type="video/mp4" />' +
+              '</video>' +
+              '<span class="pointer-events-none absolute top-1.5 left-1.5 sm:top-2 sm:left-2 px-1.5 py-0.5 rounded bg-slate-950/80 text-white text-[10px] sm:text-[11px] font-bold tabular-nums border border-white/15">#' +
+              escapeHtml(vid.num) +
+              '</span>' +
+              '<span class="pointer-events-none absolute top-1.5 right-1.5 sm:top-2 sm:right-2 px-1.5 py-0.5 rounded bg-slate-950/80 text-emerald-300 text-[10px] sm:text-[11px] font-semibold tabular-nums border border-white/15">' +
+              escapeHtml(vid.duration) +
+              '</span>' +
               '</div>' +
-              '<div class="p-6 flex-1 flex flex-col justify-between">' +
+              '<div class="p-2.5 sm:p-3.5 flex-1 flex flex-col justify-between gap-2">' +
               '<div>' +
-              '<div class="flex items-center justify-between gap-2 text-xs text-slate-500 dark:text-slate-400 mb-2">' +
-              '<span class="font-medium text-emerald-700 dark:text-emerald-400">' +
-              vid.category +
+              '<div class="flex items-center justify-between gap-1 text-[10px] sm:text-[11px] text-slate-500 dark:text-slate-400">' +
+              '<span class="font-semibold text-rose-600 dark:text-rose-400">#' +
+              escapeHtml(vid.num) +
               '</span>' +
-              '<span>' +
-              vid.duration +
+              '<span class="tabular-nums truncate">' +
+              escapeHtml(vid.recordedDate) +
               '</span>' +
               '</div>' +
-              '<h3 class="font-display text-lg font-bold tracking-tight text-slate-950 dark:text-white mb-2">' +
-              vid.title +
-              '</h3>' +
-              '<p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed mb-5">' +
-              vid.description +
-              '</p>' +
+              (hasTitle
+                ? '<h3 class="font-display text-xs sm:text-sm font-bold tracking-tight text-slate-950 dark:text-white mt-1 leading-snug line-clamp-2">' +
+                  escapeHtml(vid.title) +
+                  '</h3>'
+                : '') +
               '</div>' +
-              '<div class="pt-4 border-t border-slate-200/70 dark:border-slate-800/70">' +
-              '<a href="' +
-              vid.watchUrl +
-              '" data-video-link="' +
-              vid.id +
-              '" target="' +
-              (vid.watchUrl === '#' ? '_self' : '_blank') +
-              '" rel="noopener noreferrer" class="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 dark:bg-white dark:hover:bg-slate-200 text-white dark:text-slate-950 text-sm font-semibold transition-colors whitespace-nowrap">' +
-              '<svg viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4 text-emerald-400 dark:text-emerald-600" aria-hidden="true"><path d="m7 4 12 8-12 8V4z"/></svg>' +
-              '<span>Watch Video</span>' +
-              '</a>' +
+              '<div class="flex items-center gap-1.5 pt-2 border-t border-slate-200/70 dark:border-slate-800/70">' +
+              '<button type="button" data-watch-video="' +
+              escapeHtml(vid.id) +
+              '" class="inline-flex items-center justify-center gap-1 px-2 sm:px-2.5 py-1.5 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 hover:border-slate-900 dark:hover:border-rose-400 text-slate-900 dark:text-slate-100 text-[11px] sm:text-xs font-semibold transition-colors whitespace-nowrap cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-rose-500">' +
+              '<svg viewBox="0 0 24 24" fill="currentColor" class="w-3 h-3 sm:w-3.5 sm:h-3.5 text-rose-500 shrink-0" aria-hidden="true"><path d="m7 4 12 8-12 8V4z"/></svg>' +
+              '<span>View</span>' +
+              '</button>' +
+              '<button type="button" data-download-video="' +
+              escapeHtml(vid.videoUrl) +
+              '" data-download-video-name="' +
+              escapeHtml(fileBasename) +
+              '" class="flex-1 min-w-0 inline-flex items-center justify-center gap-1 px-2 sm:px-2.5 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-700 dark:bg-emerald-500 dark:hover:bg-emerald-400 text-white dark:text-slate-950 text-[11px] sm:text-xs font-semibold transition-colors whitespace-nowrap cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 disabled:opacity-60">' +
+              '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3 h-3 sm:w-3.5 sm:h-3.5 shrink-0" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>' +
+              '<span class="dl-label truncate">Download</span>' +
+              '</button>' +
               '</div>' +
               '</div>' +
               '</article>';
@@ -4876,23 +5099,23 @@
           videosGridEl.querySelectorAll('[data-watch-video]').forEach(function (btn) {
             btn.addEventListener('click', function () {
               var vid = findById(STUDIO_VIDEOS, btn.getAttribute('data-watch-video'));
-              if (vid) openVideoModal(vid);
+              if (vid) {
+                videosGridEl.querySelectorAll('video').forEach(function (v) {
+                  try { v.pause(); } catch (e) {}
+                });
+                openVideoModal(vid);
+              }
             });
           });
 
-          videosGridEl.querySelectorAll('[data-video-link]').forEach(function (link) {
-            link.addEventListener('click', function (e) {
-              var vid = findById(STUDIO_VIDEOS, link.getAttribute('data-video-link'));
-              if (!vid) return;
-              if (vid.youtubeId) {
-                e.preventDefault();
-                openVideoModal(vid);
-              } else if (link.getAttribute('href') === '#') {
-                e.preventDefault();
-                showToast(
-                  vid.title + ': Paste your YouTube ID or URL in STUDIO_VIDEOS inside index.html.'
-                );
-              }
+          videosGridEl.querySelectorAll('[data-download-video]').forEach(function (btn) {
+            btn.addEventListener('click', function () {
+              downloadR2MediaFile(
+                btn.getAttribute('data-download-video'),
+                btn.getAttribute('data-download-video-name'),
+                btn,
+                '/api/download-file'
+              );
             });
           });
         }
@@ -4911,6 +5134,12 @@
         }
 
         function renderGalleryFilterTabs() {
+          if (!GALLERY_ITEMS || GALLERY_ITEMS.length === 0) {
+            galleryFilterTabsEl.classList.add('hidden');
+            galleryFilterTabsEl.innerHTML = '';
+            return;
+          }
+          galleryFilterTabsEl.classList.remove('hidden');
           var html = '';
           for (var i = 0; i < GALLERY_FILTERS.length; i++) {
             var f = GALLERY_FILTERS[i];
@@ -4944,6 +5173,28 @@
           var items = GALLERY_ITEMS.filter(function (item) {
             return activeGalleryFilter === 'All' || item.group === activeGalleryFilter;
           });
+
+          if (items.length === 0) {
+            galleryGridEl.innerHTML =
+              '<div class="col-span-full rounded-2xl border border-slate-200/85 dark:border-slate-800/85 bg-white/75 dark:bg-slate-900/60 backdrop-blur-xl p-8 sm:p-10 text-center">' +
+              '<div class="w-12 h-12 mx-auto mb-3 rounded-2xl bg-sky-500/15 text-sky-600 dark:text-sky-400 flex items-center justify-center">' +
+              '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6" aria-hidden="true"><path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"/><circle cx="12" cy="13" r="3"/></svg>' +
+              '</div>' +
+              '<h3 class="font-display text-lg sm:text-xl font-bold text-slate-950 dark:text-white mb-1.5">Real Machine &amp; XYZ Photos Coming Soon</h3>' +
+              '<p class="text-sm text-slate-600 dark:text-slate-300 max-w-md mx-auto mb-5">All placeholder projects have been removed. Real workshop machine photos and verified XYZ hardware projects will appear here when added.</p>' +
+              '<div class="flex flex-wrap items-center justify-center gap-2.5">' +
+              '<button type="button" data-gallery-go="videos" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-700 text-white text-xs sm:text-sm font-semibold transition-colors cursor-pointer">Watch 37 Machine Videos</button>' +
+              '<button type="button" data-gallery-go="parts-books" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-100 text-xs sm:text-sm font-semibold hover:border-amber-500 transition-colors cursor-pointer">Browse 406 Parts Books</button>' +
+              '</div>' +
+              '</div>';
+
+            galleryGridEl.querySelectorAll('[data-gallery-go]').forEach(function (btn) {
+              btn.addEventListener('click', function () {
+                setActiveHubTab(btn.getAttribute('data-gallery-go'), true);
+              });
+            });
+            return;
+          }
 
           var html = '';
           for (var i = 0; i < items.length; i++) {
@@ -5062,7 +5313,7 @@
             partsBooksViewEl.classList.remove('hidden');
             partsSearchInput.setAttribute(
               'placeholder',
-              'Search 409 models (DDL-8700, LK-1850, VC008)...'
+              'Search 406 models (DDL-8700, LK-1850, VC008)...'
             );
             renderPartsBrands();
             renderPartsModels();
@@ -5484,10 +5735,12 @@
            UNIFIED MODAL HANDLERS (Apps, Videos, Machine & XYZ Photos)
            ------------------------------------------------------------------- */
         function resetDetailModal() {
-          detailModalMediaWrap.classList.add('hidden');
+          detailModalMediaWrap.className =
+            'hidden mb-5 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 aspect-video bg-slate-950';
           detailModalMediaWrap.innerHTML = '';
           detailModalListWrap.classList.remove('hidden');
           detailModalPrimaryAction.classList.remove('hidden');
+          detailModalPrimaryAction.onclick = null;
           detailModalInquiryBtn.classList.add('hidden');
         }
 
@@ -5531,39 +5784,35 @@
         function openVideoModal(vid) {
           resetDetailModal();
           detailModalIconWrap.innerHTML =
-            '<div class="w-12 h-12 rounded-xl bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 flex items-center justify-center">' +
+            '<div class="w-12 h-12 rounded-xl bg-rose-500/15 text-rose-600 dark:text-rose-400 flex items-center justify-center">' +
             '<svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5" aria-hidden="true"><path d="m7 4 12 8-12 8V4z"/></svg>' +
             '</div>';
-          detailModalKicker.textContent = vid.category + ' · ' + vid.duration;
-          detailModalTitle.textContent = vid.title;
-          detailModalDescription.textContent = vid.description;
+          detailModalKicker.textContent =
+            'Video #' + vid.num + ' · ' + vid.recordedDate + ' · ' + vid.duration;
+          detailModalTitle.textContent = vid.title || 'Machine Modification Video #' + vid.num;
+          detailModalDescription.textContent = '';
           detailModalListWrap.classList.add('hidden');
 
-          if (vid.youtubeId) {
-            detailModalMediaWrap.innerHTML =
-              '<iframe class="w-full h-full" src="https://www.youtube.com/embed/' +
-              vid.youtubeId +
-              '" title="' +
-              vid.title +
-              '" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
-            detailModalMediaWrap.classList.remove('hidden');
-            detailModalPrimaryAction.setAttribute(
-              'href',
-              vid.watchUrl !== '#'
-                ? vid.watchUrl
-                : 'https://www.youtube.com/watch?v=' + vid.youtubeId
-            );
-            detailModalPrimaryAction.setAttribute('target', '_blank');
-            detailModalPrimaryAction.onclick = null;
-            detailModalPrimaryLabel.textContent = 'Open on YouTube';
-          } else {
-            detailModalPrimaryAction.classList.add('hidden');
-            detailModalInquiryBtn.classList.remove('hidden');
-            detailModalInquiryBtn.onclick = function () {
-              closeDetailModal();
-              openContactModal('Video Demo Request: ' + vid.title);
-            };
-          }
+          var fileBasename = decodeURIComponent(vid.videoUrl.split('/').pop() || 'video.mp4');
+          detailModalMediaWrap.className =
+            'mb-5 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 bg-slate-950 flex items-center justify-center max-h-[60vh]';
+          detailModalMediaWrap.innerHTML =
+            '<video controls autoplay playsinline poster="' +
+            escapeHtml(vid.posterUrl) +
+            '" class="w-full max-h-[60vh] object-contain bg-slate-950">' +
+            '<source src="' +
+            escapeHtml(vid.videoUrl) +
+            '" type="video/mp4" />' +
+            '</video>';
+
+          detailModalPrimaryAction.classList.remove('hidden');
+          detailModalPrimaryAction.setAttribute('href', '#');
+          detailModalPrimaryAction.removeAttribute('target');
+          detailModalPrimaryLabel.textContent = 'Download Video';
+          detailModalPrimaryAction.onclick = function (e) {
+            e.preventDefault();
+            downloadR2MediaFile(vid.videoUrl, fileBasename, null, '/api/download-file');
+          };
 
           detailModal.classList.remove('hidden');
         }
