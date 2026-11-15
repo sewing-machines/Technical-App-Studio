@@ -1438,108 +1438,6 @@
     </div>
 
     <!-- =====================================================================
-         MODAL: IN-APP PDF READER (Mobile & Desktop Direct Viewing)
-         ===================================================================== -->
-    <div
-      id="pdfViewerModal"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="pdfViewerTitle"
-      class="hidden fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-slate-950/80 backdrop-blur-sm"
-    >
-      <div
-        id="pdfViewerCard"
-        class="relative w-full max-w-5xl h-[90vh] flex flex-col rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 shadow-2xl overflow-hidden"
-      >
-        <div
-          class="flex flex-wrap items-center justify-between gap-2.5 px-4 py-3 border-b border-slate-200 dark:border-slate-800 bg-slate-50/90 dark:bg-slate-950/90 shrink-0"
-        >
-          <div class="min-w-0 flex-1 pr-2">
-            <div
-              id="pdfViewerBrand"
-              class="text-[11px] font-semibold uppercase tracking-wider text-emerald-700 dark:text-emerald-400 truncate"
-            ></div>
-            <h3
-              id="pdfViewerTitle"
-              class="font-display text-sm sm:text-base font-bold text-slate-950 dark:text-white truncate"
-            ></h3>
-          </div>
-
-          <div class="flex items-center gap-1.5 sm:gap-2 shrink-0">
-            <button
-              type="button"
-              id="pdfViewerReloadBtn"
-              title="Reload PDF Viewer"
-              class="inline-flex items-center gap-1.5 px-2.5 py-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 hover:border-slate-900 dark:hover:border-slate-500 text-slate-800 dark:text-slate-200 text-xs font-semibold transition-colors cursor-pointer"
-            >
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 shrink-0" aria-hidden="true">
-                <path d="M21 12a9 9 0 1 1-9-9c2.52 0 4.93 1 6.74 2.74L21 8" />
-                <path d="M21 3v5h-5" />
-              </svg>
-              <span class="hidden sm:inline">Reload</span>
-            </button>
-            <a
-              id="pdfViewerDirectLink"
-              href="#"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="inline-flex items-center gap-1.5 px-2.5 py-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 hover:border-sky-500 text-slate-800 dark:text-slate-200 text-xs font-semibold transition-colors whitespace-nowrap"
-            >
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 shrink-0" aria-hidden="true">
-                <path d="M15 3h6v6" />
-                <path d="M10 14 21 3" />
-                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-              </svg>
-              <span>Direct PDF</span>
-            </a>
-            <button
-              type="button"
-              id="pdfViewerDownloadBtn"
-              class="inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-700 dark:bg-emerald-500 dark:hover:bg-emerald-400 text-white dark:text-slate-950 text-xs font-semibold transition-colors whitespace-nowrap cursor-pointer disabled:opacity-60"
-            >
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 shrink-0" aria-hidden="true">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                <polyline points="7 10 12 15 17 10" />
-                <line x1="12" y1="15" x2="12" y2="3" />
-              </svg>
-              <span class="dl-label">Download</span>
-            </button>
-            <button
-              type="button"
-              id="closePdfViewerModalBtn"
-              aria-label="Close PDF viewer"
-              class="w-9 h-9 inline-flex items-center justify-center rounded-lg border border-slate-200 dark:border-slate-700 text-slate-600 hover:text-slate-950 dark:text-slate-300 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
-            >
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4" aria-hidden="true">
-                <path d="M18 6 6 18" />
-                <path d="m6 6 12 12" />
-              </svg>
-            </button>
-          </div>
-        </div>
-
-        <div class="relative flex-1 bg-slate-100 dark:bg-slate-950 overflow-hidden">
-          <div
-            id="pdfViewerLoading"
-            class="absolute inset-0 z-10 flex flex-col items-center justify-center gap-2 bg-slate-100/95 dark:bg-slate-950/95 text-center p-6 pointer-events-none"
-          >
-            <div class="w-8 h-8 rounded-full border-2 border-emerald-500 border-t-transparent animate-spin"></div>
-            <p class="text-sm font-semibold text-slate-800 dark:text-slate-200">Loading PDF pages...</p>
-            <p class="text-xs text-slate-500 dark:text-slate-400 max-w-sm">
-              If a large manual takes long or shows blank, tap <strong>Reload</strong>, <strong>Direct PDF</strong>, or <strong>Download</strong> above.
-            </p>
-          </div>
-          <iframe
-            id="pdfViewerFrame"
-            title="Parts Book PDF Reader"
-            src="about:blank"
-            class="w-full h-full border-0 bg-white dark:bg-slate-950"
-          ></iframe>
-        </div>
-      </div>
-    </div>
-
-    <!-- =====================================================================
          MODAL: CONTACT / WHATSAPP
          ===================================================================== -->
     <div
@@ -1711,6 +1609,266 @@
          ===================================================================== -->
     <script>
       (function () {
+        var R2_PDF_PREFIX = 'https://pub-dcfbf26a7f4e400a970b6df041e7a3f5.r2.dev/';
+        var urlParams = new URLSearchParams(window.location.search || '');
+        var viewPdfParam = urlParams.get('viewpdf');
+
+        if (viewPdfParam && viewPdfParam.indexOf(R2_PDF_PREFIX) === 0) {
+          var docTitleParam = (urlParams.get('title') || 'Parts Book PDF').trim();
+          var docNameParam = (urlParams.get('name') || 'parts-book.pdf').trim();
+          document.title = docTitleParam + ' — PDF Reader';
+
+          function escText(s) {
+            return String(s || '')
+              .replace(/&/g, '&amp;')
+              .replace(/</g, '&lt;')
+              .replace(/>/g, '&gt;')
+              .replace(/"/g, '&quot;');
+          }
+
+          document.body.className = 'bg-slate-950 text-slate-100 antialiased min-h-screen flex flex-col';
+          document.body.innerHTML =
+            '<header class="sticky top-0 z-30 border-b border-slate-800 bg-slate-900/95 backdrop-blur-xl px-3 sm:px-5 py-2.5 flex flex-wrap items-center justify-between gap-2">' +
+            '  <div class="min-w-0 flex-1">' +
+            '    <div class="flex items-center gap-2">' +
+            '      <span class="text-[11px] font-semibold uppercase tracking-wider text-emerald-400">PDF Reader</span>' +
+            '      <span id="pdfPageBadge" class="text-[11px] font-semibold tabular-nums px-2 py-0.5 rounded bg-slate-800 text-slate-200">Loading...</span>' +
+            '    </div>' +
+            '    <h1 class="font-display text-sm sm:text-base font-bold text-white truncate">' +
+            escText(docTitleParam) +
+            '</h1>' +
+            '  </div>' +
+            '  <div class="flex items-center gap-1.5 shrink-0">' +
+            '    <button type="button" id="pdfZoomOutBtn" aria-label="Zoom out" class="w-8 h-8 inline-flex items-center justify-center rounded-lg border border-slate-700 bg-slate-800 hover:bg-slate-700 text-white text-sm font-bold cursor-pointer">−</button>' +
+            '    <span id="pdfZoomLabel" class="text-xs font-semibold tabular-nums px-1.5 text-slate-300">Fit</span>' +
+            '    <button type="button" id="pdfZoomInBtn" aria-label="Zoom in" class="w-8 h-8 inline-flex items-center justify-center rounded-lg border border-slate-700 bg-slate-800 hover:bg-slate-700 text-white text-sm font-bold cursor-pointer">+</button>' +
+            '    <a href="' +
+            escText(viewPdfParam) +
+            '" class="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-lg border border-slate-700 bg-slate-800 hover:border-sky-400 text-slate-100 text-xs font-semibold whitespace-nowrap">Direct File</a>' +
+            '    <button type="button" id="pdfTabDownloadBtn" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 text-xs font-bold whitespace-nowrap cursor-pointer disabled:opacity-60">Download</button>' +
+            '  </div>' +
+            '</header>' +
+            '<div id="pdfStatusBanner" class="px-4 py-3 bg-slate-900 border-b border-slate-800 text-center text-xs sm:text-sm text-slate-300 flex items-center justify-center gap-2">' +
+            '  <span class="inline-block w-4 h-4 rounded-full border-2 border-emerald-400 border-t-transparent animate-spin"></span>' +
+            '  <span id="pdfStatusText">Opening PDF in browser...</span>' +
+            '</div>' +
+            '<main id="pdfPagesContainer" class="flex-1 w-full max-w-4xl mx-auto px-2 sm:px-4 py-4 space-y-3"></main>';
+
+          var statusBannerEl = document.getElementById('pdfStatusBanner');
+          var statusTextEl = document.getElementById('pdfStatusText');
+          var pageBadgeEl = document.getElementById('pdfPageBadge');
+          var zoomLabelEl = document.getElementById('pdfZoomLabel');
+          var pagesContainerEl = document.getElementById('pdfPagesContainer');
+          var tabDownloadBtn = document.getElementById('pdfTabDownloadBtn');
+          var currentZoomFactor = 1;
+          var activePdfDoc = null;
+          var pageSlots = [];
+          var pageObserver = null;
+
+          function formatMb(bytes) {
+            return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
+          }
+
+          tabDownloadBtn.addEventListener('click', function () {
+            tabDownloadBtn.disabled = true;
+            tabDownloadBtn.textContent = 'Saving...';
+            fetch('/api/health', { method: 'GET', cache: 'no-store' })
+              .then(function (r) {
+                return Boolean(r && r.ok);
+              })
+              .catch(function () {
+                return false;
+              })
+              .then(function (hasProxy) {
+                if (hasProxy) {
+                  var a = document.createElement('a');
+                  a.href =
+                    '/api/download-pdf?url=' +
+                    encodeURIComponent(viewPdfParam) +
+                    '&filename=' +
+                    encodeURIComponent(docNameParam);
+                  a.setAttribute('download', docNameParam);
+                  document.body.appendChild(a);
+                  a.click();
+                  setTimeout(function () {
+                    if (a.parentNode) a.parentNode.removeChild(a);
+                  }, 200);
+                  return;
+                }
+                return fetch(viewPdfParam, { mode: 'cors' })
+                  .then(function (res) {
+                    if (!res.ok) throw new Error('Download failed');
+                    return res.blob();
+                  })
+                  .then(function (blob) {
+                    var blobUrl = URL.createObjectURL(blob);
+                    var a = document.createElement('a');
+                    a.href = blobUrl;
+                    a.setAttribute('download', docNameParam);
+                    document.body.appendChild(a);
+                    a.click();
+                    setTimeout(function () {
+                      if (a.parentNode) a.parentNode.removeChild(a);
+                      URL.revokeObjectURL(blobUrl);
+                    }, 10000);
+                  });
+              })
+              .catch(function () {
+                window.location.href = viewPdfParam;
+              })
+              .finally(function () {
+                setTimeout(function () {
+                  tabDownloadBtn.disabled = false;
+                  tabDownloadBtn.textContent = 'Download';
+                }, 1000);
+              });
+          });
+
+          function renderPageSlot(slot) {
+            if (!activePdfDoc || slot.rendered || slot.rendering) return;
+            slot.rendering = true;
+            activePdfDoc
+              .getPage(slot.pageNum)
+              .then(function (page) {
+                var containerWidth = Math.max(pagesContainerEl.clientWidth - 8, 280);
+                var baseVp = page.getViewport({ scale: 1 });
+                var fitScale = containerWidth / baseVp.width;
+                var cssScale = fitScale * currentZoomFactor;
+                var dpr = Math.min(window.devicePixelRatio || 1, 2);
+                var viewport = page.getViewport({ scale: cssScale * dpr });
+
+                var canvas = document.createElement('canvas');
+                canvas.width = Math.floor(viewport.width);
+                canvas.height = Math.floor(viewport.height);
+                canvas.style.width = Math.floor(viewport.width / dpr) + 'px';
+                canvas.style.height = Math.floor(viewport.height / dpr) + 'px';
+                canvas.className = 'block mx-auto bg-white shadow-lg rounded';
+
+                slot.wrap.style.minHeight = Math.floor(viewport.height / dpr) + 'px';
+                slot.wrap.innerHTML = '';
+                slot.wrap.appendChild(canvas);
+
+                var ctx = canvas.getContext('2d');
+                return page.render({ canvasContext: ctx, viewport: viewport }).promise;
+              })
+              .then(function () {
+                slot.rendered = true;
+                slot.rendering = false;
+              })
+              .catch(function () {
+                slot.rendering = false;
+              });
+          }
+
+          function rebuildPageSlots() {
+            if (!activePdfDoc) return;
+            if (pageObserver) pageObserver.disconnect();
+            pagesContainerEl.innerHTML = '';
+            pageSlots = [];
+
+            activePdfDoc.getPage(1).then(function (firstPage) {
+              var containerWidth = Math.max(pagesContainerEl.clientWidth - 8, 280);
+              var baseVp = firstPage.getViewport({ scale: 1 });
+              var estHeight = Math.floor(baseVp.height * (containerWidth / baseVp.width) * currentZoomFactor);
+
+              for (var p = 1; p <= activePdfDoc.numPages; p++) {
+                var wrap = document.createElement('div');
+                wrap.setAttribute('data-page-num', String(p));
+                wrap.style.minHeight = estHeight + 'px';
+                wrap.className =
+                  'w-full overflow-x-auto flex items-center justify-center rounded-lg bg-slate-900/70 border border-slate-800/80 text-xs text-slate-400';
+                wrap.textContent = 'Page ' + p + ' of ' + activePdfDoc.numPages;
+                pagesContainerEl.appendChild(wrap);
+                pageSlots.push({ pageNum: p, wrap: wrap, rendered: false, rendering: false });
+              }
+
+              pageObserver = new IntersectionObserver(
+                function (entries) {
+                  entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                      var pNum = Number(entry.target.getAttribute('data-page-num'));
+                      var slot = pageSlots[pNum - 1];
+                      if (slot) {
+                        pageBadgeEl.textContent = 'Page ' + pNum + ' / ' + activePdfDoc.numPages;
+                        renderPageSlot(slot);
+                      }
+                    }
+                  });
+                },
+                { rootMargin: '800px 0px', threshold: 0.05 }
+              );
+
+              pageSlots.forEach(function (slot) {
+                pageObserver.observe(slot.wrap);
+              });
+            });
+          }
+
+          document.getElementById('pdfZoomInBtn').addEventListener('click', function () {
+            currentZoomFactor = Math.min(2.25, +(currentZoomFactor + 0.25).toFixed(2));
+            zoomLabelEl.textContent = Math.round(currentZoomFactor * 100) + '%';
+            rebuildPageSlots();
+          });
+
+          document.getElementById('pdfZoomOutBtn').addEventListener('click', function () {
+            currentZoomFactor = Math.max(0.75, +(currentZoomFactor - 0.25).toFixed(2));
+            zoomLabelEl.textContent = currentZoomFactor === 1 ? 'Fit' : Math.round(currentZoomFactor * 100) + '%';
+            rebuildPageSlots();
+          });
+
+          var pdfJsScript = document.createElement('script');
+          pdfJsScript.src = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js';
+          pdfJsScript.onload = function () {
+            if (!window.pdfjsLib) {
+              statusBannerEl.innerHTML =
+                '<span class="text-rose-400 font-semibold">PDF viewer could not initialize.</span> <a href="' +
+                escText(viewPdfParam) +
+                '" class="underline text-emerald-400 font-semibold">Open Direct File</a>';
+              return;
+            }
+            window.pdfjsLib.GlobalWorkerOptions.workerSrc =
+              'https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.worker.min.js';
+
+            var loadingTask = window.pdfjsLib.getDocument({
+              url: viewPdfParam,
+              cMapUrl: 'https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/cmaps/',
+              cMapPacked: true,
+              standardFontDataUrl: 'https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/standard_fonts/',
+              disableRange: true,
+              disableStream: true,
+            });
+            loadingTask.onProgress = function (prog) {
+              if (prog && prog.loaded) {
+                statusTextEl.textContent =
+                  'Loading PDF: ' +
+                  formatMb(prog.loaded) +
+                  (prog.total ? ' / ' + formatMb(prog.total) : '');
+              }
+            };
+            loadingTask.promise
+              .then(function (pdf) {
+                activePdfDoc = pdf;
+                statusBannerEl.classList.add('hidden');
+                pageBadgeEl.textContent = 'Page 1 / ' + pdf.numPages;
+                rebuildPageSlots();
+              })
+              .catch(function () {
+                statusBannerEl.innerHTML =
+                  '<div class="flex flex-wrap items-center justify-center gap-3">' +
+                  '<span class="text-rose-400 font-semibold">Could not render PDF pages in browser.</span>' +
+                  '<a href="' +
+                  escText(viewPdfParam) +
+                  '" class="px-3 py-1.5 rounded-lg bg-emerald-500 text-slate-950 text-xs font-bold">Open Direct PDF</a>' +
+                  '</div>';
+              });
+          };
+          pdfJsScript.onerror = function () {
+            window.location.replace(viewPdfParam);
+          };
+          document.head.appendChild(pdfJsScript);
+          return;
+        }
+
         /* -------------------------------------------------------------------
            1. ALL APPS (Organized into Separate Categories)
            Includes all 6 published Google Play apps.
@@ -4670,17 +4828,6 @@
         var contactModalCard = document.getElementById('contactModalCard');
         var contactModalContext = document.getElementById('contactModalContext');
 
-        var pdfViewerModal = document.getElementById('pdfViewerModal');
-        var pdfViewerCard = document.getElementById('pdfViewerCard');
-        var pdfViewerBrand = document.getElementById('pdfViewerBrand');
-        var pdfViewerTitle = document.getElementById('pdfViewerTitle');
-        var pdfViewerFrame = document.getElementById('pdfViewerFrame');
-        var pdfViewerLoading = document.getElementById('pdfViewerLoading');
-        var pdfViewerReloadBtn = document.getElementById('pdfViewerReloadBtn');
-        var pdfViewerDirectLink = document.getElementById('pdfViewerDirectLink');
-        var pdfViewerDownloadBtn = document.getElementById('pdfViewerDownloadBtn');
-        var activePdfViewerData = null;
-
         var toastEl = document.getElementById('toast');
         var toastTextEl = document.getElementById('toastText');
 
@@ -5800,6 +5947,13 @@
           for (var j = 0; j < itemsToRender.length; j++) {
             var entry = itemsToRender[j];
             var pdfFilename = getPdfFilenameFromEntry(entry.brandName, entry.model, entry.url);
+            var viewHref =
+              '?viewpdf=' +
+              encodeURIComponent(entry.url) +
+              '&title=' +
+              encodeURIComponent(entry.brandName + ' ' + entry.model) +
+              '&name=' +
+              encodeURIComponent(pdfFilename);
             html +=
               '<div class="group flex flex-col justify-between gap-3.5 rounded-xl border border-slate-200/90 dark:border-slate-800/90 bg-slate-50/80 dark:bg-slate-950/65 hover:bg-white dark:hover:bg-slate-900 hover:border-emerald-500/50 dark:hover:border-emerald-400/50 p-4 transition-all duration-150">' +
               '<div class="min-w-0">' +
@@ -5813,18 +5967,12 @@
               '</div>' +
               '</div>' +
               '<div class="flex items-center gap-2 pt-2 border-t border-slate-200/70 dark:border-slate-800/70">' +
-              '<button type="button" data-view-pdf="' +
-              escapeHtml(entry.url) +
-              '" data-view-brand="' +
-              escapeHtml(entry.brandName) +
-              '" data-view-model="' +
-              escapeHtml(entry.model) +
-              '" data-view-name="' +
-              escapeHtml(pdfFilename) +
-              '" class="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 hover:border-slate-900 dark:hover:border-emerald-400 text-slate-900 dark:text-slate-100 text-xs font-semibold transition-colors whitespace-nowrap cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500">' +
+              '<a href="' +
+              escapeHtml(viewHref) +
+              '" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg border border-slate-300 dark:border-slate-700 bg-white dark:bg-slate-900 hover:border-slate-900 dark:hover:border-emerald-400 text-slate-900 dark:text-slate-100 text-xs font-semibold transition-colors whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500">' +
               '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-3.5 h-3.5 shrink-0" aria-hidden="true"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>' +
               '<span>View PDF</span>' +
-              '</button>' +
+              '</a>' +
               '<button type="button" data-download-pdf="' +
               escapeHtml(entry.url) +
               '" data-download-name="' +
@@ -5838,17 +5986,6 @@
           }
 
           partsModelsGridEl.innerHTML = html;
-
-          partsModelsGridEl.querySelectorAll('[data-view-pdf]').forEach(function (btn) {
-            btn.addEventListener('click', function () {
-              openPdfViewerModal(
-                btn.getAttribute('data-view-pdf'),
-                btn.getAttribute('data-view-brand'),
-                btn.getAttribute('data-view-model'),
-                btn.getAttribute('data-view-name')
-              );
-            });
-          });
 
           partsModelsGridEl.querySelectorAll('[data-download-pdf]').forEach(function (btn) {
             btn.addEventListener('click', function () {
@@ -6186,71 +6323,6 @@
           });
         });
 
-        function loadPdfIntoViewerFrame(pdfUrl) {
-          if (!pdfUrl) return;
-          pdfViewerLoading.classList.remove('hidden');
-          pdfViewerFrame.src = 'about:blank';
-          setTimeout(function () {
-            if (activePdfViewerData && activePdfViewerData.url === pdfUrl) {
-              pdfViewerFrame.src =
-                'https://docs.google.com/gview?embedded=true&url=' + encodeURIComponent(pdfUrl);
-            }
-          }, 60);
-        }
-
-        function openPdfViewerModal(url, brandName, modelName, filename) {
-          if (!url) return;
-          activePdfViewerData = {
-            url: url,
-            brandName: brandName || 'Parts Book',
-            modelName: modelName || filename || 'Parts Manual',
-            filename: filename || 'parts-book.pdf',
-          };
-          pdfViewerBrand.textContent = activePdfViewerData.brandName + ' · Parts Book PDF';
-          pdfViewerTitle.textContent = activePdfViewerData.modelName;
-          pdfViewerDirectLink.setAttribute('href', url);
-          loadPdfIntoViewerFrame(url);
-          pdfViewerModal.classList.remove('hidden');
-        }
-
-        function closePdfViewerModal() {
-          pdfViewerModal.classList.add('hidden');
-          pdfViewerFrame.src = 'about:blank';
-          pdfViewerLoading.classList.add('hidden');
-          activePdfViewerData = null;
-        }
-
-        pdfViewerFrame.addEventListener('load', function () {
-          var currentSrc = pdfViewerFrame.getAttribute('src') || '';
-          if (currentSrc && currentSrc !== 'about:blank' && currentSrc.indexOf('docs.google.com') !== -1) {
-            pdfViewerLoading.classList.add('hidden');
-          }
-        });
-
-        pdfViewerReloadBtn.addEventListener('click', function () {
-          if (activePdfViewerData && activePdfViewerData.url) {
-            loadPdfIntoViewerFrame(activePdfViewerData.url);
-          }
-        });
-
-        pdfViewerDownloadBtn.addEventListener('click', function () {
-          if (activePdfViewerData) {
-            downloadPartsPdf(
-              activePdfViewerData.url,
-              activePdfViewerData.filename,
-              pdfViewerDownloadBtn
-            );
-          }
-        });
-
-        document.getElementById('closePdfViewerModalBtn').addEventListener('click', closePdfViewerModal);
-        pdfViewerModal.addEventListener('click', function (e) {
-          if (e.target === pdfViewerModal) closePdfViewerModal();
-        });
-        pdfViewerCard.addEventListener('click', function (e) {
-          e.stopPropagation();
-        });
-
         window.addEventListener('keydown', function (e) {
           var activeTag = document.activeElement ? document.activeElement.tagName : '';
           if (
@@ -6268,7 +6340,6 @@
               searchInput.focus();
             }
           } else if (e.key === 'Escape') {
-            closePdfViewerModal();
             closeDetailModal();
             closeContactModal();
           }
